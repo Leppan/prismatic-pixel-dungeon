@@ -7,6 +7,6 @@ Based on the source code of Pixel Dungeon, by Watabou, and it's fork Shattered P
 Prismatic Pixel Dungeon uses gradle and is most easily compiled/edited using Android Studio.
 
 Source code of Shattered Pixel Dungeon:
-https://github.com/00-Evan/shattered-pixel-dungeon
+https://github.com/00-Evan/shattered-pixel-dungeon  
 Source code of original Pixel Dungeon:
 https://github.com/watabou/pixel-dungeon
