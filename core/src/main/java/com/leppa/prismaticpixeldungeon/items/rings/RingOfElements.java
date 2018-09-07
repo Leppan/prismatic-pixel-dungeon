@@ -19,26 +19,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.rings;
+package com.leppa.prismaticpixeldungeon.items.rings;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Electricity;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.ToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Charm;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Chill;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Corrosion;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Frost;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Ooze;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Paralysis;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Poison;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Weakness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Eye;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Shaman;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Warlock;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Yog;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.DisintegrationTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.GrimTrap;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Electricity;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Charm;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Chill;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Corrosion;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Frost;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Ooze;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Paralysis;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Poison;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Weakness;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Eye;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Shaman;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Warlock;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Yog;
+import com.leppa.prismaticpixeldungeon.levels.traps.DisintegrationTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.GrimTrap;
 
 import java.util.HashSet;
 

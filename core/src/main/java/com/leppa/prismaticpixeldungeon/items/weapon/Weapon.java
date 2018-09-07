@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
+<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/weapon/Weapon.java
 package com.shatteredpixel.shatteredpixeldungeon.items.weapon;
 
 import com.shatteredpixel.shatteredpixeldungeon.Badges;
@@ -54,6 +55,41 @@ import com.shatteredpixel.shatteredpixeldungeon.items.weapon.enchantments.Vorpal
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
 import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+=======
+package com.leppa.prismaticpixeldungeon.items.weapon;
+
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.KindOfWeapon;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Annoying;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Displacing;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Elastic;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Exhausting;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Fragile;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Friendly;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Sacrificial;
+import com.leppa.prismaticpixeldungeon.items.weapon.curses.Wayward;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Blazing;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Chilling;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Dazzling;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Eldritch;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Grim;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Lucky;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Projecting;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Shocking;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Stunning;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Unstable;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Vampiric;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Venomous;
+import com.leppa.prismaticpixeldungeon.items.weapon.enchantments.Vorpal;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
+>>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/weapon/Weapon.java
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -378,7 +414,7 @@ abstract public class Weapon extends KindOfWeapon {
 					return (Enchantment) Random.element(enchants).newInstance();
 				}
 			} catch (Exception e) {
-				ShatteredPixelDungeon.reportException(e);
+				PrismaticPixelDungeon.reportException(e);
 				return null;
 			}
 		}
@@ -394,7 +430,7 @@ abstract public class Weapon extends KindOfWeapon {
 					return (Enchantment) Random.element(enchants).newInstance();
 				}
 			} catch (Exception e) {
-				ShatteredPixelDungeon.reportException(e);
+				PrismaticPixelDungeon.reportException(e);
 				return null;
 			}
 		}

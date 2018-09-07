@@ -19,11 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.ui;
+package com.leppa.prismaticpixeldungeon.ui;
 
-import com.shatteredpixel.shatteredpixeldungeon.Chrome;
-import com.shatteredpixel.shatteredpixeldungeon.effects.ShadowBox;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
+import com.leppa.prismaticpixeldungeon.Chrome;
+import com.leppa.prismaticpixeldungeon.effects.ShadowBox;
+import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
 import com.watabou.input.Keys;
 import com.watabou.input.Keys.Key;
 import com.watabou.input.Touchscreen.Touch;
@@ -45,8 +45,9 @@ public class Window extends Group implements Signal.Listener<Key> {
 	protected ShadowBox shadow;
 	protected NinePatch chrome;
 	
-	public static final int TITLE_COLOR = 0xFFFF44;
+	public static final int TITLE_COLOR = 0xbaf9ff;
 	public static final int SHPX_COLOR = 0x33BB33;
+	public static final int PRPX_COLOR = 0xFFFFFF;
 	
 	public Window() {
 		this( 0, 0, 0, Chrome.get( Chrome.Type.WINDOW ) );

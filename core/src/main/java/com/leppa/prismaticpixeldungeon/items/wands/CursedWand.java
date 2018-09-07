@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
+<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/wands/CursedWand.java
 package com.shatteredpixel.shatteredpixeldungeon.items.wands;
 
 import com.shatteredpixel.shatteredpixeldungeon.Assets;
@@ -65,6 +66,54 @@ import com.shatteredpixel.shatteredpixeldungeon.scenes.InterlevelScene;
 import com.shatteredpixel.shatteredpixeldungeon.ui.TargetHealthIndicator;
 import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
 import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
+=======
+package com.leppa.prismaticpixeldungeon.items.wands;
+
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Blob;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ConfusionGas;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Fire;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ParalyticGas;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Regrowth;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Frost;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Recharging;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mimic;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Sheep;
+import com.leppa.prismaticpixeldungeon.effects.CellEmitter;
+import com.leppa.prismaticpixeldungeon.effects.Flare;
+import com.leppa.prismaticpixeldungeon.effects.MagicMissile;
+import com.leppa.prismaticpixeldungeon.effects.Speck;
+import com.leppa.prismaticpixeldungeon.effects.SpellSprite;
+import com.leppa.prismaticpixeldungeon.effects.particles.ShadowParticle;
+import com.leppa.prismaticpixeldungeon.items.Bomb;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.artifacts.TimekeepersHourglass;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRecharging;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.levels.traps.CursingTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ShockingTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.SummoningTrap;
+import com.leppa.prismaticpixeldungeon.mechanics.Ballistica;
+import com.leppa.prismaticpixeldungeon.messages.Languages;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.scenes.InterlevelScene;
+import com.leppa.prismaticpixeldungeon.ui.TargetHealthIndicator;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.windows.WndOptions;
+>>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/wands/CursedWand.java
 import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Callback;
@@ -427,7 +476,7 @@ public class CursedWand {
 						);
 					}
 				} catch(IOException e){
-					ShatteredPixelDungeon.reportException(e);
+					PrismaticPixelDungeon.reportException(e);
 					//oookay maybe don't kill the game if the save failed.
 					GLog.i(Messages.get(CursedWand.class, "nothing"));
 					wand.wandUsed();

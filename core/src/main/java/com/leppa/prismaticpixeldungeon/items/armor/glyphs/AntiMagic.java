@@ -19,19 +19,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs;
+package com.leppa.prismaticpixeldungeon.items.armor.glyphs;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Charm;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Weakness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Eye;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Shaman;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Warlock;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Yog;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.DisintegrationTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.GrimTrap;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Charm;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Weakness;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Eye;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Shaman;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Warlock;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Yog;
+import com.leppa.prismaticpixeldungeon.items.armor.Armor;
+import com.leppa.prismaticpixeldungeon.levels.traps.DisintegrationTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.GrimTrap;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 
 import java.util.HashSet;
 

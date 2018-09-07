@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.hero;
+package com.leppa.prismaticpixeldungeon.actors.hero;
 
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.watabou.utils.Bundle;
 
 public enum HeroSubClass {

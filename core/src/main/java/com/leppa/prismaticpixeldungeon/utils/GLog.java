@@ -19,11 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.utils;
+package com.leppa.prismaticpixeldungeon.utils;
 
 import android.util.Log;
 
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.watabou.utils.Signal;
 
 public class GLog {

@@ -19,8 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts;
+package com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts;
 
+<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/weapon/missiles/darts/TippedDart.java
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
 import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
@@ -42,6 +43,28 @@ import com.shatteredpixel.shatteredpixeldungeon.plants.Starflower;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Stormvine;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Sungrass;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Swiftthistle;
+=======
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.PinCushion;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.plants.Blindweed;
+import com.leppa.prismaticpixeldungeon.plants.Dreamfoil;
+import com.leppa.prismaticpixeldungeon.plants.Earthroot;
+import com.leppa.prismaticpixeldungeon.plants.Fadeleaf;
+import com.leppa.prismaticpixeldungeon.plants.Firebloom;
+import com.leppa.prismaticpixeldungeon.plants.Icecap;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.plants.Rotberry;
+import com.leppa.prismaticpixeldungeon.plants.Sorrowmoss;
+import com.leppa.prismaticpixeldungeon.plants.Starflower;
+import com.leppa.prismaticpixeldungeon.plants.Stormvine;
+import com.leppa.prismaticpixeldungeon.plants.Sungrass;
+>>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/weapon/missiles/darts/TippedDart.java
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -101,7 +124,7 @@ public abstract class TippedDart extends Dart {
 		try{
 			return (TippedDart) types.get(s.getClass()).newInstance().quantity(2);
 		} catch (Exception e) {
-			ShatteredPixelDungeon.reportException(e);
+			PrismaticPixelDungeon.reportException(e);
 			return null;
 		}
 		
@@ -158,7 +181,7 @@ public abstract class TippedDart extends Dart {
 			try{
 				return types.get(ingredients.get(1).getClass()).newInstance().quantity(produced);
 			} catch (Exception e) {
-				ShatteredPixelDungeon.reportException(e);
+				PrismaticPixelDungeon.reportException(e);
 				return null;
 			}
 			
@@ -172,7 +195,7 @@ public abstract class TippedDart extends Dart {
 				int produced = Math.min(2, ingredients.get(0).quantity());
 				return types.get(ingredients.get(1).getClass()).newInstance().quantity( produced );
 			} catch (Exception e) {
-				ShatteredPixelDungeon.reportException(e);
+				PrismaticPixelDungeon.reportException(e);
 				return null;
 			}
 		}

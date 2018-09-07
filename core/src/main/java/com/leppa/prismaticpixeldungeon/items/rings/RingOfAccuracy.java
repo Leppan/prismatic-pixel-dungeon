@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.rings;
+package com.leppa.prismaticpixeldungeon.items.rings;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.Char;
 
 public class RingOfAccuracy extends Ring {
 	

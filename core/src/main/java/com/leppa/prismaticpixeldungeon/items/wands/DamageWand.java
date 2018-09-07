@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.wands;
+package com.leppa.prismaticpixeldungeon.items.wands;
 
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.watabou.utils.Random;
 
 //for wands that directly damage a target

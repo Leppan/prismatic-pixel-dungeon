@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
+<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/Blandfruit.java
 package com.shatteredpixel.shatteredpixeldungeon.items.food;
 
 import com.shatteredpixel.shatteredpixeldungeon.Challenges;
@@ -48,6 +49,40 @@ import com.shatteredpixel.shatteredpixeldungeon.plants.Sungrass;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
 import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+=======
+package com.leppa.prismaticpixeldungeon.items.food;
+
+import com.leppa.prismaticpixeldungeon.Challenges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.EarthImbue;
+import com.leppa.prismaticpixeldungeon.actors.buffs.FireImbue;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Hunger;
+import com.leppa.prismaticpixeldungeon.actors.buffs.ToxicImbue;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfExperience;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfFrost;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLevitation;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLiquidFlame;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfParalyticGas;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfPurity;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Plant.Seed;
+import com.leppa.prismaticpixeldungeon.plants.Sungrass;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
+>>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/Blandfruit.java
 import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
@@ -128,7 +163,7 @@ public class Blandfruit extends Food {
 		try {
 			return imbuePotion(Potion.SeedToPotion.types.get(seed.getClass()).newInstance());
 		} catch (Exception e) {
-			ShatteredPixelDungeon.reportException(e);
+			PrismaticPixelDungeon.reportException(e);
 			return null;
 		}
 

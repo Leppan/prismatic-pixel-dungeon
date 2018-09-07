@@ -19,8 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.hero;
+package com.leppa.prismaticpixeldungeon.actors.hero;
 
+<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/actors/hero/Belongings.java
 import com.shatteredpixel.shatteredpixeldungeon.Badges;
 import com.shatteredpixel.shatteredpixeldungeon.GamesInProgress;
 import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
@@ -37,6 +38,23 @@ import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRemoveCurs
 import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
 import com.shatteredpixel.shatteredpixeldungeon.journal.Notes;
 import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+=======
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.GamesInProgress;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.KindOfWeapon;
+import com.leppa.prismaticpixeldungeon.items.KindofMisc;
+import com.leppa.prismaticpixeldungeon.items.armor.Armor;
+import com.leppa.prismaticpixeldungeon.items.bags.Bag;
+import com.leppa.prismaticpixeldungeon.items.keys.GoldenKey;
+import com.leppa.prismaticpixeldungeon.items.keys.IronKey;
+import com.leppa.prismaticpixeldungeon.items.keys.Key;
+import com.leppa.prismaticpixeldungeon.items.keys.SkeletonKey;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
+import com.leppa.prismaticpixeldungeon.items.wands.Wand;
+import com.leppa.prismaticpixeldungeon.journal.Notes;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+>>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/actors/hero/Belongings.java
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

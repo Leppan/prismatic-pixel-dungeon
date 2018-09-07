@@ -19,34 +19,38 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.hero;
+package com.leppa.prismaticpixeldungeon.actors.hero;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.BrokenSeal;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClothArmor;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.CloakOfShadows;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.PotionBandolier;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.ScrollHolder;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.VelvetPouch;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.Food;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.SmallRation;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHealing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfMindVision;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfUpgrade;
-import com.shatteredpixel.shatteredpixeldungeon.items.wands.WandOfMagicMissile;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.Dagger;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.Knuckles;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MagesStaff;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.WornShortsword;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Boomerang;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.ThrowingKnife;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.ThrowingStone;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.Challenges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.items.BrokenSeal;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
+import com.leppa.prismaticpixeldungeon.items.artifacts.CloakOfShadows;
+import com.leppa.prismaticpixeldungeon.items.bags.PotionBandolier;
+import com.leppa.prismaticpixeldungeon.items.bags.ScrollHolder;
+import com.leppa.prismaticpixeldungeon.items.bags.VelvetPouch;
+import com.leppa.prismaticpixeldungeon.items.food.Food;
+import com.leppa.prismaticpixeldungeon.items.food.SmallRation;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfMagicMissile;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfSapping;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.Dagger;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.Glaive;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.Knuckles;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.Mace;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.MagesStaff;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.WireWhip;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.WornShortsword;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Boomerang;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingKnife;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingStone;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.watabou.utils.Bundle;
 
 public enum HeroClass {
@@ -101,6 +105,8 @@ public enum HeroClass {
 			new SmallRation().collect();
 		}
 
+		Item f = new WandOfSapping().identify();
+		f.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

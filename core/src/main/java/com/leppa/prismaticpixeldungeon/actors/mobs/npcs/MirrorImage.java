@@ -19,177 +19,87 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs;
+package com.leppa.prismaticpixeldungeon.actors.mobs.npcs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.CorrosiveGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.ToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Invisibility;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.MirrorSprite;
-import com.shatteredpixel.shatteredpixeldungeon.ui.BuffIndicator;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.blobs.CorrosiveGas;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
+import com.leppa.prismaticpixeldungeon.sprites.MirrorSprite;
 import com.watabou.utils.Bundle;
-import com.watabou.utils.Random;
 
 public class MirrorImage extends NPC {
 	
 	{
 		spriteClass = MirrorSprite.class;
 		
-		HP = HT = 1;
-		defenseSkill = 1;
-		
 		alignment = Alignment.ALLY;
 		state = HUNTING;
-		
-		//before other mobs
-		actPriority = MOB_PRIO + 1;
 	}
 	
-	private Hero hero;
-	private int heroID;
-	public int armTier;
+	public int tier;
 	
-	@Override
-	protected boolean act() {
-		
-		if ( hero == null ){
-			hero = (Hero)Actor.findById(heroID);
-			if ( hero == null ){
-				die(null);
-				sprite.killAndErase();
-				return true;
-			}
-		}
-		
-		if (hero.tier() != armTier){
-			armTier = hero.tier();
-			((MirrorSprite)sprite).updateArmor( armTier );
-		}
-		
-		return super.act();
-	}
+	private int attack;
+	private int damage;
 	
-	private static final String HEROID	= "hero_id";
+	private static final String TIER	= "tier";
+	private static final String ATTACK	= "attack";
+	private static final String DAMAGE	= "damage";
 	
 	@Override
 	public void storeInBundle( Bundle bundle ) {
 		super.storeInBundle( bundle );
-		bundle.put( HEROID, heroID );
+		bundle.put( TIER, tier );
+		bundle.put( ATTACK, attack );
+		bundle.put( DAMAGE, damage );
 	}
 	
 	@Override
 	public void restoreFromBundle( Bundle bundle ) {
 		super.restoreFromBundle( bundle );
-		heroID = bundle.getInt( HEROID );
+		tier = bundle.getInt( TIER );
+		attack = bundle.getInt( ATTACK );
+		damage = bundle.getInt( DAMAGE );
 	}
 	
 	public void duplicate( Hero hero ) {
-		this.hero = hero;
-		heroID = this.hero.id();
-		Buff.affect(this, MirrorInvis.class, Short.MAX_VALUE);
-	}
-	
-	@Override
-	public int damageRoll() {
-		int damage;
-		if (hero.belongings.weapon != null){
-			damage = hero.belongings.weapon.damageRoll(this);
-		} else {
-			damage = hero.damageRoll(); //handles ring of force
-		}
-		return (damage+1)/2; //half hero damage, rounded up
+		tier = hero.tier();
+		attack = hero.attackSkill( hero );
+		damage = hero.damageRoll();
 	}
 	
 	@Override
 	public int attackSkill( Char target ) {
-		return hero.attackSkill(target);
+		return attack;
 	}
 	
 	@Override
-	public int defenseSkill(Char enemy) {
-		if (hero != null) {
-			int baseEvasion = 4 + hero.lvl;
-			int heroEvasion = hero.defenseSkill(enemy);
-			
-			//if the hero has more/less evasion, 50% of it is applied
-			return super.defenseSkill(enemy) * (baseEvasion + heroEvasion) / 2;
-		} else {
-			return 0;
-		}
-	}
-	
-	@Override
-	protected float attackDelay() {
-		return hero.attackDelay(); //handles ring of furor
-	}
-	
-	@Override
-	protected boolean canAttack(Char enemy) {
-		if (hero.belongings.weapon != null){
-			return Dungeon.level.distance( pos, enemy.pos ) <= hero.belongings.weapon.reachFactor(this);
-		} else {
-			return super.canAttack(enemy);
-		}
-	}
-	
-	@Override
-	public int drRoll() {
-		if (hero != null && hero.belongings.weapon != null){
-			return Random.NormalIntRange(0, hero.belongings.weapon.defenseFactor(this)/2);
-		} else {
-			return 0;
-		}
+	public int damageRoll() {
+		return damage;
 	}
 	
 	@Override
 	public int attackProc( Char enemy, int damage ) {
 		damage = super.attackProc( enemy, damage );
+
+		destroy();
+		sprite.die();
 		
-		MirrorInvis buff = buff(MirrorInvis.class);
-		if (buff != null){
-			buff.detach();
-		}
-		
-		if (enemy instanceof Mob) {
-			((Mob)enemy).aggro( this );
-		}
-		if (hero.belongings.weapon != null){
-			return hero.belongings.weapon.proc( this, enemy, damage );
-		} else {
-			return damage;
-		}
+		return damage;
 	}
 	
 	@Override
 	public CharSprite sprite() {
 		CharSprite s = super.sprite();
-		
-		//pre-0.7.0 saves
-		if (heroID == 0){
-			heroID = Dungeon.hero.id();
-		}
-		
-		hero = (Hero)Actor.findById(heroID);
-		if (hero != null) {
-			armTier = hero.tier();
-		}
-		((MirrorSprite)s).updateArmor( armTier );
+		((MirrorSprite)s).updateArmor( tier );
 		return s;
 	}
 
 	@Override
 	public boolean interact() {
-		
-		if (!Dungeon.level.passable[pos]){
-			return true;
-		}
 		
 		int curPos = pos;
 		
@@ -209,17 +119,5 @@ public class MirrorImage extends NPC {
 		immunities.add( ToxicGas.class );
 		immunities.add( CorrosiveGas.class );
 		immunities.add( Burning.class );
-	}
-	
-	public static class MirrorInvis extends Invisibility {
-		
-		{
-			announced = false;
-		}
-		
-		@Override
-		public int icon() {
-			return BuffIndicator.NONE;
-		}
 	}
 }

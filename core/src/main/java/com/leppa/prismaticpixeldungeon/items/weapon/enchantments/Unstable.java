@@ -19,12 +19,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.weapon.enchantments;
+package com.leppa.prismaticpixeldungeon.items.weapon.enchantments;
 
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.Weapon;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.watabou.utils.Random;
 
 public class Unstable extends Weapon.Enchantment {
@@ -51,7 +51,7 @@ public class Unstable extends Weapon.Enchantment {
 		try {
 			return Random.oneOf(randomEnchants).newInstance().proc( weapon, attacker, defender, damage );
 		} catch (Exception e) {
-			ShatteredPixelDungeon.reportException(e);
+			PrismaticPixelDungeon.reportException(e);
 			return damage;
 		}
 	}

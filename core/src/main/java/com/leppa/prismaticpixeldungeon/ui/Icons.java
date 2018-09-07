@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.ui;
+package com.leppa.prismaticpixeldungeon.ui;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.HeroClass;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.actors.hero.HeroClass;
 import com.watabou.noosa.Image;
 
 public enum Icons {
@@ -37,6 +37,7 @@ public enum Icons {
 	MASTERY,
 	WATA,
 	SHPX,
+	PRPX,
 	WARRIOR,
 	MAGE,
 	ROGUE,
@@ -96,6 +97,9 @@ public enum Icons {
 			break;
 		case SHPX:
 			icon.frame( icon.texture.uvRect( 64, 44, 80, 60 ) );
+			break;
+		case PRPX:
+			icon.frame( icon.texture.uvRect( 109, 44, 125, 60 ) );
 			break;
 		case WARRIOR:
 			icon.frame( icon.texture.uvRect( 0, 29, 16, 45 ) );

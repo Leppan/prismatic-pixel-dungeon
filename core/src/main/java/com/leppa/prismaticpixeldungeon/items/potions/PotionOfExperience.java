@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.potions;
+package com.leppa.prismaticpixeldungeon.items.potions;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 
 public class PotionOfExperience extends Potion {
 

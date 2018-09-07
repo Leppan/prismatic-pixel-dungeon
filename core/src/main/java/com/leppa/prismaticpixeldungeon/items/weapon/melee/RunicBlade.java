@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee;
+package com.leppa.prismaticpixeldungeon.items.weapon.melee;
 
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 
 public class RunicBlade extends MeleeWeapon {
 
@@ -38,5 +38,13 @@ public class RunicBlade extends MeleeWeapon {
 	public int max(int lvl) {
 		return  5*(tier) +                	//20 base, down from 25
 				Math.round(lvl*(tier+2));	//+6 per level, up from +5
+	}
+
+	//It also gets +2 min per level
+
+	@Override
+	public int min(int lvl) {
+		return  tier +  //base
+				2*lvl;    //+2 per level, up from +1
 	}
 }

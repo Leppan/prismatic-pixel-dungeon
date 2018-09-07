@@ -19,11 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.tiles;
+package com.leppa.prismaticpixeldungeon.tiles;
 
 import android.util.SparseIntArray;
 
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.watabou.utils.Random;
 
 import java.util.Arrays;
