@@ -230,6 +230,7 @@ import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTerror;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.leppa.prismaticpixeldungeon.items.wands.Wand;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfBlastWave;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorrosion;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorruption;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfDisintegration;
@@ -434,14 +435,14 @@ public class Generator {
 					WandOfFireblast.class,
 					WandOfCorrosion.class,
 					WandOfBlastWave.class,
-					//WandOfLivingEarth.class,
+					WandOfChanneling.class,
 					WandOfFrost.class,
 					WandOfPrismaticLight.class,
 					WandOfSapping.class,
 					WandOfTransfusion.class,
 					WandOfCorruption.class,
 					WandOfRegrowth.class };
-			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, /*3,*/ 3, 3, 2, 3, 3, 3 };
+			WAND.probs = new float[]{ 5, 4, 4, 4, 4, 3, 2, 3, 3, 2, 3, 3, 3 };
 			
 			//see generator.randomWeapon
 			WEAPON.classes = new Class<?>[]{};

@@ -36,8 +36,10 @@ import com.leppa.prismaticpixeldungeon.items.food.Food;
 import com.leppa.prismaticpixeldungeon.items.food.SmallRation;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfMagicMissile;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfSapping;
 import com.leppa.prismaticpixeldungeon.items.weapon.melee.Dagger;
@@ -104,9 +106,6 @@ public enum HeroClass {
 		if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 			new SmallRation().collect();
 		}
-
-		Item f = new WandOfSapping().identify();
-		f.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

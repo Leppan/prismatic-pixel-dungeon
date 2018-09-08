@@ -26,7 +26,11 @@ public class WandOfSapping extends DamageWand {
 
     @Override
     public int max(int lvl){
-        return 5 + 2*lvl;
+        return 6 + 3*lvl;
+    }
+
+    protected int initialCharges() {
+        return 3;
     }
 
     @Override
@@ -58,6 +62,8 @@ public class WandOfSapping extends DamageWand {
 
     @Override
     public void onHit(MagesStaff staff, Char attacker, Char defender, int damage){
-
+        int damageAmount = (int)0.5*damageRoll();
+        defender.damage(damageAmount, this);
+        Buff.affect(curUser, Healing.class).setHeal(damageAmount, 0.333f, 0);
     }
 }
