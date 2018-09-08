@@ -29,10 +29,6 @@ public class WandOfSapping extends DamageWand {
         return 6 + 3*lvl;
     }
 
-    protected int initialCharges() {
-        return 3;
-    }
-
     @Override
     protected void onZap(Ballistica attack){
         int cell = attack.collisionPos;

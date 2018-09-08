@@ -21,7 +21,6 @@
 
 package com.leppa.prismaticpixeldungeon.items;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/Generator.java
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
 import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
@@ -163,139 +162,6 @@ import com.shatteredpixel.shatteredpixeldungeon.plants.Starflower;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Stormvine;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Sungrass;
 import com.shatteredpixel.shatteredpixeldungeon.plants.Swiftthistle;
-=======
-import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
-import com.leppa.prismaticpixeldungeon.items.armor.Armor;
-import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
-import com.leppa.prismaticpixeldungeon.items.armor.LeatherArmor;
-import com.leppa.prismaticpixeldungeon.items.armor.MailArmor;
-import com.leppa.prismaticpixeldungeon.items.armor.PlateArmor;
-import com.leppa.prismaticpixeldungeon.items.armor.ScaleArmor;
-import com.leppa.prismaticpixeldungeon.items.artifacts.AlchemistsToolkit;
-import com.leppa.prismaticpixeldungeon.items.artifacts.Artifact;
-import com.leppa.prismaticpixeldungeon.items.artifacts.CapeOfThorns;
-import com.leppa.prismaticpixeldungeon.items.artifacts.ChaliceOfBlood;
-import com.leppa.prismaticpixeldungeon.items.artifacts.CloakOfShadows;
-import com.leppa.prismaticpixeldungeon.items.artifacts.DriedRose;
-import com.leppa.prismaticpixeldungeon.items.artifacts.EtherealChains;
-import com.leppa.prismaticpixeldungeon.items.artifacts.HornOfPlenty;
-import com.leppa.prismaticpixeldungeon.items.artifacts.LloydsBeacon;
-import com.leppa.prismaticpixeldungeon.items.artifacts.MasterThievesArmband;
-import com.leppa.prismaticpixeldungeon.items.artifacts.SandalsOfNature;
-import com.leppa.prismaticpixeldungeon.items.artifacts.TalismanOfForesight;
-import com.leppa.prismaticpixeldungeon.items.artifacts.TimekeepersHourglass;
-import com.leppa.prismaticpixeldungeon.items.artifacts.UnstableSpellbook;
-import com.leppa.prismaticpixeldungeon.items.bags.Bag;
-import com.leppa.prismaticpixeldungeon.items.food.Food;
-import com.leppa.prismaticpixeldungeon.items.food.MysteryMeat;
-import com.leppa.prismaticpixeldungeon.items.food.Pasty;
-import com.leppa.prismaticpixeldungeon.items.potions.Potion;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfExperience;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfFrost;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLevitation;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLiquidFlame;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMight;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfParalyticGas;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfPurity;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
-import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
-import com.leppa.prismaticpixeldungeon.items.rings.Ring;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfAccuracy;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfElements;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfEnergy;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfForce;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfMight;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfSharpshooting;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfTenacity;
-import com.leppa.prismaticpixeldungeon.items.rings.RingOfWealth;
-import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfIdentify;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfLullaby;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicalInfusion;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMirrorImage;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfPsionicBlast;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRage;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRecharging;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTerror;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
-import com.leppa.prismaticpixeldungeon.items.wands.Wand;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfBlastWave;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorrosion;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorruption;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfDisintegration;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfFireblast;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfFrost;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfLightning;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfMagicMissile;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfPrismaticLight;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfRegrowth;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfSapping;
-import com.leppa.prismaticpixeldungeon.items.wands.WandOfTransfusion;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.AssassinsBlade;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.BattleAxe;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Crossbow;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Dagger;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Dirk;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Flail;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Gauntlet;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Glaive;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Greataxe;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Greatshield;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Greatsword;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.HandAxe;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Knuckles;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Longsword;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Mace;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.MagesStaff;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Quarterstaff;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.RoundShield;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.RunicBlade;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Sai;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Scimitar;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Shortsword;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Spear;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Sword;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.WarHammer;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.Whip;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.WireWhip;
-import com.leppa.prismaticpixeldungeon.items.weapon.melee.WornShortsword;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Bolas;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.FishingSpear;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Javelin;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.MissileWeapon;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Shuriken;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingHammer;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingKnife;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingSpear;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Tomahawk;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Trident;
-import com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.Dart;
-import com.leppa.prismaticpixeldungeon.plants.BlandfruitBush;
-import com.leppa.prismaticpixeldungeon.plants.Blindweed;
-import com.leppa.prismaticpixeldungeon.plants.Dreamfoil;
-import com.leppa.prismaticpixeldungeon.plants.Earthroot;
-import com.leppa.prismaticpixeldungeon.plants.Fadeleaf;
-import com.leppa.prismaticpixeldungeon.plants.Firebloom;
-import com.leppa.prismaticpixeldungeon.plants.Icecap;
-import com.leppa.prismaticpixeldungeon.plants.Plant;
-import com.leppa.prismaticpixeldungeon.plants.Rotberry;
-import com.leppa.prismaticpixeldungeon.plants.Sorrowmoss;
-import com.leppa.prismaticpixeldungeon.plants.Starflower;
-import com.leppa.prismaticpixeldungeon.plants.Stormvine;
-import com.leppa.prismaticpixeldungeon.plants.Sungrass;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/Generator.java
 import com.watabou.utils.Bundle;
 import com.watabou.utils.GameMath;
 import com.watabou.utils.Random;
@@ -307,21 +173,21 @@ import java.util.LinkedHashMap;
 public class Generator {
 
 	public enum Category {
-		WEAPON	( 6,    MeleeWeapon.class),
-		WEP_T1	( 0,    MeleeWeapon.class),
-		WEP_T2	( 0,    MeleeWeapon.class),
-		WEP_T3	( 0,    MeleeWeapon.class),
-		WEP_T4	( 0,    MeleeWeapon.class),
-		WEP_T5	( 0,    MeleeWeapon.class),
+		WEAPON	(6,    MeleeWeapon.class),
+		WEP_T1	(0,    MeleeWeapon.class),
+		WEP_T2	(0,    MeleeWeapon.class),
+		WEP_T3	(0,    MeleeWeapon.class),
+		WEP_T4	(0,    MeleeWeapon.class),
+		WEP_T5	(0,    MeleeWeapon.class),
 		
-		ARMOR	( 4,    Armor.class ),
+		ARMOR	(4,    Armor.class),
 		
-		MISSILE ( 3,    MissileWeapon.class ),
-		MIS_T1  ( 0,    MissileWeapon.class ),
-		MIS_T2  ( 0,    MissileWeapon.class ),
-		MIS_T3  ( 0,    MissileWeapon.class ),
-		MIS_T4  ( 0,    MissileWeapon.class ),
-		MIS_T5  ( 0,    MissileWeapon.class ),
+		MISSILE (3,    MissileWeapon.class),
+		MIS_T1  (0,    MissileWeapon.class),
+		MIS_T2  (0,    MissileWeapon.class),
+		MIS_T3  (0,    MissileWeapon.class),
+		MIS_T4  (0,    MissileWeapon.class),
+		MIS_T5  (0,    MissileWeapon.class),
 		
 		WAND	( 3,    Wand.class ),
 		RING	( 1,    Ring.class ),

@@ -68,7 +68,11 @@ public class WandOfMagicMissile extends DamageWand {
 	}
 	
 	protected int initialCharges() {
-		return 4;
+		return 3;
 	}
 
+	public void updateLevel() {
+		maxCharges = Math.min( initialCharges() + 2*level(), 15 );
+		curCharges = Math.min( curCharges, maxCharges );
+	}
 }
