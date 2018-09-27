@@ -114,25 +114,6 @@ public enum HeroClass {
 		if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 			new SmallRation().collect();
 		}
-		
-		i = new DeckOfElements();
-		i.identify();
-		i.collect();
-		
-		i = new RingOfEvasion();
-		i.identify();
-		i.level(100);
-		i.collect();
-		
-		i = new WandOfSapping();
-		i.identify();
-		i.level(10);
-		i.collect();
-		
-		i = new ScrollOfUpgrade();
-		i.identify();
-		i.quantity(900);
-		i.collect();
 	}
 
 	public Badges.Badge masteryBadge() {
