@@ -30,29 +30,37 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
-public class Stunning extends Weapon.Enchantment {
+public class Stunning extends Weapon.Enchantment{
 	
-	private static ItemSprite.Glowing YELLOW = new ItemSprite.Glowing( 0xCCAA44 );
+	private static ItemSprite.Glowing YELLOW = new ItemSprite.Glowing(0xCCAA44);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		// lvl 0 - 13%
 		// lvl 1 - 22%
 		// lvl 2 - 30%
-		int level = Math.max( 0, weapon.level() );
+		int level = Math.max(0, weapon.level());
 		
-		if (Random.Int( level + 8 ) >= 7) {
+		if(Random.Int(level + 8) >= 7){
 			
-			Buff.prolong( defender, Paralysis.class, Random.Float( 1, 1.5f + level ) );
-			defender.sprite.emitter().burst(Speck.factory(Speck.LIGHT), 12 );
-
+			Buff.prolong(defender, Paralysis.class, Random.Float(1, 1.5f + level));
+			defender.sprite.emitter().burst(Speck.factory(Speck.LIGHT), 12);
+			
 		}
-
+		
+		return damage;
+	}
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		int level = Math.max(0, weapon.level());
+		Buff.prolong(defender, Paralysis.class, Random.Float(1, 1.5f + level));
+		defender.sprite.emitter().burst(Speck.factory(Speck.LIGHT), 12);
+		
 		return damage;
 	}
 	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return YELLOW;
 	}
 }

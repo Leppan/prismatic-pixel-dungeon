@@ -34,7 +34,11 @@ public class Wayward extends Weapon.Enchantment {
 		//no proc effect, see weapon.accuracyFactor for effect
 		return damage;
 	}
-
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		return proc(weapon, attacker, defender, damage);
+	}
+	
 	@Override
 	public boolean curse() {
 		return true;

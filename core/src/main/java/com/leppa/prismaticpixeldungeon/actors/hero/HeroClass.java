@@ -28,7 +28,9 @@ import com.leppa.prismaticpixeldungeon.Dungeon;
 import com.leppa.prismaticpixeldungeon.items.BrokenSeal;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
+import com.leppa.prismaticpixeldungeon.items.armor.PlateArmor;
 import com.leppa.prismaticpixeldungeon.items.artifacts.CloakOfShadows;
+import com.leppa.prismaticpixeldungeon.items.artifacts.DeckOfElements;
 import com.leppa.prismaticpixeldungeon.items.bags.PotionBandolier;
 import com.leppa.prismaticpixeldungeon.items.bags.ScrollHolder;
 import com.leppa.prismaticpixeldungeon.items.bags.VelvetPouch;
@@ -36,10 +38,16 @@ import com.leppa.prismaticpixeldungeon.items.food.Food;
 import com.leppa.prismaticpixeldungeon.items.food.SmallRation;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
+import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorruption;
+import com.leppa.prismaticpixeldungeon.items.wands.WandOfLightning;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfMagicMissile;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfSapping;
 import com.leppa.prismaticpixeldungeon.items.weapon.melee.Dagger;
@@ -106,6 +114,25 @@ public enum HeroClass {
 		if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 			new SmallRation().collect();
 		}
+		
+		i = new DeckOfElements();
+		i.identify();
+		i.collect();
+		
+		i = new RingOfEvasion();
+		i.identify();
+		i.level(100);
+		i.collect();
+		
+		i = new WandOfSapping();
+		i.identify();
+		i.level(10);
+		i.collect();
+		
+		i = new ScrollOfUpgrade();
+		i.identify();
+		i.quantity(900);
+		i.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

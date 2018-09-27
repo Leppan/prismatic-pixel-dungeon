@@ -35,7 +35,13 @@ public class Projecting extends Weapon.Enchantment {
 		//See weapon.reachFactor, and MissileWeapon.throwPos;
 		return damage;
 	}
-
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage) {
+		//Does nothing as a proc, instead increases weapon range.
+		//See weapon.reachFactor, and MissileWeapon.throwPos;
+		return damage;
+	}
+	
 	@Override
 	public ItemSprite.Glowing glowing() {
 		return GREY;

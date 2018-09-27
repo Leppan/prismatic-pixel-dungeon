@@ -27,37 +27,34 @@ import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.watabou.utils.Random;
 
-public class Unstable extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF );
-
-	private static Class<?extends Weapon.Enchantment>[] randomEnchants = new Class[]{
-			Blazing.class,
-			Chilling.class,
-			Dazzling.class,
-			Eldritch.class,
-			Grim.class,
-			Lucky.class,
-			//projecting not included, no on-hit effect
-			Shocking.class,
-			Stunning.class,
-			Vampiric.class,
-			Venomous.class,
-			Vorpal.class
-	};
-
+public class Unstable extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing(0xFFFFFF);
+	
+	public static Class<? extends Weapon.Enchantment>[] randomEnchants = new Class[]{Blazing.class, Chilling.class, Dazzling.class, Eldritch.class, Grim.class, Lucky.class, Shocking.class, Stunning.class, Vampiric.class, Venomous.class, Vorpal.class};
+	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
-		try {
-			return Random.oneOf(randomEnchants).newInstance().proc( weapon, attacker, defender, damage );
-		} catch (Exception e) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
+		try{
+			return Random.oneOf(randomEnchants).newInstance().proc(weapon, attacker, defender, damage);
+		}catch(Exception e){
 			PrismaticPixelDungeon.reportException(e);
 			return damage;
 		}
 	}
-
+	
+	//Guaranteed proc on another enchant
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		try{
+			return Random.oneOf(randomEnchants).newInstance().procGuaranteed(weapon, attacker, defender, damage);
+		}catch(Exception e){
+			PrismaticPixelDungeon.reportException(e);
+			return damage;
+		}
+	}
+	
 	@Override
-	public ItemSprite.Glowing glowing() {
+	public ItemSprite.Glowing glowing(){
 		return WHITE;
 	}
 }

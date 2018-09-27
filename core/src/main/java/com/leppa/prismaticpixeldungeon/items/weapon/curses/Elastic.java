@@ -41,6 +41,10 @@ public class Elastic extends Weapon.Enchantment {
 		return 0;
 	}
 	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		return proc(weapon, attacker, defender, damage);
+	}
+	
 	@Override
 	public boolean curse() {
 		return true;

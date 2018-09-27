@@ -33,58 +33,71 @@ import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 
-public class Shocking extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing( 0xFFFFFF, 0.6f );
-
+public class Shocking extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing WHITE = new ItemSprite.Glowing(0xFFFFFF, 0.6f);
+	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		// lvl 0 - 33%
 		// lvl 1 - 50%
 		// lvl 2 - 60%
-		int level = Math.max( 0, weapon.level() );
+		int level = Math.max(0, weapon.level());
 		
-		if (Random.Int( level + 3 ) >= 2) {
+		if(Random.Int(level + 3) >= 2){
 			
 			affected.clear();
 			affected.add(attacker);
-
+			
 			arcs.clear();
 			arcs.add(new Lightning.Arc(attacker.sprite.center(), defender.sprite.center()));
 			hit(defender, Random.Int(1, damage / 3));
-
-			attacker.sprite.parent.addToFront( new Lightning( arcs, null ) );
+			
+			attacker.sprite.parent.addToFront(new Lightning(arcs, null));
 			
 		}
-
+		
 		return damage;
-
+		
 	}
-
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		affected.clear();
+		affected.add(attacker);
+		
+		arcs.clear();
+		arcs.add(new Lightning.Arc(attacker.sprite.center(), defender.sprite.center()));
+		hit(defender, Random.Int(1, damage / 3));
+		
+		attacker.sprite.parent.addToFront(new Lightning(arcs, null));
+		
+		return damage;
+	}
+	
 	@Override
-	public ItemSprite.Glowing glowing() {
+	public ItemSprite.Glowing glowing(){
 		return WHITE;
 	}
-
+	
 	private ArrayList<Char> affected = new ArrayList<>();
-
+	
 	private ArrayList<Lightning.Arc> arcs = new ArrayList<>();
 	
-	private void hit( Char ch, int damage ) {
+	private void hit(Char ch, int damage){
 		
-		if (damage < 1) {
+		if(damage < 1){
 			return;
 		}
 		
 		affected.add(ch);
-		ch.damage(Dungeon.level.water[ch.pos] && !ch.flying ?  2*damage : damage, this);
+		ch.damage(Dungeon.level.water[ch.pos] && !ch.flying ? 2 * damage : damage, this);
 		
 		ch.sprite.centerEmitter().burst(SparkParticle.FACTORY, 3);
 		ch.sprite.flash();
-
-		for (int i = 0; i < PathFinder.NEIGHBOURS8.length; i++) {
-			Char n = Actor.findChar( ch.pos + PathFinder.NEIGHBOURS8[i] );
-			if (n != null && !affected.contains( n )) {
+		
+		for(int i = 0; i < PathFinder.NEIGHBOURS8.length; i++){
+			Char n = Actor.findChar(ch.pos + PathFinder.NEIGHBOURS8[i]);
+			if(n != null && !affected.contains(n)){
 				arcs.add(new Lightning.Arc(ch.sprite.center(), n.sprite.center()));
 				hit(n, Random.Int(damage / 2, damage));
 			}

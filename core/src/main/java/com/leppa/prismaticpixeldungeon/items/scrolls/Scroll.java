@@ -106,6 +106,8 @@ public abstract class Scroll extends Item {
 			put("BERKANAN",ItemSpriteSheet.SCROLL_BERKANAN);
 			put("ODAL",ItemSpriteSheet.SCROLL_ODAL);
 			put("TIWAZ",ItemSpriteSheet.SCROLL_TIWAZ);
+			put("FERN",ItemSpriteSheet.SCROLL_FERN);
+			put("WYNN",ItemSpriteSheet.SCROLL_WYNN);
 		}
 	};
 	

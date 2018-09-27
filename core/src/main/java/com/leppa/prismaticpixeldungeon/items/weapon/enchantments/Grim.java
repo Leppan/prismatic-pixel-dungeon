@@ -30,38 +30,61 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
-public class Grim extends Weapon.Enchantment {
+public class Grim extends Weapon.Enchantment{
 	
-	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing( 0x000000 );
+	private static ItemSprite.Glowing BLACK = new ItemSprite.Glowing(0x000000);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
-
-		int level = Math.max( 0, weapon.level() );
-
-		int enemyHealth = defender.HP - damage;
-		if (enemyHealth == 0) return damage; //no point in proccing if they're already dead.
-
-		//scales from 0 - 30% based on how low hp the enemy is, plus 1% per level
-		int chance = Math.round(((defender.HT - enemyHealth) / (float)defender.HT)*30 + level);
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		
-		if (Random.Int( 100 ) < chance) {
+		int level = Math.max(0, weapon.level());
+		
+		int enemyHealth = defender.HP - damage;
+		if(enemyHealth == 0) return damage; //no point in proccing if they're already dead.
+		
+		//scales from 0 - 30% based on how low hp the enemy is, plus 1% per level
+		int chance = Math.round(((defender.HT - enemyHealth) / (float)defender.HT) * 30 + level);
+		
+		if(Random.Int(100) < chance){
 			
-			defender.damage( defender.HP, this );
-			defender.sprite.emitter().burst( ShadowParticle.UP, 5 );
+			defender.damage(defender.HP, this);
+			defender.sprite.emitter().burst(ShadowParticle.UP, 5);
 			
-			if (!defender.isAlive() && attacker instanceof Hero) {
+			if(!defender.isAlive() && attacker instanceof Hero){
 				Badges.validateGrimWeapon();
 			}
 			
 		}
-
+		
+		return damage;
+	}
+	
+	//Not actually guaranteed, but twice as likely.
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		
+		int level = Math.max(0, weapon.level());
+		
+		int enemyHealth = defender.HP - damage;
+		if(enemyHealth == 0) return damage; //no point in proccing if they're already dead.
+		
+		//scales from 0 - 30% based on how low hp the enemy is, plus 1% per level
+		int chance = Math.round(((defender.HT - enemyHealth) / (float)defender.HT) * 30 + level);
+		
+		if(Random.Int(100) < chance*2){
+			defender.damage(defender.HP, this);
+			defender.sprite.emitter().burst(ShadowParticle.UP, 5);
+			
+			if(!defender.isAlive() && attacker instanceof Hero){
+				Badges.validateGrimWeapon();
+			}
+		}
+		
 		return damage;
 	}
 	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return BLACK;
 	}
-
+	
 }

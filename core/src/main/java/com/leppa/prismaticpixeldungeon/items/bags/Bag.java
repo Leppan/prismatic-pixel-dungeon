@@ -115,9 +115,16 @@ public class Bag extends Item implements Iterable<Item> {
 	}
 	
 	public void resurrect() {
+		Item mostUpgUsed = null;
 		for (Item item : items.toArray(new Item[0])){
+			if(mostUpgUsed == null && !item.unique){
+				mostUpgUsed = item;
+			}else if(!item.unique && item.level() > mostUpgUsed.level()){
+				mostUpgUsed = item;
+			}
 			if (!item.unique) items.remove(item);
 		}
+		Dungeon.level.drop(mostUpgUsed, owner.pos);
 	}
 	
 	private static final String ITEMS	= "inventory";

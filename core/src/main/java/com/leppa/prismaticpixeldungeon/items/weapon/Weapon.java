@@ -99,7 +99,7 @@ import java.util.Arrays;
 
 abstract public class Weapon extends KindOfWeapon {
 
-	private static final int HITS_TO_KNOW    = 20;
+	public static final int HITS_TO_KNOW    = 20;
 
 	public float    ACC = 1f;	// Accuracy modifier
 	public float	DLY	= 1f;	// Speed modifier
@@ -128,8 +128,8 @@ abstract public class Weapon extends KindOfWeapon {
 	}
 	
 	public Augment augment = Augment.NONE;
-
-	private int hitsToKnow = HITS_TO_KNOW;
+	
+	public int hitsToKnow = HITS_TO_KNOW;
 	
 	public Enchantment enchantment;
 	
@@ -329,6 +329,7 @@ abstract public class Weapon extends KindOfWeapon {
 		
 			
 		public abstract int proc( Weapon weapon, Char attacker, Char defender, int damage );
+		public abstract int procGuaranteed( Weapon weapon, Char attacker, Char defender, int damage );
 
 		public String name() {
 			if (!curse())

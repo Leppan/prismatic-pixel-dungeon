@@ -29,56 +29,67 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Lucky extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing( 0x00FF00 );
+public class Lucky extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing GREEN = new ItemSprite.Glowing(0x00FF00);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
-		int level = Math.max( 0, weapon.level() );
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
+		int level = Math.max(0, weapon.level());
 		
 		float zeroChance = 0.5f;
 		
 		Luck buff = attacker.buff(Luck.class);
-		if (buff != null){
+		if(buff != null){
 			zeroChance = buff.zeroChance;
 		}
 		
-		if (Random.Float() >= zeroChance){
+		if(Random.Float() >= zeroChance){
 			
-			if (buff != null) {
+			if(buff != null){
 				buff.detach();
 			}
 			
-			return 2*damage;
-		} else {
+			return 2 * damage;
+		}else{
 			
 			buff = Buff.affect(attacker, Luck.class);
 			buff.zeroChance = zeroChance * (0.5f - (0.01f*level));
 			
 			return 0;
 		}
-
+		
 	}
-
+	
+	//Always doubles
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		Luck buff = attacker.buff(Luck.class);
+		
+		if(buff != null){
+			buff.detach();
+		}
+		
+		return 2 * damage;
+	}
+	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return GREEN;
 	}
 	
 	
-	public static class Luck extends Buff {
+	public static class Luck extends Buff{
 		
 		float zeroChance;
 		
 		@Override
-		public boolean act() {
+		public boolean act(){
 			
 			zeroChance += 0.01f;
 			
-			if (zeroChance >= 0.5f){
+			if(zeroChance >= 0.5f){
 				detach();
-			} else {
+			}else{
 				spend(TICK);
 			}
 			
@@ -88,13 +99,13 @@ public class Lucky extends Weapon.Enchantment {
 		private static final String CHANCE = "chance";
 		
 		@Override
-		public void restoreFromBundle(Bundle bundle) {
+		public void restoreFromBundle(Bundle bundle){
 			super.restoreFromBundle(bundle);
 			zeroChance = bundle.getFloat(CHANCE);
 		}
 		
 		@Override
-		public void storeInBundle(Bundle bundle) {
+		public void storeInBundle(Bundle bundle){
 			super.storeInBundle(bundle);
 			bundle.put(CHANCE, zeroChance);
 		}

@@ -29,34 +29,37 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
-public class Vampiric extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing RED = new ItemSprite.Glowing( 0x660022 );
+public class Vampiric extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing RED = new ItemSprite.Glowing(0x660022);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		
-		int level = Math.max( 0, weapon.level() );
+		int level = Math.max(0, weapon.level());
 		
 		// lvl 0 - 16%
 		// lvl 1 - 17.65%
 		// lvl 2 - 19.23%
 		int maxValue = Math.round(damage * ((level + 8) / (float)(level + 50)));
-		int effValue = Math.min( Random.IntRange( 0, maxValue ), attacker.HT - attacker.HP );
+		int effValue = Math.min(Random.IntRange(0, maxValue), attacker.HT - attacker.HP);
 		
-		if (effValue > 0) {
-		
+		if(effValue > 0){
 			attacker.HP += effValue;
-			attacker.sprite.emitter().start( Speck.factory( Speck.HEALING ), 0.4f, 1 );
-			attacker.sprite.showStatus( CharSprite.POSITIVE, Integer.toString( effValue ) );
-			
+			attacker.sprite.emitter().start(Speck.factory(Speck.HEALING), 0.4f, 1);
+			attacker.sprite.showStatus(CharSprite.POSITIVE, Integer.toString(effValue));
 		}
-
+		
 		return damage;
 	}
 	
+	//Always procs anyway
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		return proc(weapon, attacker, defender, damage);
+	}
+	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return RED;
 	}
 }

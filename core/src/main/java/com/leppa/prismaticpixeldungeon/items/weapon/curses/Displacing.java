@@ -67,7 +67,11 @@ public class Displacing extends Weapon.Enchantment {
 
 		return damage;
 	}
-
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		return proc(weapon, attacker, defender, damage);
+	}
+	
 	@Override
 	public boolean curse() {
 		return true;

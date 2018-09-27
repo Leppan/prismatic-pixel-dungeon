@@ -30,31 +30,41 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
-public class Chilling extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing( 0x00FFFF );
+public class Chilling extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing TEAL = new ItemSprite.Glowing(0x00FFFF);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		// lvl 0 - 20%
 		// lvl 1 - 33%
 		// lvl 2 - 43%
-		int level = Math.max( 0, weapon.level() );
+		int level = Math.max(0, weapon.level());
 		
-		if (Random.Int( level + 5 ) >= 4) {
+		if(Random.Int(level + 5) >= 4){
+			
+			Buff.prolong(defender, Chill.class, Random.Float(2f, 3f));
+			Splash.at(defender.sprite.center(), 0xFFB2D6FF, 5);
 			
 			//FIXME this should probably stack chilled
 			Buff.prolong( defender, Chill.class, Random.Float( 2f, 3f ) );
 			Splash.at( defender.sprite.center(), 0xFFB2D6FF, 5);
 
 		}
-
+		
+		return damage;
+	}
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		Buff.prolong(defender, Chill.class, Random.Float(2f, 3f));
+		Splash.at(defender.sprite.center(), 0xFFB2D6FF, 5);
+		
 		return damage;
 	}
 	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return TEAL;
 	}
-
+	
 }

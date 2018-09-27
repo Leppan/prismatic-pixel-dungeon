@@ -382,16 +382,18 @@ public class Hero extends Char {
 
 	//this variable is only needed because of the boomerang, remove if/when it is no longer equippable
 	boolean rangedAttack = false;
+	public KindOfWeapon weaponWhileShooting;
+	
 	
 	public boolean shoot( Char enemy, MissileWeapon wep ) {
 
 		//temporarily set the hero's weapon to the missile weapon being used
-		KindOfWeapon equipped = belongings.weapon;
+		weaponWhileShooting = belongings.weapon;
 		belongings.weapon = wep;
 		rangedAttack = true;
 		boolean result = attack( enemy );
 		Invisibility.dispel();
-		belongings.weapon = equipped;
+		belongings.weapon = weaponWhileShooting;
 		rangedAttack = false;
 
 		return result;
@@ -1283,7 +1285,7 @@ public class Hero extends Char {
 			
 			curAction = new HeroAction.Unlock( cell );
 			
-		} else if (cell == Dungeon.level.exit && Dungeon.depth < 26) {
+		} else if (cell == Dungeon.level.exit && Dungeon.depth < 31) {
 			
 			curAction = new HeroAction.Descend( cell );
 			
@@ -1419,13 +1421,13 @@ public class Hero extends Char {
 		}
 
 		if (ankh != null && ankh.isBlessed()) {
-			this.HP = HT/4;
+			this.HP = HT;
 
-			//ensures that you'll get to act first in almost any case, to prevent reviving and then instantly dieing again.
+			//ensures that you'll get to act first in almost any case, to prevent reviving and then instantly dying again.
 			Buff.detach(this, Paralysis.class);
 			spend(-cooldown());
 
-			new Flare(8, 32).color(0xFFFF66, true).show(sprite, 2f);
+			new Flare(8, 32).color(0xFFFF66, true).show(sprite, 3f);
 			CellEmitter.get(this.pos).start(Speck.factory(Speck.LIGHT), 0.2f, 3);
 
 			ankh.detach(belongings.backpack);

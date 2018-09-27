@@ -31,29 +31,37 @@ import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite.Glowing;
 import com.watabou.utils.Random;
 
-public class Venomous extends Weapon.Enchantment {
-
-	private static ItemSprite.Glowing PURPLE = new ItemSprite.Glowing( 0x4400AA );
+public class Venomous extends Weapon.Enchantment{
+	
+	private static ItemSprite.Glowing PURPLE = new ItemSprite.Glowing(0x4400AA);
 	
 	@Override
-	public int proc( Weapon weapon, Char attacker, Char defender, int damage ) {
+	public int proc(Weapon weapon, Char attacker, Char defender, int damage){
 		// lvl 0 - 33%
 		// lvl 1 - 50%
 		// lvl 2 - 60%
-		int level = Math.max( 0, weapon.level() );
+		int level = Math.max(0, weapon.level());
 		
-		if (Random.Int( level + 3 ) >= 2) {
+		if(Random.Int(level + 3) >= 2){
 			
-			Buff.affect( defender, Poison.class ).extend( ((level/2) + 1) );
-			CellEmitter.center(defender.pos).burst( PoisonParticle.SPLASH, 5 );
-
+			Buff.affect(defender, Poison.class).extend(((level / 2) + 1));
+			CellEmitter.center(defender.pos).burst(PoisonParticle.SPLASH, 5);
+			
 		}
-
+		
+		return damage;
+	}
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		int level = Math.max(0, weapon.level());
+		Buff.affect(defender, Poison.class).extend(((level / 2) + 1));
+		CellEmitter.center(defender.pos).burst(PoisonParticle.SPLASH, 5);
+		
 		return damage;
 	}
 	
 	@Override
-	public Glowing glowing() {
+	public Glowing glowing(){
 		return PURPLE;
 	}
 }

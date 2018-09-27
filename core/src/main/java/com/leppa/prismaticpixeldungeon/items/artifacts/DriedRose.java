@@ -71,8 +71,13 @@ import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.blobs.CorrosiveGas;
 import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Bleeding;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Chill;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Corruption;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Cripple;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Doom;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Drowsy;
 import com.leppa.prismaticpixeldungeon.actors.buffs.LockedFloor;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
@@ -463,7 +468,7 @@ public class DriedRose extends Artifact {
 
 		public void saySpawned(){
 			if (Messages.lang() != Languages.ENGLISH) return; //don't say anything if not on english
-			int i = (Dungeon.depth - 1) / 5;
+			int i = (Dungeon.depth - 1) / 6;
 			fieldOfView = new boolean[Dungeon.level.length()];
 			Dungeon.level.updateFieldOfView(this, fieldOfView);
 			if (chooseEnemy() == null)
@@ -491,7 +496,7 @@ public class DriedRose extends Artifact {
 		}
 
 		public void sayBossBeaten(){
-			yell( Random.element( VOICE_BOSSBEATEN[ Dungeon.depth==25 ? 1 : 0 ] ) );
+			yell( Random.element( VOICE_BOSSBEATEN[ Dungeon.depth==30 ? 1 : 0 ] ) );
 			Sample.INSTANCE.play( Assets.SND_GHOST );
 		}
 
@@ -689,6 +694,10 @@ public class DriedRose extends Artifact {
 			immunities.add( ScrollOfRetribution.class );
 			immunities.add( ScrollOfPsionicBlast.class );
 			immunities.add( Corruption.class );
+			immunities.add( Doom.class );
+			immunities.add( Bleeding.class );
+			immunities.add( Cripple.class );
+			immunities.add( Drowsy.class );
 		}
 		
 		private class Wandering extends Mob.Wandering {

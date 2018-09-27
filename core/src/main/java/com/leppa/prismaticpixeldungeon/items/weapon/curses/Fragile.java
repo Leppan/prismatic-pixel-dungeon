@@ -38,7 +38,11 @@ public class Fragile extends Weapon.Enchantment {
 		if (hits < 150) hits++;
 		return damage;
 	}
-
+	
+	public int procGuaranteed(Weapon weapon, Char attacker, Char defender, int damage){
+		return proc(weapon, attacker, defender, damage);
+	}
+	
 	@Override
 	public boolean curse() {
 		return true;

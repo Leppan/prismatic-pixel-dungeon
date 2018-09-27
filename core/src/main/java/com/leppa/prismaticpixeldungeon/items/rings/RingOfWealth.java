@@ -112,6 +112,7 @@ public class RingOfWealth extends Ring {
 					items.add(Generator.random(Random.Int(2) == 0 ? Generator.Category.POTION : Generator.Category.SCROLL ));
 					items.add(Generator.random(Random.Int(2) == 0 ? Generator.Category.POTION : Generator.Category.SCROLL ));
 					items.add(Generator.random(Random.Int(2) == 0 ? Generator.Category.POTION : Generator.Category.SCROLL ));
+					items.add(Generator.random(Random.Int(2) == 0 ? Generator.Category.POTION : Generator.Category.SCROLL ));
 					break;
 				case 2:
 					items.add(new Bomb().random());
@@ -121,7 +122,7 @@ public class RingOfWealth extends Ring {
 		} else {
 			Gold g = new Gold();
 			g.random();
-			g.quantity(g.quantity()*5);
+			g.quantity(g.quantity()*10);
 			items.add(g);
 		}
 		return items;
