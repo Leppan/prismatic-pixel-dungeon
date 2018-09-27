@@ -14,12 +14,16 @@ import com.leppa.prismaticpixeldungeon.mechanics.Ballistica;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
+import com.watabou.utils.PointF;
+import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 
 public class WandOfChanneling extends Wand{
-
+    
+    java.util.Random r = new java.util.Random();
+    
     {
         image = ItemSpriteSheet.WAND_CHANNELING;
     }
@@ -138,5 +142,17 @@ public class WandOfChanneling extends Wand{
             }
             return buffs;
         }
+    }
+    
+    public void staffFx(MagesStaff.StaffParticle particle){
+        particle.color(0x6d3030);
+        particle.am = 0.6f;
+        particle.setLifespan(3f);
+        float amt = PointF.PI*0.25f + Random.Float(-PointF.PI/4, PointF.PI/4);
+        particle.speed.polar(amt, 0.3f);
+        particle.setSize(1f, 2f);
+        particle.radiateXY(5f);
+        
+        particle.speed.polar(amt + PointF.PI, 4f);
     }
 }
