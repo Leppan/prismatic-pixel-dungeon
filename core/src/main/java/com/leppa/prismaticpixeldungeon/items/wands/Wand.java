@@ -96,6 +96,7 @@ public abstract class Wand extends Item {
 	public int maxCharges = initialCharges();
 	public int curCharges = maxCharges;
 	public float partialCharge = 0f;
+	public int maxLeveledCharges = 10;
 	
 	protected Charger charger;
 	
@@ -269,7 +270,7 @@ public abstract class Wand extends Item {
 	}
 	
 	public void updateLevel() {
-		maxCharges = Math.min( initialCharges() + level(), 10 );
+		maxCharges = Math.min( initialCharges() + level(), maxLeveledCharges );
 		curCharges = Math.min( curCharges, maxCharges );
 	}
 	

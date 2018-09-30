@@ -35,6 +35,8 @@ public class WandOfMagicMissile extends DamageWand {
 
 	{
 		image = ItemSpriteSheet.WAND_MAGIC_MISSILE;
+		
+		maxLeveledCharges = 15;
 	}
 
 	public int min(int lvl){
@@ -72,7 +74,7 @@ public class WandOfMagicMissile extends DamageWand {
 	}
 
 	public void updateLevel() {
-		maxCharges = Math.min( initialCharges() + 2*level(), 15 );
-		curCharges = Math.min( curCharges, maxCharges );
+		maxCharges = Math.min(initialCharges() + 2*level(), maxLeveledCharges);
+		curCharges = Math.min(curCharges, maxCharges);
 	}
 }

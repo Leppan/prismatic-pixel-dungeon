@@ -25,7 +25,7 @@ import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.watabou.utils.Random;
 
 //for wands that directly damage a target
-//wands with AOE effects count here (e.g. fireblast), but wands with indrect damage do not (e.g. venom, transfusion)
+//wands with AOE effects count here (e.g. fireblast), but wands with indrect damage do not (e.g. corrosion, transfusion)
 public abstract class DamageWand extends Wand{
 
 	public int min(){

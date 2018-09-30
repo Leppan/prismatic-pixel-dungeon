@@ -41,6 +41,7 @@ import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;

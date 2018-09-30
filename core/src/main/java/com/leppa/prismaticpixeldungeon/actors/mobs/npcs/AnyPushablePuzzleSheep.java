@@ -19,7 +19,7 @@ public class AnyPushablePuzzleSheep extends Sheep{
     @Override
     public boolean interact(){
         for(int x : PathFinder.NEIGHBOURS4){
-            if(Dungeon.hero.pos == pos + x){
+            if(Dungeon.hero.pos == pos + x  && !Dungeon.level.solid[pos-x] && Dungeon.level.findMob(pos-x) == null){
                 sprite.move(pos, pos - x);
                 move(pos - x);
                 Dungeon.hero.sprite.move(Dungeon.hero.pos, Dungeon.hero.pos - x);

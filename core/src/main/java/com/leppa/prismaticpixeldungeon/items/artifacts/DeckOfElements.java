@@ -107,6 +107,7 @@ public class DeckOfElements extends Artifact{
 			else{
 				EnchantedCard card = new EnchantedCard();
 				card.enchant(current);
+				card.identify();
 				curMinCardDamage = hero.belongings.weapon.min() / 2;
 				curMaxCardDamage = hero.belongings.weapon.max() / 2;
 				if(Random.Int(100) > charge){

@@ -17,7 +17,7 @@ public class VerticalPuzzleSheep extends Sheep{
     
     @Override
     public boolean interact(){
-        if(Dungeon.hero.pos == pos + Dungeon.level.width()){
+        if(Dungeon.hero.pos == pos + Dungeon.level.width() && !Dungeon.level.solid[pos-Dungeon.level.width()] && Dungeon.level.findMob(pos-Dungeon.level.width()) == null){
             sprite.move(pos, pos - Dungeon.level.width());
             move(pos - Dungeon.level.width());
             Dungeon.hero.sprite.move(Dungeon.hero.pos, Dungeon.hero.pos - Dungeon.level.width());
@@ -25,7 +25,7 @@ public class VerticalPuzzleSheep extends Sheep{
             Dungeon.hero.spend(1 / Dungeon.hero.speed());
             Dungeon.hero.busy();
             return true;
-        }else if(Dungeon.hero.pos == pos - Dungeon.level.width()){
+        }else if(Dungeon.hero.pos == pos - Dungeon.level.width() && !Dungeon.level.solid[pos+Dungeon.level.width()] && Dungeon.level.findMob(pos+Dungeon.level.width()) == null){
             sprite.move(pos, pos + Dungeon.level.width());
             move(pos + Dungeon.level.width());
             Dungeon.hero.sprite.move(Dungeon.hero.pos, Dungeon.hero.pos + Dungeon.level.width());

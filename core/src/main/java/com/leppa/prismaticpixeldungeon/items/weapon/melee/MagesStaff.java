@@ -87,7 +87,7 @@ public class MagesStaff extends MeleeWeapon {
 		wand.identify();
 		wand.cursed = false;
 		this.wand = wand;
-		wand.maxCharges = Math.min(wand.maxCharges + 1, 10);
+		wand.maxCharges = Math.min(wand.maxCharges + 1, wand.maxLeveledCharges);
 		wand.curCharges = wand.maxCharges;
 		name = Messages.get(wand, "staff_name");
 	}
@@ -191,7 +191,7 @@ public class MagesStaff extends MeleeWeapon {
 			wand.degrade(Math.abs(wandLevelDiff));
 
 		this.wand = wand;
-		wand.maxCharges = Math.min(wand.maxCharges + 1, 10);
+		wand.maxCharges = Math.min(wand.maxCharges + 1, wand.maxLeveledCharges);
 		wand.curCharges = wand.maxCharges;
 		wand.identify();
 		if (owner != null) wand.charge(owner);

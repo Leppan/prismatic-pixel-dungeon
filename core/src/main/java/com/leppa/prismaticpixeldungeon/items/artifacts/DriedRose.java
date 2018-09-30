@@ -694,10 +694,8 @@ public class DriedRose extends Artifact {
 			immunities.add( ScrollOfRetribution.class );
 			immunities.add( ScrollOfPsionicBlast.class );
 			immunities.add( Corruption.class );
-			immunities.add( Doom.class );
 			immunities.add( Bleeding.class );
 			immunities.add( Cripple.class );
-			immunities.add( Drowsy.class );
 		}
 		
 		private class Wandering extends Mob.Wandering {

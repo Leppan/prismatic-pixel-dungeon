@@ -39,9 +39,6 @@ public class PuzzleLevel extends Level{
 		
 		pressurePads = new SparseArray<>();
 		
-		buildFlagMaps();
-		cleanWalls();
-		
 		for(int f = 0; f < MAP_START.length; f++){
 			if(MAP_START[f] == X) exit = f;
 			if(MAP_START[f] == E) entrance = f;
@@ -166,23 +163,23 @@ public class PuzzleLevel extends Level{
 		}
 	}
 	
-	private static final int W = Terrain.WALL;
-	private static final int D = Terrain.DOOR;
-	private static final int L = Terrain.LOCKED_DOOR;
-	private static final int e = Terrain.EMPTY;
+	protected static final int W = Terrain.WALL;
+	protected static final int D = Terrain.DOOR;
+	protected static final int L = Terrain.LOCKED_DOOR;
+	protected static final int e = Terrain.EMPTY;
 	
-	private static final int P = Terrain.PRESSUREPAD;
+	protected static final int P = Terrain.PRESSUREPAD;
 	
-	private static final int E = Terrain.ENTRANCE;
-	private static final int X = Terrain.EXIT;
+	protected static final int E = Terrain.ENTRANCE;
+	protected static final int X = Terrain.EXIT;
 	
-	private static final int M = Terrain.WALL_DECO;
-	private static final int S = Terrain.STATUE;
-	private static final int T = Terrain.TRAP;
+	protected static final int M = Terrain.WALL_DECO;
+	protected static final int S = Terrain.STATUE;
+	protected static final int T = Terrain.TRAP;
 	
 	//TODO if I ever need to store more static maps I should externalize them instead of hard-coding
 	//Especially as I means I won't be limited to legal identifiers
-	private static final int[] MAP_START =
+	protected static int[] MAP_START =
 			{W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
 					W, W, W, W, W, W, W, W, W, S, e, S, W, W, W, W, W, W, W, W, W,
 					W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,

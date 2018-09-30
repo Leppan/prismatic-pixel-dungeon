@@ -49,8 +49,7 @@ public class FleecingTrap extends Trap{
 		
 		if(target instanceof Sheep){
 			//Kill the (poor) sheep
-			target.damage(target.HT, this);
-			Level.set(pos, Terrain.EMBERS);
+			target.die(this);
 			GameScene.updateMap(pos);
 			return;
 		}else if(target instanceof Hero){

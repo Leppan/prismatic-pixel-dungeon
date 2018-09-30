@@ -13,7 +13,7 @@ public class WireWhip extends MeleeWeapon{
 
     @Override
     public int max(int lvl) {
-        return  4*(tier) +    //20 base
-                lvl*(tier);     //+5 per level
+        return  4*(tier)-2  +   //18 base
+                lvl*(tier-1);   //+4 per level
     }
 }

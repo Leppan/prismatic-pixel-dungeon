@@ -17,7 +17,7 @@ public class HorizontalPuzzleSheep extends Sheep{
     
     @Override
     public boolean interact(){
-        if(Dungeon.hero.pos == pos + 1 && Dungeon.level.passable[pos-1]){
+        if(Dungeon.hero.pos == pos + 1 && !Dungeon.level.solid[pos-1] && Dungeon.level.findMob(pos-1) == null){
             sprite.move(pos, pos - 1);
             move(pos - 1);
             Dungeon.hero.sprite.move(Dungeon.hero.pos, Dungeon.hero.pos - 1);
@@ -25,7 +25,7 @@ public class HorizontalPuzzleSheep extends Sheep{
             Dungeon.hero.spend(1 / Dungeon.hero.speed());
             Dungeon.hero.busy();
             return true;
-        }else if(Dungeon.hero.pos == pos - 1 && Dungeon.level.passable[pos+1]){
+        }else if(Dungeon.hero.pos == pos - 1 && !Dungeon.level.solid[pos+1] && Dungeon.level.findMob(pos+1) == null){
             sprite.move(pos, pos + 1);
             move(pos + 1);
             Dungeon.hero.sprite.move(Dungeon.hero.pos, Dungeon.hero.pos + 1);
