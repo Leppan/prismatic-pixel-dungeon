@@ -44,6 +44,7 @@ import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfDebug;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;

@@ -62,7 +62,7 @@ public class ElementalImage extends Statue{
 	
 	public static void restoreAllFromBundle(Bundle bundle){
 		Collection<Bundlable> collection = bundle.getCollection(INSTANCES);
-		for(Bundlable p : collection){
+		if (collection != null) for(Bundlable p : collection){
 			ElementalImage image = (ElementalImage)p;
 			instances.put(image.pos, image);
 		}

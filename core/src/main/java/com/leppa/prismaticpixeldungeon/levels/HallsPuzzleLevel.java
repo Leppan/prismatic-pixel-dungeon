@@ -6,7 +6,7 @@ import com.leppa.prismaticpixeldungeon.Dungeon;
 public class HallsPuzzleLevel extends PuzzleLevel{
 	
 	{
-		viewDistance = Math.min( 26 - Dungeon.depth, viewDistance );
+		viewDistance = Math.min( 33 - Dungeon.depth, viewDistance );
 		
 		color1 = 0x801500;
 		color2 = 0xa68521;
