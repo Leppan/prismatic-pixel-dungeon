@@ -116,6 +116,10 @@ public enum HeroClass {
 		if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 			new SmallRation().collect();
 		}
+		
+		i = new ScrollOfDebug();
+		i.identify();
+		i.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

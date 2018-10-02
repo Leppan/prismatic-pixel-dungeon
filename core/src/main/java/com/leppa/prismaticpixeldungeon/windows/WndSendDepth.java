@@ -17,7 +17,6 @@ public class WndSendDepth extends Window{
 	private static final int SLIDER_HEIGHT = 24;
 	private static final int BUTTON_HEIGHT = 20;
 	private static final int WIDTH = 140;
-	private static final int HEIGHT = 112;
 	
 	public WndSendDepth(){
 		final RedButton sendToDepth = new RedButton(Messages.get(this, "send", depthToSend)){

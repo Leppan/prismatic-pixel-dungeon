@@ -179,7 +179,7 @@ public class PuzzleLevel extends Level{
 	
 	//TODO if I ever need to store more static maps I should externalize them instead of hard-coding
 	//Especially as I means I won't be limited to legal identifiers
-	protected static int[] MAP_START =
+	protected int[] MAP_START =
 			{W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
 					W, W, W, W, W, W, W, W, W, S, e, S, W, W, W, W, W, W, W, W, W,
 					W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,

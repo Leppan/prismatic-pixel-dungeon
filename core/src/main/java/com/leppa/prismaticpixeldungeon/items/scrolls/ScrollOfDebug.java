@@ -41,4 +41,8 @@ public class ScrollOfDebug extends Item{
 			);
 		}
 	}
+	
+	public boolean isUpgradable(){
+		return false;
+	}
 }
