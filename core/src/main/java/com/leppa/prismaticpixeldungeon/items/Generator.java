@@ -74,6 +74,7 @@ import com.leppa.prismaticpixeldungeon.items.rings.RingOfSharpshooting;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfTenacity;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfWealth;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfCorruption;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
@@ -264,9 +265,10 @@ public class Generator {
 					ScrollOfRage.class,
 					ScrollOfRetribution.class,
 					ScrollOfTerror.class,
-					ScrollOfTransmutation.class
+					ScrollOfTransmutation.class,
+					ScrollOfCorruption.class
 			};
-			SCROLL.probs = new float[]{ 0, 6, 4, 3, 3, 3, 2, 2, 2, 2, 2, 1 };
+			SCROLL.probs = new float[]{ 0, 6, 4, 3, 3, 3, 2, 2, 2, 2, 2, 1, 1};
 			
 			STONE.classes = new Class<?>[]{
 					StoneOfEnchantment.class,   //1 is guaranteed to drop on floors 6-19

@@ -205,6 +205,8 @@ public class Heap implements Bundlable {
 			sprite.place( pos );
 		}
 		
+		Dungeon.level.collectItem(item);
+		
 		return item;
 	}
 	

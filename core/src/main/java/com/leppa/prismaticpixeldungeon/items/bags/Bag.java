@@ -124,7 +124,7 @@ public class Bag extends Item implements Iterable<Item> {
 			}
 			if (!item.unique) items.remove(item);
 		}
-		Dungeon.level.drop(mostUpgUsed, owner.pos);
+		(mostUpgUsed.identify()).collect();
 	}
 	
 	private static final String ITEMS	= "inventory";

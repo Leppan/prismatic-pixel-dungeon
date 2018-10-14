@@ -25,6 +25,7 @@ import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Badges;
 import com.leppa.prismaticpixeldungeon.Challenges;
 import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.items.Ankh;
 import com.leppa.prismaticpixeldungeon.items.BrokenSeal;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
@@ -44,6 +45,7 @@ import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfCorruption;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfDebug;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
@@ -116,10 +118,6 @@ public enum HeroClass {
 		if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 			new SmallRation().collect();
 		}
-		
-		i = new ScrollOfDebug();
-		i.identify();
-		i.collect();
 	}
 
 	public Badges.Badge masteryBadge() {

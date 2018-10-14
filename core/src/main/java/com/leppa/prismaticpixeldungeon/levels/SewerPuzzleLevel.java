@@ -38,58 +38,14 @@ public class SewerPuzzleLevel extends PuzzleLevel{
 		return Assets.WATER_SEWERS;
 	}
 	
-	@Override
-	public Mob createMob(){
-		return null;
+	protected void setup(){
+		int[] pressurePadStages = {0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4};
+		int[] pressurePadColours = {0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2};
+		int[] stageDoors = {0, 1, 3, 4, 2};
+		int[] padsPerStage = {1, 2, 4, 2, 2};
+		this.pressurePadStages = pressurePadStages;
+		this.pressurePadColours = pressurePadColours;
+		this.stageDoors = stageDoors;
+		this.padsPerStage = padsPerStage;
 	}
-	
-	private static final int W = Terrain.WALL;
-	private static final int D = Terrain.DOOR;
-	private static final int L = Terrain.LOCKED_DOOR;
-	private static final int e = Terrain.EMPTY;
-	
-	private static final int P = Terrain.PRESSUREPAD;
-	
-	private static final int E = Terrain.ENTRANCE;
-	private static final int X = Terrain.EXIT;
-	
-	private static final int M = Terrain.WALL_DECO;
-	private static final int S = Terrain.STATUE;
-	private static final int T = Terrain.TRAP;
-	
-	//TODO if I ever need to store more static maps I should externalize them instead of hard-coding
-	//Especially as I means I won't be limited to legal identifiers
-	private static final int[] MAP_START =
-			{W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, S, e, S, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, M, D, M, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, P, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, M, L, M, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, e, e, e, e, e, e, T, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, P, e, e, e, P, e, e, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-					W, W, W, M, W, W, W, W, W, M, L, M, W, W, W, W, W, M, W, W, W,
-					W, W, e, e, e, e, W, e, e, e, e, e, e, T, W, e, e, e, e, W, W,
-					W, W, e, P, e, e, L, e, e, P, e, P, e, e, L, e, e, P, e, W, W,
-					W, W, e, e, e, e, W, e, e, e, e, e, e, e, W, e, e, e, e, W, W,
-					W, W, W, W, W, W, W, W, D, W, e, W, D, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
-					W, W, W, W, W, e, P, e, e, W, e, W, e, e, P, e, W, W, W, W, W,
-					W, W, W, W, W, e, e, P, e, W, T, W, e, P, e, e, W, W, W, W, W,
-					W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, L, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, X, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W};
 }

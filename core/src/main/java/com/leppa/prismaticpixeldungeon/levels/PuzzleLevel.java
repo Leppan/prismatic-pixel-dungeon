@@ -1,5 +1,7 @@
 package com.leppa.prismaticpixeldungeon.levels;
 
+import android.util.Log;
+
 import com.leppa.prismaticpixeldungeon.Bones;
 import com.leppa.prismaticpixeldungeon.Dungeon;
 import com.leppa.prismaticpixeldungeon.actors.Char;
@@ -13,6 +15,7 @@ import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.levels.Level;
 import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.leppa.prismaticpixeldungeon.levels.puzzle.PressurePad;
+import com.leppa.prismaticpixeldungeon.levels.puzzle.PuzzleRoom;
 import com.leppa.prismaticpixeldungeon.levels.traps.DistortionTrap;
 import com.leppa.prismaticpixeldungeon.levels.traps.FleecingTrap;
 import com.leppa.prismaticpixeldungeon.levels.traps.Trap;
@@ -20,11 +23,16 @@ import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.watabou.utils.SparseArray;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PuzzleLevel extends Level{
 	
+	protected boolean usesHardCodedPressurePads = true;
+	protected ArrayList<PuzzleRoom> rooms = new ArrayList<>();
+	
 	int[] pressurePadStages = {0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4};
 	int[] pressurePadColours = {0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2};
+	ArrayList<PressurePad> pads = new ArrayList<>();
 	int[] stageDoors = {0, 1, 3, 4, 2};
 	int[] padsPerStage = {1, 2, 4, 2, 2};
 	Trap[] traps = {new DistortionTrap().reveal(), new DistortionTrap().reveal(), new DistortionTrap().reveal(), new FleecingTrap().reveal()};
@@ -37,20 +45,33 @@ public class PuzzleLevel extends Level{
 		
 		map = MAP_START.clone();
 		
-		pressurePads = new SparseArray<>();
+		buildFlagMaps();
+		cleanWalls();
+		setup();
+		
+		for(int i = 0; i < pressurePadStages.length; i++){
+			PressurePad p = new PressurePad().setColour(pressurePadColours[i]).setStage(pressurePadStages[i]);
+			pads.add(p);
+		}
 		
 		for(int f = 0; f < MAP_START.length; f++){
-			if(MAP_START[f] == X) exit = f;
-			if(MAP_START[f] == E) entrance = f;
-			if(MAP_START[f] == P) setPressurePad(new PressurePad().setColour(pressurePadColours[pressurePads.size()]).setStage(pressurePadStages[pressurePads.size()]), f);
-			if(MAP_START[f] == L) stageDoorsPos.add(f);
-			if(MAP_START[f] == T){
-				setTrap(traps[trapCounter], f);
-				trapCounter++;
-			}
+			checkTile(f);
 		}
 		
 		return true;
+	}
+	
+	protected void setup(){}
+	
+	protected void checkTile(int f){
+		if(MAP_START[f] == X) exit = f;
+		if(MAP_START[f] == E) entrance = f;
+		if(MAP_START[f] == P && usesHardCodedPressurePads) setPressurePad(pads.get(pressurePads.size()), f);
+		if(MAP_START[f] == L) stageDoorsPos.add(f);
+		if(MAP_START[f] == T){
+			setTrap(traps[trapCounter], f);
+			trapCounter++;
+		}
 	}
 	
 	public PressurePad setPressurePad(PressurePad pad, int pos){
@@ -167,6 +188,7 @@ public class PuzzleLevel extends Level{
 	protected static final int D = Terrain.DOOR;
 	protected static final int L = Terrain.LOCKED_DOOR;
 	protected static final int e = Terrain.EMPTY;
+	protected static final int p = Terrain.PEDESTAL;
 	
 	protected static final int P = Terrain.PRESSUREPAD;
 	
@@ -179,37 +201,37 @@ public class PuzzleLevel extends Level{
 	
 	//TODO if I ever need to store more static maps I should externalize them instead of hard-coding
 	//Especially as I means I won't be limited to legal identifiers
-	protected int[] MAP_START =
-			{W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, S, e, S, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, M, D, M, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, T, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, P, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, M, L, M, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, e, e, e, e, e, e, T, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, P, e, e, e, P, e, e, W, W, W, W, W, W,
-					W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-					W, W, W, M, W, W, W, W, W, M, L, M, W, W, W, W, W, M, W, W, W,
-					W, W, e, e, e, e, W, e, e, e, e, e, e, T, W, e, e, e, e, W, W,
-					W, W, e, P, e, e, L, e, e, P, e, P, e, e, L, e, e, P, e, W, W,
-					W, W, e, e, e, e, W, e, e, e, e, e, e, e, W, e, e, e, e, W, W,
-					W, W, W, W, W, W, W, W, D, W, e, W, D, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
-					W, W, W, W, W, e, P, e, e, W, e, W, e, e, P, e, W, W, W, W, W,
-					W, W, W, W, W, e, e, P, e, W, T, W, e, P, e, e, W, W, W, W, W,
-					W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, L, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, X, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
-					W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W};
+	protected int[] MAP_START = {
+			W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, S, e, S, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, M, D, M, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, e, T, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, P, e, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, M, L, M, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, e, e, e, e, e, e, e, e, T, W, W, W, W, W, W,
+			W, W, W, W, W, W, e, e, P, e, e, e, P, e, e, W, W, W, W, W, W,
+			W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
+			W, W, W, M, W, W, W, W, W, M, L, M, W, W, W, W, W, M, W, W, W,
+			W, W, e, e, e, e, W, e, e, e, e, e, e, T, W, e, e, e, e, W, W,
+			W, W, e, P, e, e, L, e, e, P, e, P, e, e, L, e, e, P, e, W, W,
+			W, W, e, e, e, e, W, e, e, e, e, e, e, e, W, e, e, e, e, W, W,
+			W, W, W, W, W, W, W, W, D, W, e, W, D, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
+			W, W, W, W, W, e, P, e, e, W, e, W, e, e, P, e, W, W, W, W, W,
+			W, W, W, W, W, e, e, P, e, W, T, W, e, P, e, e, W, W, W, W, W,
+			W, W, W, W, W, e, e, e, e, W, e, W, e, e, e, e, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, W, L, W, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, e, e, X, e, e, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W,
+			W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W};
 }

@@ -21,7 +21,6 @@
 
 package com.leppa.prismaticpixeldungeon.items.scrolls;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/scrolls/Scroll.java
 import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
 import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Blindness;
@@ -50,19 +49,6 @@ import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.HeroSprite;
 import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
 import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
-import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.actors.buffs.Blindness;
-import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
-import com.leppa.prismaticpixeldungeon.items.Item;
-import com.leppa.prismaticpixeldungeon.items.ItemStatusHandler;
-import com.leppa.prismaticpixeldungeon.items.artifacts.UnstableSpellbook;
-import com.leppa.prismaticpixeldungeon.journal.Catalog;
-import com.leppa.prismaticpixeldungeon.messages.Messages;
-import com.leppa.prismaticpixeldungeon.sprites.HeroSprite;
-import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
-import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/scrolls/Scroll.java
 import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
@@ -89,7 +75,8 @@ public abstract class Scroll extends Item {
 		ScrollOfLullaby.class,
 		ScrollOfTransmutation.class,
 		ScrollOfRetribution.class,
-		ScrollOfMirrorImage.class
+		ScrollOfMirrorImage.class,
+		ScrollOfCorruption.class
 	};
 
 	private static final HashMap<String, Integer> runes = new HashMap<String, Integer>() {
@@ -267,7 +254,7 @@ public abstract class Scroll extends Item {
 	
 	@Override
 	public int price() {
-		return 30 * quantity;
+		return 40 * quantity;
 	}
 	
 	public static class ScrollToStone extends Recipe {

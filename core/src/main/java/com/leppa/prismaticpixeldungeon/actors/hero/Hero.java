@@ -187,6 +187,7 @@ import com.leppa.prismaticpixeldungeon.items.weapon.melee.Flail;
 import com.leppa.prismaticpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.leppa.prismaticpixeldungeon.journal.Notes;
 import com.leppa.prismaticpixeldungeon.levels.Level;
+import com.leppa.prismaticpixeldungeon.levels.PuzzleLevel;
 import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.leppa.prismaticpixeldungeon.levels.features.Chasm;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
@@ -906,17 +907,14 @@ public class Hero extends Char {
 				
 			}
 			
-			if (hasKey) {
-				
+			if(hasKey){
 				sprite.operate( doorCell );
-				
 				Sample.INSTANCE.play( Assets.SND_UNLOCK );
-				
-			} else {
-				GLog.w( Messages.get(this, "locked_door") );
+			}else{
+				if(Dungeon.level instanceof PuzzleLevel) GLog.w(Messages.get(this, "locked_door_puzzle"));
+				else GLog.w(Messages.get(this, "locked_door"));
 				ready();
 			}
-
 			return false;
 
 		} else if (getCloser( doorCell )) {
