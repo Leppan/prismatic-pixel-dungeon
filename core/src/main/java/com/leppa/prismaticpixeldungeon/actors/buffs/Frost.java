@@ -19,21 +19,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.buffs;
+package com.leppa.prismaticpixeldungeon.actors.buffs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Thief;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.FrozenCarpaccio;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.MysteryMeat;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.ui.BuffIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Thief;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.food.FrozenCarpaccio;
+import com.leppa.prismaticpixeldungeon.items.food.MysteryMeat;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
+import com.leppa.prismaticpixeldungeon.ui.BuffIndicator;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;

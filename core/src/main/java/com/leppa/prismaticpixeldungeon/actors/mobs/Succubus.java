@@ -19,22 +19,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Barrier;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Charm;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Light;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Sleep;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfLullaby;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.shatteredpixel.shatteredpixeldungeon.mechanics.Ballistica;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.SuccubusSprite;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Barrier;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Charm;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Light;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Sleep;
+import com.leppa.prismaticpixeldungeon.effects.Speck;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfLullaby;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.leppa.prismaticpixeldungeon.mechanics.Ballistica;
+import com.leppa.prismaticpixeldungeon.sprites.SuccubusSprite;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;

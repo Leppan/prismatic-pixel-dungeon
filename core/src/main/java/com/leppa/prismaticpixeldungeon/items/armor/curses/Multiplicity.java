@@ -19,31 +19,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/armor/curses/Multiplicity.java
-package com.shatteredpixel.shatteredpixeldungeon.items.armor.curses;
-
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.PinCushion;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mimic;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Statue;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Thief;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.MirrorImage;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-=======
 package com.leppa.prismaticpixeldungeon.items.armor.curses;
 
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.PinCushion;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mimic;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
@@ -54,7 +36,6 @@ import com.leppa.prismaticpixeldungeon.items.armor.Armor;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/armor/curses/Multiplicity.java
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;
 import com.watabou.utils.Random;
@@ -109,7 +90,7 @@ public class Multiplicity extends Armor.Glyph {
 							}
 
 						} catch (Exception e) {
-							PrismaticPixelDungeon.reportException(e);
+							ShatteredPixelDungeon.reportException(e);
 							m = null;
 						}
 					}

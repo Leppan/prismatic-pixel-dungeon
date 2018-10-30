@@ -19,28 +19,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels;
+package com.leppa.prismaticpixeldungeon.levels;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Ghost;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Ripple;
-import com.shatteredpixel.shatteredpixeldungeon.items.DewVial;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.Painter;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.SewerPainter;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.AlarmTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ChillingTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ConfusionTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.FlockTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.OozeTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ShockingTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.SummoningTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.TeleportationTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ToxicTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.WornDartTrap;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTilemap;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Ghost;
+import com.leppa.prismaticpixeldungeon.effects.Ripple;
+import com.leppa.prismaticpixeldungeon.items.DewVial;
+import com.leppa.prismaticpixeldungeon.levels.painters.Painter;
+import com.leppa.prismaticpixeldungeon.levels.painters.SewerPainter;
+import com.leppa.prismaticpixeldungeon.levels.traps.AlarmTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ChillingTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ConfusionTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.FlockTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.OozeTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ShockingTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.SummoningTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.TeleportationTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ToxicTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.WornDartTrap;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.particles.Emitter;

@@ -19,50 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/DriedRose.java
-package com.shatteredpixel.shatteredpixeldungeon.items.artifacts;
-
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.CorrosiveGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.ToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Corruption;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.LockedFloor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Wraith;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Ghost;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.NPC;
-import com.shatteredpixel.shatteredpixeldungeon.effects.CellEmitter;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ShaftParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.AntiMagic;
-import com.shatteredpixel.shatteredpixeldungeon.items.rings.RingOfElements;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRetribution;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Boomerang;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Languages;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.GhostSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.ui.RenderedTextMultiline;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Window;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.IconTitle;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBlacksmith;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndQuest;
-=======
 package com.leppa.prismaticpixeldungeon.items.artifacts;
 
 import com.leppa.prismaticpixeldungeon.Assets;
@@ -73,11 +29,8 @@ import com.leppa.prismaticpixeldungeon.actors.blobs.CorrosiveGas;
 import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Bleeding;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
-import com.leppa.prismaticpixeldungeon.actors.buffs.Chill;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Corruption;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Cripple;
-import com.leppa.prismaticpixeldungeon.actors.buffs.Doom;
-import com.leppa.prismaticpixeldungeon.actors.buffs.Drowsy;
 import com.leppa.prismaticpixeldungeon.actors.buffs.LockedFloor;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
@@ -91,7 +44,8 @@ import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.armor.Armor;
 import com.leppa.prismaticpixeldungeon.items.armor.glyphs.AntiMagic;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfElements;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfPsionicBlast;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRetribution;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
 import com.leppa.prismaticpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Boomerang;
 import com.leppa.prismaticpixeldungeon.levels.Level;
@@ -109,7 +63,6 @@ import com.leppa.prismaticpixeldungeon.windows.IconTitle;
 import com.leppa.prismaticpixeldungeon.windows.WndBag;
 import com.leppa.prismaticpixeldungeon.windows.WndBlacksmith;
 import com.leppa.prismaticpixeldungeon.windows.WndQuest;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/DriedRose.java
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.PathFinder;

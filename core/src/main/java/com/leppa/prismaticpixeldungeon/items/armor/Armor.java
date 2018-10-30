@@ -19,58 +19,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/armor/Armor.java
-package com.shatteredpixel.shatteredpixeldungeon.items.armor;
-
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MagicImmune;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Momentum;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
-import com.shatteredpixel.shatteredpixeldungeon.items.BrokenSeal;
-import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.AntiEntropy;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Bulk;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Corrosion;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Displacement;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Metabolism;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Multiplicity;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Overgrowth;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.curses.Stench;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Affection;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.AntiMagic;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Brimstone;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Camouflage;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Entanglement;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Flow;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Obfuscation;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Potential;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Repulsion;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Stone;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Swiftness;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Thorns;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.glyphs.Viscosity;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.HeroSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
 package com.leppa.prismaticpixeldungeon.items.armor;
 
 import com.leppa.prismaticpixeldungeon.Badges;
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.MagicImmune;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Momentum;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.effects.Speck;
@@ -104,7 +61,6 @@ import com.leppa.prismaticpixeldungeon.sprites.HeroSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/armor/Armor.java
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
@@ -642,7 +598,7 @@ public class Armor extends EquipableItem {
 					return (Glyph) Random.element(glyphs).newInstance();
 				}
 			} catch (Exception e) {
-				PrismaticPixelDungeon.reportException(e);
+				ShatteredPixelDungeon.reportException(e);
 				return null;
 			}
 		}
@@ -690,7 +646,7 @@ public class Armor extends EquipableItem {
 					return (Glyph) Random.element(glyphs).newInstance();
 				}
 			} catch (Exception e) {
-				PrismaticPixelDungeon.reportException(e);
+				ShatteredPixelDungeon.reportException(e);
 				return null;
 			}
 		}

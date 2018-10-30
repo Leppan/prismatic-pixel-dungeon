@@ -19,36 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/UnstableSpellbook.java
-package com.shatteredpixel.shatteredpixeldungeon.items.artifacts;
-
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Blindness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.LockedFloor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ElmoParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.Scroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfIdentify;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTransmutation;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.ExoticScroll;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
-=======
 package com.leppa.prismaticpixeldungeon.items.artifacts;
 
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Blindness;
 import com.leppa.prismaticpixeldungeon.actors.buffs.LockedFloor;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
@@ -60,12 +35,14 @@ import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTransmutation;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ExoticScroll;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.leppa.prismaticpixeldungeon.windows.WndBag;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/UnstableSpellbook.java
+import com.leppa.prismaticpixeldungeon.windows.WndOptions;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;

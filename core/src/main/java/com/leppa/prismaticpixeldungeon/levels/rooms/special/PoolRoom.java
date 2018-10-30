@@ -19,18 +19,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special;
+package com.leppa.prismaticpixeldungeon.levels.rooms.special;
 
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Piranha;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Heap;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfInvisibility;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.Painter;
+import com.leppa.prismaticpixeldungeon.Challenges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Piranha;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Heap;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
+import com.leppa.prismaticpixeldungeon.levels.Level;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.levels.painters.Painter;
 import com.watabou.utils.Random;
 
 public class PoolRoom extends SpecialRoom {

@@ -19,12 +19,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Paralysis;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.SeniorSprite;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Paralysis;
+import com.leppa.prismaticpixeldungeon.sprites.SeniorSprite;
 import com.watabou.utils.Random;
 
 public class Senior extends Monk {

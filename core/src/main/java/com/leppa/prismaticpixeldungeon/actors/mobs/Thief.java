@@ -19,23 +19,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Corruption;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Terror;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.CellEmitter;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Gold;
-import com.shatteredpixel.shatteredpixeldungeon.items.Honeypot;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ThiefSprite;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Corruption;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Terror;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.effects.CellEmitter;
+import com.leppa.prismaticpixeldungeon.effects.Speck;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Gold;
+import com.leppa.prismaticpixeldungeon.items.Honeypot;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ThiefSprite;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

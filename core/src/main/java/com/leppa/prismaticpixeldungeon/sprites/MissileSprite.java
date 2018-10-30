@@ -19,21 +19,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.sprites;
+package com.leppa.prismaticpixeldungeon.sprites;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.Crossbow;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Bolas;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Boomerang;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.FishingSpear;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Javelin;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Shuriken;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.ThrowingKnife;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.ThrowingSpear;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Trident;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts.Dart;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTilemap;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.Crossbow;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Bolas;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Boomerang;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.FishingSpear;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Javelin;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Shuriken;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingKnife;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.ThrowingSpear;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.Trident;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.Dart;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.noosa.Visual;
 import com.watabou.noosa.tweeners.PosTweener;
 import com.watabou.noosa.tweeners.Tweener;

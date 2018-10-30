@@ -19,13 +19,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.traps;
+package com.leppa.prismaticpixeldungeon.levels.traps;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Ooze;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Splash;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Ooze;
+import com.leppa.prismaticpixeldungeon.effects.Splash;
 
 public class OozeTrap extends Trap {
 

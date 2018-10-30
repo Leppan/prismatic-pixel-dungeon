@@ -19,17 +19,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.SparkParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.mechanics.Ballistica;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ShamanSprite;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.effects.particles.SparkParticle;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.mechanics.Ballistica;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ShamanSprite;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.watabou.noosa.Camera;
 import com.watabou.utils.Callback;
 import com.watabou.utils.Random;

@@ -19,14 +19,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.traps;
+package com.leppa.prismaticpixeldungeon.levels.traps;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Belongings;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.LloydsBeacon;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Notes;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.InterlevelScene;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.hero.Belongings;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.artifacts.LloydsBeacon;
+import com.leppa.prismaticpixeldungeon.journal.Notes;
+import com.leppa.prismaticpixeldungeon.scenes.InterlevelScene;
 import com.watabou.noosa.Game;
 
 public class DistortionTrap extends Trap{

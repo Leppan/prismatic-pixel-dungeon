@@ -23,7 +23,7 @@ package com.leppa.prismaticpixeldungeon.actors.mobs.npcs;
 
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Paralysis;
@@ -293,7 +293,7 @@ public class Ghost extends NPC {
 						weapon = (Weapon) Generator.wepTiers[wepTier - 1].classes[Random.chances(Generator.wepTiers[wepTier - 1].probs)].newInstance();
 					} while (!(weapon instanceof MeleeWeapon));
 				} catch (Exception e){
-					PrismaticPixelDungeon.reportException(e);
+					ShatteredPixelDungeon.reportException(e);
 					weapon = new Shortsword();
 				}
 

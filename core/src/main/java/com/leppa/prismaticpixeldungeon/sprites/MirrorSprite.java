@@ -19,11 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.sprites;
+package com.leppa.prismaticpixeldungeon.sprites;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.MirrorImage;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.MirrorImage;
 import com.watabou.noosa.TextureFilm;
 
 public class MirrorSprite extends MobSprite {
@@ -42,7 +42,7 @@ public class MirrorSprite extends MobSprite {
 	@Override
 	public void link( Char ch ) {
 		super.link( ch );
-		updateArmor( ((MirrorImage)ch).armTier );
+		updateArmor( ((MirrorImage)ch).tier );
 	}
 	
 	public void updateArmor( int tier ) {

@@ -19,18 +19,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.traps;
+package com.leppa.prismaticpixeldungeon.levels.traps;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Bleeding;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Cripple;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Wound;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Bleeding;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Cripple;
+import com.leppa.prismaticpixeldungeon.effects.Wound;
+import com.leppa.prismaticpixeldungeon.levels.Level;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.watabou.noosa.audio.Sample;
 
 public class GrippingTrap extends Trap {

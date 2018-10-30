@@ -19,52 +19,58 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon;
+package com.leppa.prismaticpixeldungeon;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Amok;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Awareness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Light;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MindVision;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Blacksmith;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Ghost;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Imp;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Wandmaker;
-import com.shatteredpixel.shatteredpixeldungeon.items.Ankh;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Heap;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.DriedRose;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.rings.Ring;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.Scroll;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Notes;
-import com.shatteredpixel.shatteredpixeldungeon.levels.CavesBossLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.CavesLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.CityBossLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.CityLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.DeadEndLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.HallsBossLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.HallsLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.LastLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.LastShopLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
-import com.shatteredpixel.shatteredpixeldungeon.levels.PrisonBossLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.PrisonLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.SewerBossLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.SewerLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.secret.SecretRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.SpecialRoom;
-import com.shatteredpixel.shatteredpixeldungeon.mechanics.ShadowCaster;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.ui.QuickSlotButton;
-import com.shatteredpixel.shatteredpixeldungeon.utils.BArray;
-import com.shatteredpixel.shatteredpixeldungeon.utils.DungeonSeed;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndResurrect;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Amok;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Awareness;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Light;
+import com.leppa.prismaticpixeldungeon.actors.buffs.MindVision;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.actors.mobs.ElementalImage;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Blacksmith;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Ghost;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Imp;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Wandmaker;
+import com.leppa.prismaticpixeldungeon.items.Ankh;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Heap;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.artifacts.DriedRose;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.rings.Ring;
+import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.journal.Notes;
+import com.leppa.prismaticpixeldungeon.levels.CavesBossLevel;
+import com.leppa.prismaticpixeldungeon.levels.CavesLevel;
+import com.leppa.prismaticpixeldungeon.levels.CavesPuzzleLevel;
+import com.leppa.prismaticpixeldungeon.levels.CityBossLevel;
+import com.leppa.prismaticpixeldungeon.levels.CityLevel;
+import com.leppa.prismaticpixeldungeon.levels.CityPuzzleLevel;
+import com.leppa.prismaticpixeldungeon.levels.DeadEndLevel;
+import com.leppa.prismaticpixeldungeon.levels.HallsBossLevel;
+import com.leppa.prismaticpixeldungeon.levels.HallsLevel;
+import com.leppa.prismaticpixeldungeon.levels.HallsPuzzleLevel;
+import com.leppa.prismaticpixeldungeon.levels.LastLevel;
+import com.leppa.prismaticpixeldungeon.levels.LastShopLevel;
+import com.leppa.prismaticpixeldungeon.levels.Level;
+import com.leppa.prismaticpixeldungeon.levels.PrisonBossLevel;
+import com.leppa.prismaticpixeldungeon.levels.PrisonLevel;
+import com.leppa.prismaticpixeldungeon.levels.PrisonPuzzleLevel;
+import com.leppa.prismaticpixeldungeon.levels.SewerBossLevel;
+import com.leppa.prismaticpixeldungeon.levels.SewerLevel;
+import com.leppa.prismaticpixeldungeon.levels.SewerPuzzleLevel;
+import com.leppa.prismaticpixeldungeon.levels.rooms.secret.SecretRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.special.SpecialRoom;
+import com.leppa.prismaticpixeldungeon.mechanics.ShadowCaster;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.ui.QuickSlotButton;
+import com.leppa.prismaticpixeldungeon.utils.BArray;
+import com.leppa.prismaticpixeldungeon.utils.DungeonSeed;
+import com.leppa.prismaticpixeldungeon.windows.WndResurrect;
 import com.watabou.noosa.Game;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
@@ -266,52 +272,77 @@ public class Dungeon {
 		switch (depth) {
 		case 1:
 		case 2:
-		case 3:
-		case 4:
 			level = new SewerLevel();
 			break;
+		case 3:
+			level = new SewerPuzzleLevel();
+			break;
+		case 4:
 		case 5:
-			level = new SewerBossLevel();
+			level = new SewerLevel();
 			break;
 		case 6:
+			level = new SewerBossLevel();
+			break;
 		case 7:
 		case 8:
-		case 9:
 			level = new PrisonLevel();
 			break;
+		case 9:
+			level = new PrisonPuzzleLevel();
+			break;
 		case 10:
+		case 11:
+			level = new PrisonLevel();
+			break;
+		case 12:
 			level = new PrisonBossLevel();
 			break;
-		case 11:
-		case 12:
 		case 13:
 		case 14:
 			level = new CavesLevel();
 			break;
 		case 15:
-			level = new CavesBossLevel();
+			level = new CavesPuzzleLevel();
 			break;
 		case 16:
 		case 17:
+			level = new CavesLevel();
+			break;
 		case 18:
+			level = new CavesBossLevel();
+			break;
 		case 19:
+		case 20:
 			level = new CityLevel();
 			break;
-		case 20:
-			level = new CityBossLevel();
-			break;
 		case 21:
-			level = new LastShopLevel();
+			level = new CityPuzzleLevel();
 			break;
 		case 22:
 		case 23:
+			level = new CityLevel();
+			break;
 		case 24:
-			level = new HallsLevel();
+			level = new CityBossLevel();
 			break;
 		case 25:
-			level = new HallsBossLevel();
+			level = new LastShopLevel();
 			break;
 		case 26:
+		case 27:
+			level = new HallsLevel();
+			break;
+		case 28:
+			level = new HallsPuzzleLevel();
+			break;
+		case 29:
+			level = new HallsLevel();
+			break;
+		case 30:
+			level = new HallsBossLevel();
+			break;
+		case 31:
 			level = new LastLevel();
 			break;
 		default:
@@ -527,6 +558,8 @@ public class Dungeon {
 			Badges.saveLocal( badges );
 			bundle.put( BADGES, badges );
 			
+			ElementalImage.storeAllInBundle(bundle);
+			
 			FileUtils.bundleToFile( GamesInProgress.gameFile(save), bundle);
 			
 		} catch (IOException e) {
@@ -584,7 +617,9 @@ public class Dungeon {
 		Scroll.restore( bundle );
 		Potion.restore( bundle );
 		Ring.restore( bundle );
-
+		
+		ElementalImage.restoreAllFromBundle(bundle);
+		
 		quickslot.restorePlaceholders( bundle );
 		
 		if (fullLoad) {

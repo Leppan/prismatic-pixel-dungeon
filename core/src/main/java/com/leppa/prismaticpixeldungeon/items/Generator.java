@@ -22,7 +22,7 @@
 package com.leppa.prismaticpixeldungeon.items;
 
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.items.armor.Armor;
 import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
 import com.leppa.prismaticpixeldungeon.items.armor.LeatherArmor;
@@ -51,6 +51,7 @@ import com.leppa.prismaticpixeldungeon.items.food.Pasty;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfExperience;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfFrost;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHaste;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLevitation;
@@ -78,15 +79,29 @@ import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfCorruption;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfIdentify;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfLullaby;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicalInfusion;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMirrorImage;
-import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfPsionicBlast;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRage;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRecharging;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRetribution;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTerror;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTransmutation;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.leppa.prismaticpixeldungeon.items.stones.Runestone;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAffection;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAggression;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAugmentation;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfBlast;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfBlink;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfClairvoyance;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDeepenedSleep;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDespair;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDetectCurse;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfEnchantment;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfFlock;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfIntuition;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfShock;
 import com.leppa.prismaticpixeldungeon.items.wands.Wand;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfBlastWave;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfChanneling;
@@ -154,6 +169,7 @@ import com.leppa.prismaticpixeldungeon.plants.Sorrowmoss;
 import com.leppa.prismaticpixeldungeon.plants.Starflower;
 import com.leppa.prismaticpixeldungeon.plants.Stormvine;
 import com.leppa.prismaticpixeldungeon.plants.Sungrass;
+import com.leppa.prismaticpixeldungeon.plants.Swiftthistle;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.GameMath;
 import com.watabou.utils.Random;
@@ -282,11 +298,11 @@ public class Generator {
 					StoneOfDeepenedSleep.class,
 					StoneOfDetectCurse.class,
 					StoneOfFlock.class,
-					StoneOfShock.class
+					StoneOfShock.class,
+					StoneOfDespair.class
 			};
 			STONE.probs = new float[]{ 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 			
-			//TODO: add last ones when implemented
 			WAND.classes = new Class<?>[]{
 					WandOfMagicMissile.class,
 					WandOfLightning.class,
@@ -484,7 +500,7 @@ public class Generator {
 			
 		} catch (Exception e) {
 
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 			
 		}
@@ -497,7 +513,7 @@ public class Generator {
 			
 		} catch (Exception e) {
 
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 			
 		}
@@ -516,7 +532,7 @@ public class Generator {
 			a.random();
 			return a;
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 	}
@@ -543,7 +559,7 @@ public class Generator {
 			w.random();
 			return w;
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 	}
@@ -570,7 +586,7 @@ public class Generator {
 			w.random();
 			return w;
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 	}
@@ -600,7 +616,7 @@ public class Generator {
 			}
 
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 	}

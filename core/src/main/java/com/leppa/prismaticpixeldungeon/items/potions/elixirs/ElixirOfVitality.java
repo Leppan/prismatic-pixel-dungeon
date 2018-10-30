@@ -19,15 +19,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.potions.elixirs;
+package com.leppa.prismaticpixeldungeon.items.potions.elixirs;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Barrier;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Healing;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHealing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfShielding;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Barrier;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Healing;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfShielding;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 
 public class ElixirOfVitality extends Elixir {
 	
@@ -48,7 +48,7 @@ public class ElixirOfVitality extends Elixir {
 		return quantity * (30 + 50);
 	}
 	
-	public static class Recipe extends com.shatteredpixel.shatteredpixeldungeon.items.Recipe.SimpleRecipe {
+	public static class Recipe extends com.leppa.prismaticpixeldungeon.items.Recipe.SimpleRecipe {
 		
 		{
 			inputs =  new Class[]{PotionOfHealing.class, PotionOfShielding.class};

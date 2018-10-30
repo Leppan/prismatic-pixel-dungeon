@@ -19,11 +19,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.food;
+package com.leppa.prismaticpixeldungeon.items.food;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Hunger;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Hunger;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 
 public class StewedMeat extends Food {
 	

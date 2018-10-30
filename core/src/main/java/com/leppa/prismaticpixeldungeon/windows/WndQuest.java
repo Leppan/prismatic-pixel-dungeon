@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.windows;
+package com.leppa.prismaticpixeldungeon.windows;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.NPC;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.NPC;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
 
 public class WndQuest extends WndTitledMessage {
 

@@ -19,12 +19,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.traps;
+package com.leppa.prismaticpixeldungeon.levels.traps;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
@@ -32,15 +32,16 @@ import com.watabou.utils.Bundle;
 public abstract class Trap implements Bundlable {
 
 	//trap colors
-	public static final int RED     = 0;
-	public static final int ORANGE  = 1;
-	public static final int YELLOW  = 2;
-	public static final int GREEN   = 3;
-	public static final int TEAL    = 4;
-	public static final int VIOLET  = 5;
-	public static final int WHITE   = 6;
-	public static final int GREY    = 7;
-	public static final int BLACK   = 8;
+	public static final int RED       = 0;
+	public static final int ORANGE    = 1;
+	public static final int YELLOW    = 2;
+	public static final int GREEN     = 3;
+	public static final int TEAL      = 4;
+	public static final int VIOLET    = 5;
+	public static final int WHITE     = 6;
+	public static final int GREY      = 7;
+	public static final int BLACK     = 8;
+	public static final int BLUESHIFT = 9;
 
 	//trap shapes
 	public static final int DOTS        = 0;

@@ -19,28 +19,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.windows;
+package com.leppa.prismaticpixeldungeon.windows;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.GamesInProgress;
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.HeroClass;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.HeroSubClass;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Journal;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.InterlevelScene;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.IntroScene;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ActionIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.IconButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Icons;
-import com.shatteredpixel.shatteredpixeldungeon.ui.RedButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Window;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.GamesInProgress;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.hero.HeroClass;
+import com.leppa.prismaticpixeldungeon.actors.hero.HeroSubClass;
+import com.leppa.prismaticpixeldungeon.journal.Journal;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.scenes.InterlevelScene;
+import com.leppa.prismaticpixeldungeon.scenes.IntroScene;
+import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.ui.ActionIndicator;
+import com.leppa.prismaticpixeldungeon.ui.IconButton;
+import com.leppa.prismaticpixeldungeon.ui.Icons;
+import com.leppa.prismaticpixeldungeon.ui.RedButton;
+import com.leppa.prismaticpixeldungeon.ui.Window;
 import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;

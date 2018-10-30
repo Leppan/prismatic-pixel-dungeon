@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.stones;
+package com.leppa.prismaticpixeldungeon.items.stones;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.bombs.Bomb;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 
 public class StoneOfBlast extends Runestone {
 	

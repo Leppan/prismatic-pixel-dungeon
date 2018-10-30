@@ -19,19 +19,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.Statistics;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Vertigo;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.MysteryMeat;
-import com.shatteredpixel.shatteredpixeldungeon.levels.RegularLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.Room;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.PoolRoom;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.PiranhaSprite;
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.Statistics;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Vertigo;
+import com.leppa.prismaticpixeldungeon.items.food.MysteryMeat;
+import com.leppa.prismaticpixeldungeon.levels.RegularLevel;
+import com.leppa.prismaticpixeldungeon.levels.rooms.Room;
+import com.leppa.prismaticpixeldungeon.levels.rooms.special.PoolRoom;
+import com.leppa.prismaticpixeldungeon.sprites.PiranhaSprite;
 import com.watabou.utils.Random;
 
 public class Piranha extends Mob {

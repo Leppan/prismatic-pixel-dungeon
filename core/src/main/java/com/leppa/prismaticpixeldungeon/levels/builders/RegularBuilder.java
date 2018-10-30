@@ -19,16 +19,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.builders;
+package com.leppa.prismaticpixeldungeon.levels.builders;
 
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.Room;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.connection.ConnectionRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.connection.MazeConnectionRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.secret.SecretRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.ShopRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.EntranceRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.ExitRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.StandardRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.Room;
+import com.leppa.prismaticpixeldungeon.levels.rooms.connection.ConnectionRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.connection.MazeConnectionRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.secret.SecretRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.special.ShopRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.EntranceRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.ExitRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.StandardRoom;
 import com.watabou.utils.Random;
 
 import java.util.ArrayList;

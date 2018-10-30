@@ -19,31 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/actors/mobs/Goo.java
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
-
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Blob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.GooWarn;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.LockedFloor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Ooze;
-import com.shatteredpixel.shatteredpixeldungeon.effects.CellEmitter;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Speck;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ElmoParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.SkeletonKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.quest.GooBlob;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.GooSprite;
-import com.shatteredpixel.shatteredpixeldungeon.ui.BossHealthBar;
-import com.shatteredpixel.shatteredpixeldungeon.utils.BArray;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
 package com.leppa.prismaticpixeldungeon.actors.mobs;
 
 import com.leppa.prismaticpixeldungeon.Assets;
@@ -58,8 +33,8 @@ import com.leppa.prismaticpixeldungeon.actors.buffs.Ooze;
 import com.leppa.prismaticpixeldungeon.effects.CellEmitter;
 import com.leppa.prismaticpixeldungeon.effects.Speck;
 import com.leppa.prismaticpixeldungeon.effects.particles.ElmoParticle;
-import com.leppa.prismaticpixeldungeon.items.artifacts.LloydsBeacon;
 import com.leppa.prismaticpixeldungeon.items.keys.SkeletonKey;
+import com.leppa.prismaticpixeldungeon.items.quest.GooBlob;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
@@ -67,7 +42,6 @@ import com.leppa.prismaticpixeldungeon.sprites.GooSprite;
 import com.leppa.prismaticpixeldungeon.ui.BossHealthBar;
 import com.leppa.prismaticpixeldungeon.utils.BArray;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/actors/mobs/Goo.java
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;

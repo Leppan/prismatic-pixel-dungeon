@@ -19,18 +19,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon;
+package com.leppa.prismaticpixeldungeon;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.Dewdrop;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClassArmor;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.ClothArmor;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.HornOfPlenty;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.Blandfruit;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.Food;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.SmallRation;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHealing;
+import com.leppa.prismaticpixeldungeon.items.Dewdrop;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.armor.Armor;
+import com.leppa.prismaticpixeldungeon.items.armor.ClassArmor;
+import com.leppa.prismaticpixeldungeon.items.armor.ClothArmor;
+import com.leppa.prismaticpixeldungeon.items.artifacts.HornOfPlenty;
+import com.leppa.prismaticpixeldungeon.items.food.Blandfruit;
+import com.leppa.prismaticpixeldungeon.items.food.Food;
+import com.leppa.prismaticpixeldungeon.items.food.SmallRation;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
 
 public class Challenges {
 

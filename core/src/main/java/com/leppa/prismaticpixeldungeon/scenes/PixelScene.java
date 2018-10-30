@@ -19,13 +19,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.scenes;
+package com.leppa.prismaticpixeldungeon.scenes;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.effects.BadgeBanner;
-import com.shatteredpixel.shatteredpixeldungeon.ui.RenderedTextMultiline;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.effects.BadgeBanner;
+import com.leppa.prismaticpixeldungeon.ui.RenderedTextMultiline;
 import com.watabou.glwrap.Blending;
 import com.watabou.input.Touchscreen;
 import com.watabou.noosa.BitmapText;

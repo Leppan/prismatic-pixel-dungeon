@@ -19,25 +19,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic;
+package com.leppa.prismaticpixeldungeon.items.scrolls.exotic;
 
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.Scroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfIdentify;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfLullaby;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicMapping;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMirrorImage;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRage;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRecharging;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRetribution;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTerror;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTransmutation;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfUpgrade;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.Runestone;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfIdentify;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfLullaby;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicMapping;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMirrorImage;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRage;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRecharging;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRetribution;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTerror;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTransmutation;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.leppa.prismaticpixeldungeon.items.stones.Runestone;
 
 import java.util.ArrayList;
 import java.util.HashMap;

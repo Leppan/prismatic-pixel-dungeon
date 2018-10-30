@@ -19,19 +19,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.scenes;
+package com.leppa.prismaticpixeldungeon.scenes;
 
 import android.content.Intent;
 import android.net.Uri;
 
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Flare;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Archs;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ExitButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Icons;
-import com.shatteredpixel.shatteredpixeldungeon.ui.RenderedTextMultiline;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Window;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.effects.Flare;
+import com.leppa.prismaticpixeldungeon.ui.Archs;
+import com.leppa.prismaticpixeldungeon.ui.ExitButton;
+import com.leppa.prismaticpixeldungeon.ui.Icons;
+import com.leppa.prismaticpixeldungeon.ui.RenderedTextMultiline;
+import com.leppa.prismaticpixeldungeon.ui.Window;
 import com.watabou.input.Touchscreen.Touch;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;

@@ -21,36 +21,20 @@
 
 package com.leppa.prismaticpixeldungeon.items.scrolls;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/scrolls/ScrollOfRemoveCurse.java
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Invisibility;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Weakness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Flare;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.ShadowParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.Weapon;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
-=======
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Invisibility;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Weakness;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.effects.Flare;
 import com.leppa.prismaticpixeldungeon.effects.particles.ShadowParticle;
+import com.leppa.prismaticpixeldungeon.items.EquipableItem;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.armor.Armor;
-import com.leppa.prismaticpixeldungeon.items.bags.Bag;
+import com.leppa.prismaticpixeldungeon.items.wands.Wand;
 import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.leppa.prismaticpixeldungeon.windows.WndBag;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/scrolls/ScrollOfRemoveCurse.java
 import com.watabou.noosa.audio.Sample;
 
 public class ScrollOfRemoveCurse extends InventoryScroll {

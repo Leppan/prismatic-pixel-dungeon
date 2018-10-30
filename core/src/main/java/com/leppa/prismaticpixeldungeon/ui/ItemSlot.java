@@ -19,26 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/ui/ItemSlot.java
-package com.shatteredpixel.shatteredpixeldungeon.ui;
-
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.Key;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.SkeletonKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.ExoticPotion;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.Scroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.ExoticScroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.Weapon;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-=======
 package com.leppa.prismaticpixeldungeon.ui;
 
 import com.leppa.prismaticpixeldungeon.Assets;
@@ -48,14 +28,15 @@ import com.leppa.prismaticpixeldungeon.items.armor.Armor;
 import com.leppa.prismaticpixeldungeon.items.keys.Key;
 import com.leppa.prismaticpixeldungeon.items.keys.SkeletonKey;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.ExoticPotion;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ExoticScroll;
 import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
 import com.leppa.prismaticpixeldungeon.items.weapon.melee.MeleeWeapon;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/ui/ItemSlot.java
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.ui.Button;

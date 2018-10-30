@@ -19,28 +19,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.scrolls;
+package com.leppa.prismaticpixeldungeon.items.scrolls;
 
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.Artifact;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.ExoticPotion;
-import com.shatteredpixel.shatteredpixeldungeon.items.rings.Ring;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.ExoticScroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.Weapon;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MagesStaff;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.melee.MeleeWeapon;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Catalog;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
+import com.leppa.prismaticpixeldungeon.Challenges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.items.EquipableItem;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.artifacts.Artifact;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.ExoticPotion;
+import com.leppa.prismaticpixeldungeon.items.rings.Ring;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ExoticScroll;
+import com.leppa.prismaticpixeldungeon.items.wands.Wand;
+import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.MagesStaff;
+import com.leppa.prismaticpixeldungeon.items.weapon.melee.MeleeWeapon;
+import com.leppa.prismaticpixeldungeon.journal.Catalog;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.windows.WndBag;
 import com.watabou.utils.Random;
 
 public class ScrollOfTransmutation extends InventoryScroll {

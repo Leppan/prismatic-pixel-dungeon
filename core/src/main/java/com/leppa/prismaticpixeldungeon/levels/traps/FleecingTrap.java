@@ -4,15 +4,19 @@ import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Dungeon;
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Sheep;
 import com.leppa.prismaticpixeldungeon.items.EquipableItem;
 import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.leppa.prismaticpixeldungeon.levels.Level;
 import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.scenes.InterlevelScene;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
+import com.watabou.noosa.Game;
 import com.watabou.noosa.audio.Sample;
 
 import java.util.ArrayList;
@@ -24,7 +28,7 @@ public class FleecingTrap extends Trap{
 	public static boolean removeArmour = true;
 	
 	{
-		color = VIOLET;
+		color = BLUESHIFT;
 		shape = WAVES;
 	}
 	
@@ -65,8 +69,16 @@ public class FleecingTrap extends Trap{
 					hero.belongings.armor.detachAll(hero.belongings.backpack);
 					GLog.w( Messages.get(this, "destroyarmour"));
 				}
+			//Teleport to start of stage
+			}else{
+				Buff buff = Dungeon.hero.buff(TimekeepersHourglass.timeFreeze.class);
+				if (buff != null) buff.detach();
+				
+				InterlevelScene.mode = InterlevelScene.Mode.RETURN;
+				InterlevelScene.returnDepth = (Dungeon.depth/6)*6+1;
+				InterlevelScene.returnPos = -1;
+				Game.switchScene(InterlevelScene.class);
 			}
-			
 		}
 	}
 }

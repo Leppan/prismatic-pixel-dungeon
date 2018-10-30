@@ -19,26 +19,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/CapeOfThorns.java
-package com.shatteredpixel.shatteredpixeldungeon.items.artifacts;
-
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.ui.BuffIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
 package com.leppa.prismaticpixeldungeon.items.artifacts;
 
 import com.leppa.prismaticpixeldungeon.Dungeon;
 import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.ui.BuffIndicator;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/artifacts/CapeOfThorns.java
 import com.watabou.utils.Random;
 
 public class CapeOfThorns extends Artifact {

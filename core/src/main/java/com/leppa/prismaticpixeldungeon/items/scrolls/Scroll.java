@@ -21,34 +21,35 @@
 
 package com.leppa.prismaticpixeldungeon.items.scrolls;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Blindness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MagicImmune;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.ItemStatusHandler;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.UnstableSpellbook;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.exotic.ScrollOfAntiMagic;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.Runestone;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfAffection;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfAggression;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfAugmentation;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfBlast;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfBlink;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfClairvoyance;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfDeepenedSleep;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfDetectCurse;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfEnchantment;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfFlock;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfIntuition;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfShock;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Catalog;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.HeroSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Blindness;
+import com.leppa.prismaticpixeldungeon.actors.buffs.MagicImmune;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.ItemStatusHandler;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.items.artifacts.UnstableSpellbook;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ScrollOfAntiMagic;
+import com.leppa.prismaticpixeldungeon.items.stones.Runestone;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAffection;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAggression;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAugmentation;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfBlast;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfBlink;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfClairvoyance;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDeepenedSleep;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDespair;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDetectCurse;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfEnchantment;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfFlock;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfIntuition;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfShock;
+import com.leppa.prismaticpixeldungeon.journal.Catalog;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.sprites.HeroSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
@@ -297,6 +298,9 @@ public abstract class Scroll extends Item {
 			
 			stones.put(ScrollOfUpgrade.class,       StoneOfEnchantment.class);
 			amnts.put(ScrollOfUpgrade.class,        2);
+			
+			stones.put(ScrollOfCorruption.class,    StoneOfDespair.class);
+			amnts.put(ScrollOfCorruption.class,     3);
 		}
 		
 		@Override

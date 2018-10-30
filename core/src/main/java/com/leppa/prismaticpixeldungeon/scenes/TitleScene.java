@@ -19,22 +19,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.scenes;
+package com.leppa.prismaticpixeldungeon.scenes;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.BuildConfig;
-import com.shatteredpixel.shatteredpixeldungeon.GamesInProgress;
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.effects.BannerSprites;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Fireball;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Archs;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ChangesButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ExitButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.LanguageButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.PrefsButton;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndStartGame;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.BuildConfig;
+import com.leppa.prismaticpixeldungeon.GamesInProgress;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.effects.BannerSprites;
+import com.leppa.prismaticpixeldungeon.effects.Fireball;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.ui.Archs;
+import com.leppa.prismaticpixeldungeon.ui.ChangesButton;
+import com.leppa.prismaticpixeldungeon.ui.ExitButton;
+import com.leppa.prismaticpixeldungeon.ui.LanguageButton;
+import com.leppa.prismaticpixeldungeon.ui.PrefsButton;
+import com.leppa.prismaticpixeldungeon.windows.WndStartGame;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;

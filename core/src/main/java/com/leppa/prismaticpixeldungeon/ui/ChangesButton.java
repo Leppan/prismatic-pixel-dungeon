@@ -22,7 +22,7 @@
 package com.leppa.prismaticpixeldungeon.ui;
 
 import com.leppa.prismaticpixeldungeon.Assets;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.scenes.ChangesScene;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Sample;
@@ -68,6 +68,6 @@ public class ChangesButton extends Button {
 
 	@Override
 	protected void onClick() {
-		PrismaticPixelDungeon.switchNoFade(ChangesScene.class);
+		ShatteredPixelDungeon.switchNoFade(ChangesScene.class);
 	}
 }

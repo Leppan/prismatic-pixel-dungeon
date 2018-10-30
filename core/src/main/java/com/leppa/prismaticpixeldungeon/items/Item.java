@@ -24,7 +24,7 @@ package com.leppa.prismaticpixeldungeon.items;
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Badges;
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Combo;
@@ -235,7 +235,7 @@ public class Item implements Bundlable {
 				
 				return split;
 			} catch (Exception e){
-				PrismaticPixelDungeon.reportException(e);
+				ShatteredPixelDungeon.reportException(e);
 				return null;
 			}
 		}
@@ -433,7 +433,7 @@ public class Item implements Bundlable {
 			return item;
 			
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 	}

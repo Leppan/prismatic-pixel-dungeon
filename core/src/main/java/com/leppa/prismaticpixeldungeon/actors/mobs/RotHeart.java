@@ -19,21 +19,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Blob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.ToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Amok;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Paralysis;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Sleep;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Terror;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Vertigo;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Rotberry;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.RotHeartSprite;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Blob;
+import com.leppa.prismaticpixeldungeon.actors.blobs.ToxicGas;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Amok;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Paralysis;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Sleep;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Terror;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Vertigo;
+import com.leppa.prismaticpixeldungeon.plants.Rotberry;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.sprites.RotHeartSprite;
 import com.watabou.utils.Random;
 
 public class RotHeart extends Mob {

@@ -29,7 +29,6 @@ android {
 
         }
     }
-<<<<<<< HEAD
 
     defaultConfig {
         //noinspection MinSdkTooLow
@@ -42,9 +41,4 @@ dependencies {
         google()
         jcenter()
     }
-=======
-    defaultConfig {
-        minSdkVersion 8
-    }
->>>>>>> 255e28cf... Fixed:
 }

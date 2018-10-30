@@ -19,16 +19,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.painters;
+package com.leppa.prismaticpixeldungeon.levels.painters;
 
-import com.shatteredpixel.shatteredpixeldungeon.levels.Level;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.Room;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.connection.ConnectionRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.CaveRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.EmptyRoom;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.StandardRoom;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTileSheet;
+import com.leppa.prismaticpixeldungeon.levels.Level;
+import com.leppa.prismaticpixeldungeon.levels.Terrain;
+import com.leppa.prismaticpixeldungeon.levels.rooms.Room;
+import com.leppa.prismaticpixeldungeon.levels.rooms.connection.ConnectionRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.CaveRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.EmptyRoom;
+import com.leppa.prismaticpixeldungeon.levels.rooms.standard.StandardRoom;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTileSheet;
 import com.watabou.utils.Random;
 import com.watabou.utils.Rect;
 

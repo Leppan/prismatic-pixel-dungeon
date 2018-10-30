@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ShieldedSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ShieldedSprite;
 import com.watabou.utils.Random;
 
 public class Shielded extends Brute {

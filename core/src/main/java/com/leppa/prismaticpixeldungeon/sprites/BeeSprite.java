@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.sprites;
+package com.leppa.prismaticpixeldungeon.sprites;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Assets;
 import com.watabou.noosa.TextureFilm;
 
 public class BeeSprite extends MobSprite {

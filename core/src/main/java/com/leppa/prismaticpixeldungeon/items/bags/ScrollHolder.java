@@ -21,16 +21,10 @@
 
 package com.leppa.prismaticpixeldungeon.items.bags;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/bags/ScrollHolder.java
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.Scroll;
-import com.shatteredpixel.shatteredpixeldungeon.items.spells.Spell;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-=======
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.spells.Spell;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/bags/ScrollHolder.java
 
 public class ScrollHolder extends Bag {
 

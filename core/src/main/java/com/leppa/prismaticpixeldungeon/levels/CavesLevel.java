@@ -19,29 +19,29 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels;
+package com.leppa.prismaticpixeldungeon.levels;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Blacksmith;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.CavesPainter;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.Painter;
-import com.shatteredpixel.shatteredpixeldungeon.levels.rooms.Room;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.BurningTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ConfusionTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.CorrosionTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.ExplosiveTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.FrostTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.GrippingTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.GuardianTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.PitfallTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.PoisonDartTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.RockfallTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.StormTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.SummoningTrap;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.WarpingTrap;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTilemap;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Blacksmith;
+import com.leppa.prismaticpixeldungeon.levels.painters.CavesPainter;
+import com.leppa.prismaticpixeldungeon.levels.painters.Painter;
+import com.leppa.prismaticpixeldungeon.levels.rooms.Room;
+import com.leppa.prismaticpixeldungeon.levels.traps.BurningTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ConfusionTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.CorrosionTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.ExplosiveTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.FrostTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.GrippingTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.GuardianTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.PitfallTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.PoisonDartTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.RockfallTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.StormTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.SummoningTrap;
+import com.leppa.prismaticpixeldungeon.levels.traps.WarpingTrap;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTilemap;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.particles.PixelParticle;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.leppa.prismaticpixeldungeon"
-	android:versionCode="264"
-	android:versionName="0.6.5c"
+	android:versionCode="303"
+	android:versionName="0.7.0-PRISMATIC"
 	android:installLocation="auto">
 	
 	<uses-feature
@@ -25,7 +25,7 @@
 		android:backupAgent="com.leppa.prismaticpixeldungeon.BackupHandler">
 		<activity
 			android:label="@string/app_name"
-			android:name="com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon"
+			android:name="com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon"
 			android:alwaysRetainTaskState="true"
 			android:launchMode="singleInstance"
 			android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"

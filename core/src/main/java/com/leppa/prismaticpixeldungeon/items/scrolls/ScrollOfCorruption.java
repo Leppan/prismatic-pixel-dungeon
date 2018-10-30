@@ -119,4 +119,9 @@ public class ScrollOfCorruption extends Scroll{
 			return Messages.get(ScrollOfCorruption.class, "prompt");
 		}
 	};
+	
+	@Override
+	public int price() {
+		return isKnown() ? 55 * quantity : super.price();
+	}
 }

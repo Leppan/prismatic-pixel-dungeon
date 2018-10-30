@@ -19,7 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon;
+package com.leppa.prismaticpixeldungeon;
 
 import com.watabou.noosa.NinePatch;
 

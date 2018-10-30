@@ -19,12 +19,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.effects;
+package com.leppa.prismaticpixeldungeon.effects;
 
 import android.annotation.SuppressLint;
 import android.util.SparseArray;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Assets;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.TextureFilm;

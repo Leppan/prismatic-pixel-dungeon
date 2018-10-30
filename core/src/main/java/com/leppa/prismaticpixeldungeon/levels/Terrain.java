@@ -19,7 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels;
+package com.leppa.prismaticpixeldungeon.levels;
 
 public class Terrain {
 
@@ -57,6 +57,8 @@ public class Terrain {
 
 	public static final int WATER		    = 29;
 	
+	public static final int PRESSUREPAD     = 30;
+	
 	public static final int PASSABLE		= 0x01;
 	public static final int LOS_BLOCKING	= 0x02;
 	public static final int FLAMABLE		= 0x04;
@@ -85,7 +87,9 @@ public class Terrain {
 		flags[BARRICADE]	= FLAMABLE | SOLID | LOS_BLOCKING;
 		flags[EMPTY_SP]		= flags[EMPTY];
 		flags[HIGH_GRASS]	= PASSABLE | LOS_BLOCKING | FLAMABLE;
-
+		
+		flags[PRESSUREPAD]	= PASSABLE;
+		
 		flags[SECRET_DOOR]  = flags[WALL]  | SECRET;
 		flags[SECRET_TRAP]  = flags[EMPTY] | SECRET;
 		flags[TRAP]         = AVOID;

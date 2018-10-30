@@ -22,7 +22,7 @@
 package com.leppa.prismaticpixeldungeon.ui;
 
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
 import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
@@ -146,7 +146,7 @@ public class AttackIndicator extends Tag {
 			PixelScene.align(sprite);
 			
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 		}
 	}
 	

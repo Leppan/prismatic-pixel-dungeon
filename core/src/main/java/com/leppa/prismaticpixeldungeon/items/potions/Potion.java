@@ -21,62 +21,11 @@
 
 package com.leppa.prismaticpixeldungeon.items.potions;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/potions/Potion.java
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.Statistics;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Fire;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Ooze;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Splash;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.ItemStatusHandler;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.Bag;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.elixirs.ElixirOfHoneyedHealing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.ExoticPotion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfCleansing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfCorrosiveGas;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfShroudingFog;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic.PotionOfStormClouds;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Catalog;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Blindweed;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Dreamfoil;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Earthroot;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Fadeleaf;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Firebloom;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Icecap;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Rotberry;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Sorrowmoss;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Starflower;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Stormvine;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Sungrass;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Swiftthistle;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndItem;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
-=======
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.Badges;
 import com.leppa.prismaticpixeldungeon.Challenges;
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.Statistics;
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
@@ -90,17 +39,37 @@ import com.leppa.prismaticpixeldungeon.items.Generator;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.ItemStatusHandler;
 import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.items.bags.Bag;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfHoneyedHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.ExoticPotion;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfCleansing;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfCorrosiveGas;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfShroudingFog;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfSnapFreeze;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.PotionOfStormClouds;
 import com.leppa.prismaticpixeldungeon.journal.Catalog;
 import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Blindweed;
+import com.leppa.prismaticpixeldungeon.plants.Dreamfoil;
+import com.leppa.prismaticpixeldungeon.plants.Earthroot;
+import com.leppa.prismaticpixeldungeon.plants.Fadeleaf;
+import com.leppa.prismaticpixeldungeon.plants.Firebloom;
+import com.leppa.prismaticpixeldungeon.plants.Icecap;
 import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.plants.Rotberry;
+import com.leppa.prismaticpixeldungeon.plants.Sorrowmoss;
+import com.leppa.prismaticpixeldungeon.plants.Starflower;
+import com.leppa.prismaticpixeldungeon.plants.Stormvine;
+import com.leppa.prismaticpixeldungeon.plants.Sungrass;
+import com.leppa.prismaticpixeldungeon.plants.Swiftthistle;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.leppa.prismaticpixeldungeon.windows.WndBag;
+import com.leppa.prismaticpixeldungeon.windows.WndItem;
 import com.leppa.prismaticpixeldungeon.windows.WndOptions;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/potions/Potion.java
 import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -521,7 +490,7 @@ public class Potion extends Item {
 				try {
 					result = itemClass.newInstance();
 				} catch (Exception e) {
-					PrismaticPixelDungeon.reportException(e);
+					ShatteredPixelDungeon.reportException(e);
 					result = Generator.random( Generator.Category.POTION );
 				}
 				

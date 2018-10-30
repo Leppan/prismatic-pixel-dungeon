@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels.traps;
+package com.leppa.prismaticpixeldungeon.levels.traps;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.bombs.Bomb;
+import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
 
 public class ExplosiveTrap extends Trap {
 

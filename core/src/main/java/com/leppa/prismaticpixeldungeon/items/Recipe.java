@@ -21,9 +21,43 @@
 
 package com.leppa.prismaticpixeldungeon.items;
 
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.items.artifacts.AlchemistsToolkit;
+import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
 import com.leppa.prismaticpixeldungeon.items.food.Blandfruit;
+import com.leppa.prismaticpixeldungeon.items.food.MeatPie;
+import com.leppa.prismaticpixeldungeon.items.food.StewedMeat;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.BlizzardBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.CausticBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.FrigidBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.FrostfireBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.InfernalBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.ShockingBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.brews.WickedBrew;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfAquaticRejuvenation;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfDragonsBlood;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfHoneyedHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfIcyTouch;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfMight;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfRestoration;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfToxicEssence;
+import com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfVitality;
+import com.leppa.prismaticpixeldungeon.items.potions.exotic.ExoticPotion;
+import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ExoticScroll;
+import com.leppa.prismaticpixeldungeon.items.spells.Alchemize;
+import com.leppa.prismaticpixeldungeon.items.spells.AquaBlast;
+import com.leppa.prismaticpixeldungeon.items.spells.BeaconOfReturning;
+import com.leppa.prismaticpixeldungeon.items.spells.CurseInfusion;
+import com.leppa.prismaticpixeldungeon.items.spells.FeatherFall;
+import com.leppa.prismaticpixeldungeon.items.spells.MagicalInfusion;
+import com.leppa.prismaticpixeldungeon.items.spells.MagicalPorter;
+import com.leppa.prismaticpixeldungeon.items.spells.PhaseShift;
+import com.leppa.prismaticpixeldungeon.items.spells.ReclaimTrap;
+import com.leppa.prismaticpixeldungeon.items.spells.Recycle;
+import com.leppa.prismaticpixeldungeon.items.wands.Wand;
+import com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.Dart;
 import com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.TippedDart;
 
 import java.util.ArrayList;
@@ -32,7 +66,6 @@ public abstract class Recipe {
 	
 	public abstract boolean testIngredients(ArrayList<Item> ingredients);
 	
-	//not currently used
 	public abstract int cost(ArrayList<Item> ingredients);
 	
 	public abstract Item brew(ArrayList<Item> ingredients);
@@ -43,7 +76,7 @@ public abstract class Recipe {
 	public static abstract class SimpleRecipe extends Recipe {
 		
 		//*** These elements must be filled in by subclasses
-		protected Class<?extends Item>[] inputs;
+		protected Class<?extends Item>[] inputs; //each class should be unique
 		protected int[] inQuantity;
 		
 		protected int cost;
@@ -52,22 +85,42 @@ public abstract class Recipe {
 		protected int outQuantity;
 		//***
 		
+		//gets a simple list of items based on inputs
+		public ArrayList<Item> getIngredients() {
+			ArrayList<Item> result = new ArrayList<>();
+			try {
+				for (int i = 0; i < inputs.length; i++) {
+					Item ingredient = inputs[i].newInstance();
+					ingredient.quantity(inQuantity[i]);
+					result.add(ingredient);
+				}
+			} catch (Exception e){
+				ShatteredPixelDungeon.reportException( e );
+				return null;
+			}
+			return result;
+		}
+		
 		@Override
 		public final boolean testIngredients(ArrayList<Item> ingredients) {
-			boolean found;
-			for(int i = 0; i < inputs.length; i++){
-				found = false;
-				for (Item ingredient : ingredients){
-					if (ingredient.getClass() == inputs[i]
-							&& ingredient.quantity() >= inQuantity[i]){
-						found = true;
+			
+			int[] needed = inQuantity.clone();
+			
+			for (Item ingredient : ingredients){
+				for (int i = 0; i < inputs.length; i++){
+					if (ingredient.getClass() == inputs[i]){
+						needed[i] -= ingredient.quantity();
 						break;
 					}
 				}
-				if (!found){
+			}
+			
+			for (int i : needed){
+				if (i > 0){
 					return false;
 				}
 			}
+			
 			return true;
 		}
 		
@@ -79,11 +132,18 @@ public abstract class Recipe {
 		public final Item brew(ArrayList<Item> ingredients) {
 			if (!testIngredients(ingredients)) return null;
 			
-			for(int i = 0; i < inputs.length; i++){
-				for (Item ingredient : ingredients){
-					if (ingredient.getClass() == inputs[i]){
-						ingredient.quantity( ingredient.quantity()-inQuantity[i]);
-						break;
+			int[] needed = inQuantity.clone();
+			
+			for (Item ingredient : ingredients){
+				for (int i = 0; i < inputs.length; i++) {
+					if (ingredient.getClass() == inputs[i] && needed[i] > 0) {
+						if (needed[i] <= ingredient.quantity()) {
+							ingredient.quantity(ingredient.quantity() - needed[i]);
+							needed[i] = 0;
+						} else {
+							needed[i] -= ingredient.quantity();
+							ingredient.quantity(0);
+						}
 					}
 				}
 			}
@@ -99,7 +159,7 @@ public abstract class Recipe {
 				result.quantity(outQuantity);
 				return result;
 			} catch (Exception e) {
-				PrismaticPixelDungeon.reportException( e );
+				ShatteredPixelDungeon.reportException( e );
 				return null;
 			}
 		}
@@ -111,16 +171,49 @@ public abstract class Recipe {
 	//*******
 	
 	private static Recipe[] oneIngredientRecipes = new Recipe[]{
-	
+			new AlchemistsToolkit.upgradeKit(),
+			new Scroll.ScrollToStone(),
+			new StewedMeat.oneMeat()
 	};
 	
 	private static Recipe[] twoIngredientRecipes = new Recipe[]{
-		new Blandfruit.CookFruit(),
-		new TippedDart.TipDart()
+			new Blandfruit.CookFruit(),
+			new TippedDart.TipDart(),
+			new Bomb.EnhanceBomb(),
+			new ElixirOfAquaticRejuvenation.Recipe(),
+			new ElixirOfDragonsBlood.Recipe(),
+			new ElixirOfIcyTouch.Recipe(),
+			new ElixirOfMight.Recipe(),
+			new ElixirOfHoneyedHealing.Recipe(),
+			new ElixirOfRestoration.Recipe(),
+			new ElixirOfToxicEssence.Recipe(),
+			new ElixirOfVitality.Recipe(),
+			new BlizzardBrew.Recipe(),
+			new CausticBrew.Recipe(),
+			new FrigidBrew.Recipe(),
+			new FrostfireBrew.Recipe(),
+			new InfernalBrew.Recipe(),
+			new ShockingBrew.Recipe(),
+			new WickedBrew.Recipe(),
+			new Alchemize.Recipe(),
+			new AquaBlast.Recipe(),
+			new BeaconOfReturning.Recipe(),
+			new CurseInfusion.Recipe(),
+			new FeatherFall.Recipe(),
+			new MagicalInfusion.Recipe(),
+			new MagicalPorter.Recipe(),
+			new PhaseShift.Recipe(),
+			new ReclaimTrap.Recipe(),
+			new Recycle.Recipe(),
+			new StewedMeat.twoMeat()
 	};
 	
 	private static Recipe[] threeIngredientRecipes = new Recipe[]{
-		new Potion.RandomPotion()
+			new Potion.SeedToPotion(),
+			new ExoticPotion.PotionToExotic(),
+			new ExoticScroll.ScrollToExotic(),
+			new StewedMeat.threeMeat(),
+			new MeatPie.Recipe()
 	};
 	
 	public static Recipe findRecipe(ArrayList<Item> ingredients){
@@ -150,6 +243,10 @@ public abstract class Recipe {
 		return null;
 	}
 	
+	public static boolean usableInRecipe(Item item){
+		return item.isIdentified()
+				&& !item.cursed
+				&& (!(item instanceof EquipableItem) || item instanceof Dart || item instanceof AlchemistsToolkit)
+				&& !(item instanceof Wand);
+	}
 }
-
-

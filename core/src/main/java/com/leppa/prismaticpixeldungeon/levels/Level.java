@@ -19,55 +19,56 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.levels;
+package com.leppa.prismaticpixeldungeon.levels;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.Statistics;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Blob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.SmokeScreen;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.WellWater;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Awareness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Blindness;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.LockedFloor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MagicalSight;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.MindVision;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Shadows;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.HeroClass;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.FlowParticle;
-import com.shatteredpixel.shatteredpixeldungeon.effects.particles.WindParticle;
-import com.shatteredpixel.shatteredpixeldungeon.items.Generator;
-import com.shatteredpixel.shatteredpixeldungeon.items.Heap;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.Stylus;
-import com.shatteredpixel.shatteredpixeldungeon.items.Torch;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.DriedRose;
-import com.shatteredpixel.shatteredpixeldungeon.items.artifacts.TimekeepersHourglass;
-import com.shatteredpixel.shatteredpixeldungeon.items.food.SmallRation;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfUpgrade;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfEnchantment;
-import com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfIntuition;
-import com.shatteredpixel.shatteredpixeldungeon.levels.features.Chasm;
-import com.shatteredpixel.shatteredpixeldungeon.levels.features.Door;
-import com.shatteredpixel.shatteredpixeldungeon.levels.features.HighGrass;
-import com.shatteredpixel.shatteredpixeldungeon.levels.painters.Painter;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.Trap;
-import com.shatteredpixel.shatteredpixeldungeon.mechanics.ShadowCaster;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.GameScene;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.CustomTiledVisual;
-import com.shatteredpixel.shatteredpixeldungeon.utils.BArray;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Challenges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.Statistics;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Blob;
+import com.leppa.prismaticpixeldungeon.actors.blobs.SmokeScreen;
+import com.leppa.prismaticpixeldungeon.actors.blobs.WellWater;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Awareness;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Blindness;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
+import com.leppa.prismaticpixeldungeon.actors.buffs.LockedFloor;
+import com.leppa.prismaticpixeldungeon.actors.buffs.MagicalSight;
+import com.leppa.prismaticpixeldungeon.actors.buffs.MindVision;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Shadows;
+import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.actors.hero.HeroClass;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
+import com.leppa.prismaticpixeldungeon.effects.particles.FlowParticle;
+import com.leppa.prismaticpixeldungeon.effects.particles.WindParticle;
+import com.leppa.prismaticpixeldungeon.items.Generator;
+import com.leppa.prismaticpixeldungeon.items.Heap;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.Stylus;
+import com.leppa.prismaticpixeldungeon.items.Torch;
+import com.leppa.prismaticpixeldungeon.items.artifacts.DriedRose;
+import com.leppa.prismaticpixeldungeon.items.artifacts.TimekeepersHourglass;
+import com.leppa.prismaticpixeldungeon.items.food.SmallRation;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfUpgrade;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfEnchantment;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfIntuition;
+import com.leppa.prismaticpixeldungeon.levels.features.Chasm;
+import com.leppa.prismaticpixeldungeon.levels.features.Door;
+import com.leppa.prismaticpixeldungeon.levels.features.HighGrass;
+import com.leppa.prismaticpixeldungeon.levels.painters.Painter;
+import com.leppa.prismaticpixeldungeon.levels.puzzle.PressurePad;
+import com.leppa.prismaticpixeldungeon.levels.traps.Trap;
+import com.leppa.prismaticpixeldungeon.mechanics.ShadowCaster;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.scenes.GameScene;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.tiles.CustomTiledVisual;
+import com.leppa.prismaticpixeldungeon.utils.BArray;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.audio.Sample;
@@ -133,8 +134,11 @@ public abstract class Level implements Bundlable {
 	public HashMap<Class<? extends Blob>,Blob> blobs;
 	public SparseArray<Plant> plants;
 	public SparseArray<Trap> traps;
+	public SparseArray<PressurePad> pressurePads; //TODO: FIX THIS
 	public HashSet<CustomTiledVisual> customTiles;
 	public HashSet<CustomTiledVisual> customWalls;
+	
+	public ArrayList<Integer> interResetData; //TODO: FIX THIS
 	
 	protected ArrayList<Item> itemsToSpawn = new ArrayList<>();
 
@@ -155,6 +159,7 @@ public abstract class Level implements Bundlable {
 	private static final String HEAPS		= "heaps";
 	private static final String PLANTS		= "plants";
 	private static final String TRAPS       = "traps";
+	private static final String PRESSUREPADS= "pressurePads";
 	private static final String CUSTOM_TILES= "customTiles";
 	private static final String CUSTOM_WALLS= "customWalls";
 	private static final String MOBS		= "mobs";
@@ -165,7 +170,7 @@ public abstract class Level implements Bundlable {
 
 		Random.seed( Dungeon.seedCurDepth() );
 		
-		if (!(Dungeon.bossLevel() || Dungeon.depth == 21) /*final shop floor*/) {
+		if (!(Dungeon.bossLevel() || Dungeon.depth == 25) /*final shop floor*/) {
 
 			if (Dungeon.isChallenged(Challenges.NO_FOOD)){
 				addItemToSpawn( new SmallRation() );
@@ -191,8 +196,8 @@ public abstract class Level implements Bundlable {
 			}
 			//one scroll of transmutation is guaranteed to spawn somewhere on chapter 2-4
 			int enchChapter = (int)((Dungeon.seed / 10) % 3) + 1;
-			if ( Dungeon.depth / 5 == enchChapter &&
-					Dungeon.seed % 4 + 1 == Dungeon.depth % 5){
+			if ( Dungeon.depth / 6 == enchChapter &&
+					Dungeon.seed % 4 + 1 == Dungeon.depth % 6){
 				addItemToSpawn( new StoneOfEnchantment() );
 			}
 			
@@ -244,6 +249,7 @@ public abstract class Level implements Bundlable {
 			blobs = new HashMap<>();
 			plants = new SparseArray<>();
 			traps = new SparseArray<>();
+			pressurePads = new SparseArray<>();
 			customTiles = new HashSet<>();
 			customWalls = new HashSet<>();
 			
@@ -311,6 +317,7 @@ public abstract class Level implements Bundlable {
 		blobs = new HashMap<>();
 		plants = new SparseArray<>();
 		traps = new SparseArray<>();
+		pressurePads = new SparseArray<>();
 		customTiles = new HashSet<>();
 		customWalls = new HashSet<>();
 		
@@ -347,7 +354,13 @@ public abstract class Level implements Bundlable {
 			Trap trap = (Trap)p;
 			traps.put( trap.pos, trap );
 		}
-
+		
+		collection = bundle.getCollection( PRESSUREPADS );
+		for (Bundlable p : collection) {
+			PressurePad pad = (PressurePad)p;
+			pressurePads.put( pad.pos, pad );
+		}
+		
 		collection = bundle.getCollection( CUSTOM_TILES );
 		for (Bundlable p : collection) {
 			CustomTiledVisual vis = (CustomTiledVisual)p;
@@ -396,6 +409,7 @@ public abstract class Level implements Bundlable {
 		bundle.put( HEAPS, heaps.values() );
 		bundle.put( PLANTS, plants.values() );
 		bundle.put( TRAPS, traps.values() );
+		bundle.put( PRESSUREPADS, pressurePads.values() );
 		bundle.put( CUSTOM_TILES, customTiles );
 		bundle.put( CUSTOM_WALLS, customWalls );
 		bundle.put( MOBS, mobs );
@@ -1029,6 +1043,8 @@ public abstract class Level implements Bundlable {
 				return Messages.get(Level.class, "bookshelf_name");
 			case Terrain.ALCHEMY:
 				return Messages.get(Level.class, "alchemy_name");
+			case Terrain.PRESSUREPAD:
+				return Messages.get(Level.class, "pressure_pad_name");
 			default:
 				return Messages.get(Level.class, "default_name");
 		}
@@ -1065,10 +1081,14 @@ public abstract class Level implements Bundlable {
 				return Messages.get(Level.class, "statue_desc");
 			case Terrain.ALCHEMY:
 				return Messages.get(Level.class, "alchemy_desc");
+			case Terrain.PRESSUREPAD:
+				return Messages.get(Level.class, "pressure_pad_desc");
 			case Terrain.EMPTY_WELL:
 				return Messages.get(Level.class, "empty_well_desc");
 			default:
 				return "";
 		}
 	}
+	
+	public void collectItem(Item i){}
 }

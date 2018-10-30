@@ -19,10 +19,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.messages;
+package com.leppa.prismaticpixeldungeon.messages;
 
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.watabou.utils.DeviceCompat;
 
 import java.util.Arrays;
@@ -62,15 +62,15 @@ public class Messages {
 	 */
 
 	private static String[] prop_files = new String[]{
-			"com.shatteredpixel.shatteredpixeldungeon.messages.actors.actors",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.items.items",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.journal.journal",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.levels.levels",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.plants.plants",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.scenes.scenes",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.ui.ui",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.windows.windows",
-			"com.shatteredpixel.shatteredpixeldungeon.messages.misc.misc"
+			"com.leppa.prismaticpixeldungeon.messages.actors.actors",
+			"com.leppa.prismaticpixeldungeon.messages.items.items",
+			"com.leppa.prismaticpixeldungeon.messages.journal.journal",
+			"com.leppa.prismaticpixeldungeon.messages.levels.levels",
+			"com.leppa.prismaticpixeldungeon.messages.plants.plants",
+			"com.leppa.prismaticpixeldungeon.messages.scenes.scenes",
+			"com.leppa.prismaticpixeldungeon.messages.ui.ui",
+			"com.leppa.prismaticpixeldungeon.messages.windows.windows",
+			"com.leppa.prismaticpixeldungeon.messages.misc.misc"
 	};
 
 	static{
@@ -119,7 +119,7 @@ public class Messages {
 	public static String get(Class c, String k, Object...args){
 		String key;
 		if (c != null){
-			key = c.getName().replace("com.shatteredpixel.shatteredpixeldungeon.", "");
+			key = c.getName().replace("com.leppa.prismaticpixeldungeon.", "");
 			key += "." + k;
 		} else
 			key = k;

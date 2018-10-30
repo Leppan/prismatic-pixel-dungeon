@@ -115,7 +115,8 @@ public class DeckOfElements extends Artifact{
 					hero.spendAndNext(card.castDelay(hero, 0));
 				}else{
 					charge -= 10;
-					card.execute(curUser);
+					curItem = card;
+					card.doThrow(curUser);
 				}
 				if(charge < 10) charge = 10;
 				try{
@@ -175,7 +176,7 @@ public class DeckOfElements extends Artifact{
 		}
 	}
 	
-	public class EnchantedCard extends MissileWeapon{
+	public static class EnchantedCard extends MissileWeapon{
 		
 		public EnchantedCard(){
 			super();
@@ -205,17 +206,7 @@ public class DeckOfElements extends Artifact{
 		}
 		
 		public int proc(Char attacker, Char defender, int damage){
-			enchantment.procGuaranteed(this, attacker, defender, damage);
-			
-			//Run part of super.proc, since we don't want twice-activating enchantments
-			if(!levelKnown){
-				if(--hitsToKnow <= 0){
-					identify();
-					GLog.i(Messages.get(Weapon.class, "identify"));
-					Badges.validateItemLevelAquired(this);
-				}
-			}
-			
+			if(enchantment != null) enchantment.procGuaranteed(this, attacker, defender, damage);
 			return damage;
 		}
 		

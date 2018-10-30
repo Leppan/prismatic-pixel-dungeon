@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.effects.particles;
+package com.leppa.prismaticpixeldungeon.effects.particles;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.Dungeon;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.particles.Emitter.Factory;
 import com.watabou.noosa.particles.PixelParticle;

@@ -19,7 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon;
+package com.leppa.prismaticpixeldungeon;
 
 import android.content.pm.ActivityInfo;
 import android.os.Build;
@@ -27,8 +27,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.shatteredpixel.shatteredpixeldungeon.scenes.PixelScene;
-import com.shatteredpixel.shatteredpixeldungeon.scenes.WelcomeScene;
+import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
+import com.leppa.prismaticpixeldungeon.scenes.WelcomeScene;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.RenderedText;
 import com.watabou.noosa.audio.Music;
@@ -55,98 +55,98 @@ public class ShatteredPixelDungeon extends Game {
 		
 		//v0.6.2
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.rooms.secret.RatKingRoom.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.RatKingRoom" );
+				com.leppa.prismaticpixeldungeon.levels.rooms.secret.RatKingRoom.class,
+				"com.leppa.prismaticpixeldungeon.levels.rooms.special.RatKingRoom" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.PlantsRoom.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.rooms.standard.GardenRoom" );
+				com.leppa.prismaticpixeldungeon.levels.rooms.standard.PlantsRoom.class,
+				"com.leppa.prismaticpixeldungeon.levels.rooms.standard.GardenRoom" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.GardenRoom.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.rooms.special.FoliageRoom" );
+				com.leppa.prismaticpixeldungeon.levels.rooms.special.GardenRoom.class,
+				"com.leppa.prismaticpixeldungeon.levels.rooms.special.FoliageRoom" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.WornDartTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.WornTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.WornDartTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.WornTrap" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.PoisonDartTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.PoisonTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.PoisonDartTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.PoisonTrap" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.ShockingTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.ParalyticTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.ShockingTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.ParalyticTrap" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.ShockingTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.LightningTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.ShockingTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.LightningTrap" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.GrippingTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.SpearTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.GrippingTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.SpearTrap" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.BurningTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.FireTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.BurningTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.FireTrap" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.actors.buffs.BlobImmunity.class,
-				"com.shatteredpixel.shatteredpixeldungeon.actors.buffs.GasesImmunity" );
+				com.leppa.prismaticpixeldungeon.actors.buffs.BlobImmunity.class,
+				"com.leppa.prismaticpixeldungeon.actors.buffs.GasesImmunity" );
 		
 		//v0.6.3
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Tomahawk.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Tamahawk" );
+				com.leppa.prismaticpixeldungeon.items.weapon.missiles.Tomahawk.class,
+				"com.leppa.prismaticpixeldungeon.items.weapon.missiles.Tamahawk" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts.Dart.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.Dart" );
+				com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.Dart.class,
+				"com.leppa.prismaticpixeldungeon.items.weapon.missiles.Dart" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts.IncendiaryDart.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.IncendiaryDart" );
+				com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.IncendiaryDart.class,
+				"com.leppa.prismaticpixeldungeon.items.weapon.missiles.IncendiaryDart" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.darts.ParalyticDart.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.CurareDart" );
+				com.leppa.prismaticpixeldungeon.items.weapon.missiles.darts.ParalyticDart.class,
+				"com.leppa.prismaticpixeldungeon.items.weapon.missiles.CurareDart" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.wands.WandOfCorrosion.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.wands.WandOfVenom" );
+				com.leppa.prismaticpixeldungeon.items.wands.WandOfCorrosion.class,
+				"com.leppa.prismaticpixeldungeon.items.wands.WandOfVenom" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.actors.blobs.CorrosiveGas.class,
-				"com.shatteredpixel.shatteredpixeldungeon.actors.blobs.VenomGas" );
+				com.leppa.prismaticpixeldungeon.actors.blobs.CorrosiveGas.class,
+				"com.leppa.prismaticpixeldungeon.actors.blobs.VenomGas" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Corrosion.class,
-				"com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Venom" );
+				com.leppa.prismaticpixeldungeon.actors.buffs.Corrosion.class,
+				"com.leppa.prismaticpixeldungeon.actors.buffs.Venom" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.levels.traps.CorrosionTrap.class,
-				"com.shatteredpixel.shatteredpixeldungeon.levels.traps.VenomTrap" );
+				com.leppa.prismaticpixeldungeon.levels.traps.CorrosionTrap.class,
+				"com.leppa.prismaticpixeldungeon.levels.traps.VenomTrap" );
 		
 		//v0.6.4
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.bags.VelvetPouch.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.bags.SeedPouch" );
+				com.leppa.prismaticpixeldungeon.items.bags.VelvetPouch.class,
+				"com.leppa.prismaticpixeldungeon.items.bags.SeedPouch" );
 		
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.bags.MagicalHolster.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.bags.WandHolster" );
+				com.leppa.prismaticpixeldungeon.items.bags.MagicalHolster.class,
+				"com.leppa.prismaticpixeldungeon.items.bags.WandHolster" );
 		
 		//v0.6.5
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.stones.StoneOfAugmentation.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.Weightstone" );
+				com.leppa.prismaticpixeldungeon.items.stones.StoneOfAugmentation.class,
+				"com.leppa.prismaticpixeldungeon.items.Weightstone" );
 		
 		//v0.7.0
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.bombs.Bomb.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.Bomb" );
+				com.leppa.prismaticpixeldungeon.items.bombs.Bomb.class,
+				"com.leppa.prismaticpixeldungeon.items.Bomb" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRetribution.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfPsionicBlast" );
+				com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRetribution.class,
+				"com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfPsionicBlast" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.potions.elixirs.ElixirOfMight.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfMight" );
+				com.leppa.prismaticpixeldungeon.items.potions.elixirs.ElixirOfMight.class,
+				"com.leppa.prismaticpixeldungeon.items.potions.PotionOfMight" );
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.spells.MagicalInfusion.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfMagicalInfusion" );
+				com.leppa.prismaticpixeldungeon.items.spells.MagicalInfusion.class,
+				"com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfMagicalInfusion" );
 		
 		//v0.7.0 beta, remove before full release
 		com.watabou.utils.Bundle.addAlias(
-				com.shatteredpixel.shatteredpixeldungeon.items.food.MeatPie.class,
-				"com.shatteredpixel.shatteredpixeldungeon.items.food.Feast" );
+				com.leppa.prismaticpixeldungeon.items.food.MeatPie.class,
+				"com.leppa.prismaticpixeldungeon.items.food.Feast" );
 	}
 	
 	@Override

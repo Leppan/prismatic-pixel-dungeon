@@ -19,53 +19,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/Blandfruit.java
-package com.shatteredpixel.shatteredpixeldungeon.items.food;
-
-import com.shatteredpixel.shatteredpixeldungeon.Challenges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Hunger;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfExperience;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfFrost;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHaste;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHealing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfInvisibility;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfLevitation;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfLiquidFlame;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfMindVision;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfParalyticGas;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfPurity;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.levels.Terrain;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant.Seed;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Sungrass;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
 package com.leppa.prismaticpixeldungeon.items.food;
 
 import com.leppa.prismaticpixeldungeon.Challenges;
 import com.leppa.prismaticpixeldungeon.Dungeon;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
-import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
-import com.leppa.prismaticpixeldungeon.actors.buffs.EarthImbue;
-import com.leppa.prismaticpixeldungeon.actors.buffs.FireImbue;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Hunger;
-import com.leppa.prismaticpixeldungeon.actors.buffs.ToxicImbue;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.Recipe;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfExperience;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfFrost;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHaste;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLevitation;
@@ -82,7 +48,6 @@ import com.leppa.prismaticpixeldungeon.plants.Sungrass;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/Blandfruit.java
 import com.watabou.utils.Bundle;
 
 import java.util.ArrayList;
@@ -163,7 +128,7 @@ public class Blandfruit extends Food {
 		try {
 			return imbuePotion(Potion.SeedToPotion.types.get(seed.getClass()).newInstance());
 		} catch (Exception e) {
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return null;
 		}
 

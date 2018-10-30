@@ -21,7 +21,7 @@
 
 package com.leppa.prismaticpixeldungeon.items.weapon.enchantments;
 
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.items.weapon.Weapon;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
@@ -38,7 +38,7 @@ public class Unstable extends Weapon.Enchantment{
 		try{
 			return Random.oneOf(randomEnchants).newInstance().proc(weapon, attacker, defender, damage);
 		}catch(Exception e){
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return damage;
 		}
 	}
@@ -48,7 +48,7 @@ public class Unstable extends Weapon.Enchantment{
 		try{
 			return Random.oneOf(randomEnchants).newInstance().procGuaranteed(weapon, attacker, defender, damage);
 		}catch(Exception e){
-			PrismaticPixelDungeon.reportException(e);
+			ShatteredPixelDungeon.reportException(e);
 			return damage;
 		}
 	}

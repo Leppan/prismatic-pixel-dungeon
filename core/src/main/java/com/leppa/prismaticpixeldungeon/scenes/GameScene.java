@@ -19,79 +19,79 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.scenes;
+package com.leppa.prismaticpixeldungeon.scenes;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.Statistics;
-import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
-import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Blob;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.Mob;
-import com.shatteredpixel.shatteredpixeldungeon.effects.BannerSprites;
-import com.shatteredpixel.shatteredpixeldungeon.effects.BlobEmitter;
-import com.shatteredpixel.shatteredpixeldungeon.effects.EmoIcon;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Flare;
-import com.shatteredpixel.shatteredpixeldungeon.effects.FloatingText;
-import com.shatteredpixel.shatteredpixeldungeon.effects.Ripple;
-import com.shatteredpixel.shatteredpixeldungeon.effects.SpellSprite;
-import com.shatteredpixel.shatteredpixeldungeon.items.Heap;
-import com.shatteredpixel.shatteredpixeldungeon.items.Honeypot;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.MagicalHolster;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.PotionBandolier;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.ScrollHolder;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.VelvetPouch;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfTeleportation;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Journal;
-import com.shatteredpixel.shatteredpixeldungeon.levels.RegularLevel;
-import com.shatteredpixel.shatteredpixeldungeon.levels.traps.Trap;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.CharSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.DiscardedItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.HeroSprite;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSprite;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.CustomTiledVisual;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTerrainTilemap;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTileSheet;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonTilemap;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.DungeonWallsTilemap;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.FogOfWar;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.GridTileMap;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.TerrainFeaturesTilemap;
-import com.shatteredpixel.shatteredpixeldungeon.tiles.WallBlockingTilemap;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ActionIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.AttackIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Banner;
-import com.shatteredpixel.shatteredpixeldungeon.ui.BusyIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.CharHealthIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.GameLog;
-import com.shatteredpixel.shatteredpixeldungeon.ui.LootIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.QuickSlotButton;
-import com.shatteredpixel.shatteredpixeldungeon.ui.ResumeIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.StatusPane;
-import com.shatteredpixel.shatteredpixeldungeon.ui.TargetHealthIndicator;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Toast;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Toolbar;
-import com.shatteredpixel.shatteredpixeldungeon.ui.Window;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndBag.Mode;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndGame;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndHero;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndInfoCell;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndInfoItem;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndInfoMob;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndInfoPlant;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndInfoTrap;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndMessage;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndOptions;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndStory;
-import com.shatteredpixel.shatteredpixeldungeon.windows.WndTradeItem;
+import com.leppa.prismaticpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Badges;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.SPDSettings;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.Statistics;
+import com.leppa.prismaticpixeldungeon.actors.Actor;
+import com.leppa.prismaticpixeldungeon.actors.blobs.Blob;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
+import com.leppa.prismaticpixeldungeon.effects.BannerSprites;
+import com.leppa.prismaticpixeldungeon.effects.BlobEmitter;
+import com.leppa.prismaticpixeldungeon.effects.EmoIcon;
+import com.leppa.prismaticpixeldungeon.effects.Flare;
+import com.leppa.prismaticpixeldungeon.effects.FloatingText;
+import com.leppa.prismaticpixeldungeon.effects.Ripple;
+import com.leppa.prismaticpixeldungeon.effects.SpellSprite;
+import com.leppa.prismaticpixeldungeon.items.Heap;
+import com.leppa.prismaticpixeldungeon.items.Honeypot;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.bags.MagicalHolster;
+import com.leppa.prismaticpixeldungeon.items.bags.PotionBandolier;
+import com.leppa.prismaticpixeldungeon.items.bags.ScrollHolder;
+import com.leppa.prismaticpixeldungeon.items.bags.VelvetPouch;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfTeleportation;
+import com.leppa.prismaticpixeldungeon.journal.Journal;
+import com.leppa.prismaticpixeldungeon.levels.RegularLevel;
+import com.leppa.prismaticpixeldungeon.levels.traps.Trap;
+import com.leppa.prismaticpixeldungeon.messages.Messages;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.sprites.CharSprite;
+import com.leppa.prismaticpixeldungeon.sprites.DiscardedItemSprite;
+import com.leppa.prismaticpixeldungeon.sprites.HeroSprite;
+import com.leppa.prismaticpixeldungeon.sprites.ItemSprite;
+import com.leppa.prismaticpixeldungeon.tiles.CustomTiledVisual;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTerrainTilemap;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTileSheet;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonTilemap;
+import com.leppa.prismaticpixeldungeon.tiles.DungeonWallsTilemap;
+import com.leppa.prismaticpixeldungeon.tiles.FogOfWar;
+import com.leppa.prismaticpixeldungeon.tiles.GridTileMap;
+import com.leppa.prismaticpixeldungeon.tiles.TerrainFeaturesTilemap;
+import com.leppa.prismaticpixeldungeon.tiles.WallBlockingTilemap;
+import com.leppa.prismaticpixeldungeon.ui.ActionIndicator;
+import com.leppa.prismaticpixeldungeon.ui.AttackIndicator;
+import com.leppa.prismaticpixeldungeon.ui.Banner;
+import com.leppa.prismaticpixeldungeon.ui.BusyIndicator;
+import com.leppa.prismaticpixeldungeon.ui.CharHealthIndicator;
+import com.leppa.prismaticpixeldungeon.ui.GameLog;
+import com.leppa.prismaticpixeldungeon.ui.LootIndicator;
+import com.leppa.prismaticpixeldungeon.ui.QuickSlotButton;
+import com.leppa.prismaticpixeldungeon.ui.ResumeIndicator;
+import com.leppa.prismaticpixeldungeon.ui.StatusPane;
+import com.leppa.prismaticpixeldungeon.ui.TargetHealthIndicator;
+import com.leppa.prismaticpixeldungeon.ui.Toast;
+import com.leppa.prismaticpixeldungeon.ui.Toolbar;
+import com.leppa.prismaticpixeldungeon.ui.Window;
+import com.leppa.prismaticpixeldungeon.utils.GLog;
+import com.leppa.prismaticpixeldungeon.windows.WndBag;
+import com.leppa.prismaticpixeldungeon.windows.WndBag.Mode;
+import com.leppa.prismaticpixeldungeon.windows.WndGame;
+import com.leppa.prismaticpixeldungeon.windows.WndHero;
+import com.leppa.prismaticpixeldungeon.windows.WndInfoCell;
+import com.leppa.prismaticpixeldungeon.windows.WndInfoItem;
+import com.leppa.prismaticpixeldungeon.windows.WndInfoMob;
+import com.leppa.prismaticpixeldungeon.windows.WndInfoPlant;
+import com.leppa.prismaticpixeldungeon.windows.WndInfoTrap;
+import com.leppa.prismaticpixeldungeon.windows.WndMessage;
+import com.leppa.prismaticpixeldungeon.windows.WndOptions;
+import com.leppa.prismaticpixeldungeon.windows.WndStory;
+import com.leppa.prismaticpixeldungeon.windows.WndTradeItem;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
@@ -214,7 +214,7 @@ public class GameScene extends PixelScene {
 		visualGrid = new GridTileMap();
 		terrain.add( visualGrid );
 
-		terrainFeatures = new TerrainFeaturesTilemap(Dungeon.level.plants, Dungeon.level.traps);
+		terrainFeatures = new TerrainFeaturesTilemap(Dungeon.level.plants, Dungeon.level.traps, Dungeon.level.pressurePads);
 		terrain.add(terrainFeatures);
 		
 		levelVisuals = Dungeon.level.addVisuals();
@@ -342,20 +342,20 @@ public class GameScene extends PixelScene {
 			case 1:
 				WndStory.showChapter( WndStory.ID_SEWERS );
 				break;
-			case 6:
+			case 7:
 				WndStory.showChapter( WndStory.ID_PRISON );
 				break;
-			case 11:
+			case 13:
 				WndStory.showChapter( WndStory.ID_CAVES );
 				break;
-			case 16:
+			case 19:
 				WndStory.showChapter( WndStory.ID_CITY );
 				break;
-			case 22:
+			case 26:
 				WndStory.showChapter( WndStory.ID_HALLS );
 				break;
 			}
-			if (Dungeon.hero.isAlive() && Dungeon.depth != 22) {
+			if (Dungeon.hero.isAlive() && Dungeon.depth != 26) {
 				Badges.validateNoKilling();
 			}
 			break;

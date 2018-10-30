@@ -19,14 +19,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.actors.mobs;
+package com.leppa.prismaticpixeldungeon.actors.mobs;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Amok;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Sleep;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Terror;
-import com.shatteredpixel.shatteredpixeldungeon.actors.mobs.npcs.Imp;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.GolemSprite;
+import com.leppa.prismaticpixeldungeon.actors.Char;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Amok;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Sleep;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Terror;
+import com.leppa.prismaticpixeldungeon.actors.mobs.npcs.Imp;
+import com.leppa.prismaticpixeldungeon.sprites.GolemSprite;
 import com.watabou.utils.Random;
 
 public class Golem extends Mob {

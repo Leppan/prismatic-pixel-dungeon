@@ -33,6 +33,8 @@ import com.watabou.utils.PointF;
 import com.watabou.utils.RectF;
 import com.watabou.utils.SparseArray;
 
+import java.util.ArrayList;
+
 //TODO add in a proper set of vfx for plants growing/withering, grass burning, discovering traps
 public class TerrainFeaturesTilemap extends DungeonTilemap {
 
@@ -40,7 +42,7 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 
 	private SparseArray<Plant> plants;
 	private SparseArray<Trap> traps;
-	private SparseArray<PressurePad> pressurePads;
+	private SparseArray<PressurePad> pressurePads = new SparseArray<>();
 
 	public TerrainFeaturesTilemap(SparseArray<Plant> plants, SparseArray<Trap> traps, SparseArray<PressurePad> pressurePads){
 		super(Assets.TERRAIN_FEATURES);
@@ -75,11 +77,11 @@ public class TerrainFeaturesTilemap extends DungeonTilemap {
 		int stage = (Dungeon.depth-1)/6;
 		if (Dungeon.depth == 25) stage--;
 		if (tile == Terrain.HIGH_GRASS){
-			return 9 + 16*stage + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
+			return 10 + 16*stage + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
 		} else if (tile == Terrain.GRASS) {
-			return 11 + 16*stage + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
+			return 12 + 16*stage + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
 		} else if (tile == Terrain.EMBERS) {
-			return 13 + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
+			return 14 + (DungeonTileSheet.tileVariance[pos] >= 50 ? 1 : 0);
 		}
 
 		return -1;

@@ -21,20 +21,6 @@
 
 package com.leppa.prismaticpixeldungeon.items.food;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/MysteryMeat.java
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Buff;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Burning;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Hunger;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Paralysis;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Poison;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Roots;
-import com.shatteredpixel.shatteredpixeldungeon.actors.buffs.Slow;
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-import com.shatteredpixel.shatteredpixeldungeon.utils.GLog;
-=======
 import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Burning;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Hunger;
@@ -43,10 +29,10 @@ import com.leppa.prismaticpixeldungeon.actors.buffs.Poison;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Roots;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Slow;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
+import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 import com.leppa.prismaticpixeldungeon.utils.GLog;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/food/MysteryMeat.java
 import com.watabou.utils.Random;
 
 public class MysteryMeat extends Food {

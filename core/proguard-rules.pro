@@ -1,5 +1,5 @@
 # retain these to support class references and meaningful stack traces
--keepnames class com.shatteredpixel.** { *; }
+-keepnames class com.leppa.** { *; }
 -keepnames class com.watabou.** { *; }
 -keep class com.leppa.prismaticpixeldungeon { *; }
 -keep class com.watabou.noosa.game { *; }

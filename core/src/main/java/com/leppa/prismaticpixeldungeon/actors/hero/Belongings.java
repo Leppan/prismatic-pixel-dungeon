@@ -21,26 +21,9 @@
 
 package com.leppa.prismaticpixeldungeon.actors.hero;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/actors/hero/Belongings.java
-import com.shatteredpixel.shatteredpixeldungeon.Badges;
-import com.shatteredpixel.shatteredpixeldungeon.GamesInProgress;
-import com.shatteredpixel.shatteredpixeldungeon.items.EquipableItem;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.KindOfWeapon;
-import com.shatteredpixel.shatteredpixeldungeon.items.KindofMisc;
-import com.shatteredpixel.shatteredpixeldungeon.items.armor.Armor;
-import com.shatteredpixel.shatteredpixeldungeon.items.bags.Bag;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.GoldenKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.IronKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.Key;
-import com.shatteredpixel.shatteredpixeldungeon.items.keys.SkeletonKey;
-import com.shatteredpixel.shatteredpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
-import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
-import com.shatteredpixel.shatteredpixeldungeon.journal.Notes;
-import com.shatteredpixel.shatteredpixeldungeon.messages.Messages;
-=======
 import com.leppa.prismaticpixeldungeon.Badges;
 import com.leppa.prismaticpixeldungeon.GamesInProgress;
+import com.leppa.prismaticpixeldungeon.items.EquipableItem;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.KindOfWeapon;
 import com.leppa.prismaticpixeldungeon.items.KindofMisc;
@@ -54,7 +37,6 @@ import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRemoveCurse;
 import com.leppa.prismaticpixeldungeon.items.wands.Wand;
 import com.leppa.prismaticpixeldungeon.journal.Notes;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/actors/hero/Belongings.java
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 

@@ -19,26 +19,26 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.items.potions.exotic;
+package com.leppa.prismaticpixeldungeon.items.potions.exotic;
 
-import com.shatteredpixel.shatteredpixeldungeon.Dungeon;
-import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.Recipe;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.Potion;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfExperience;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfFrost;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHaste;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfHealing;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfInvisibility;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfLevitation;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfLiquidFlame;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfMindVision;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfParalyticGas;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfPurity;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfStrength;
-import com.shatteredpixel.shatteredpixeldungeon.items.potions.PotionOfToxicGas;
-import com.shatteredpixel.shatteredpixeldungeon.plants.Plant;
+import com.leppa.prismaticpixeldungeon.Dungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.Recipe;
+import com.leppa.prismaticpixeldungeon.items.potions.Potion;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfExperience;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfFrost;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHaste;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfHealing;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfInvisibility;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLevitation;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfLiquidFlame;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMindVision;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfParalyticGas;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfPurity;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
+import com.leppa.prismaticpixeldungeon.items.potions.PotionOfToxicGas;
+import com.leppa.prismaticpixeldungeon.plants.Plant;
 
 import java.util.ArrayList;
 import java.util.HashMap;

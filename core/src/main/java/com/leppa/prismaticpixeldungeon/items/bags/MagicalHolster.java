@@ -21,18 +21,11 @@
 
 package com.leppa.prismaticpixeldungeon.items.bags;
 
-<<<<<<< HEAD:core/src/main/java/com/leppa/prismaticpixeldungeon/items/bags/MagicalHolster.java
-import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.bombs.Bomb;
-import com.shatteredpixel.shatteredpixeldungeon.items.wands.Wand;
-import com.shatteredpixel.shatteredpixeldungeon.items.weapon.missiles.MissileWeapon;
-import com.shatteredpixel.shatteredpixeldungeon.sprites.ItemSpriteSheet;
-=======
 import com.leppa.prismaticpixeldungeon.items.Item;
+import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
 import com.leppa.prismaticpixeldungeon.items.wands.Wand;
 import com.leppa.prismaticpixeldungeon.items.weapon.missiles.MissileWeapon;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
->>>>>>> 57789e0c... Added::core/src/main/java/com/leppa/prismaticpixeldungeon/items/bags/MagicalHolster.java
 
 public class MagicalHolster extends Bag {
 

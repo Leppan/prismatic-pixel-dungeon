@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.effects;
+package com.leppa.prismaticpixeldungeon.effects;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Assets;
 import com.watabou.glwrap.Blending;
 import com.watabou.glwrap.Texture;
 import com.watabou.noosa.Game;

@@ -22,7 +22,7 @@
 package com.leppa.prismaticpixeldungeon.ui;
 
 import com.leppa.prismaticpixeldungeon.Assets;
-import com.leppa.prismaticpixeldungeon.PrismaticPixelDungeon;
+import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.scenes.TitleScene;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
@@ -72,7 +72,7 @@ public class ExitButton extends Button {
 		if (Game.scene() instanceof TitleScene) {
 			Game.instance.finish();
 		} else {
-			PrismaticPixelDungeon.switchNoFade( TitleScene.class );
+			ShatteredPixelDungeon.switchNoFade( TitleScene.class );
 		}
 	}
 }

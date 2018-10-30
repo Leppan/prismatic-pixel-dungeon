@@ -19,9 +19,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-package com.shatteredpixel.shatteredpixeldungeon.sprites;
+package com.leppa.prismaticpixeldungeon.sprites;
 
-import com.shatteredpixel.shatteredpixeldungeon.Assets;
+import com.leppa.prismaticpixeldungeon.Assets;
 import com.watabou.noosa.TextureFilm;
 
 public class ItemSpriteSheet {
@@ -244,6 +244,7 @@ public class ItemSpriteSheet {
 	public static final int GREATAXE        = WEP_TIER5+3;
 	public static final int GREATSHIELD     = WEP_TIER5+4;
 	public static final int GAUNTLETS       = WEP_TIER5+5;
+	public static final int WIREWHIP        = WEP_TIER5+6;
 	static{
 		assignItemRect(GREATSWORD,  16, 16);
 		assignItemRect(WAR_HAMMER,  16, 16);
@@ -264,6 +265,7 @@ public class ItemSpriteSheet {
 	
 	public static final int FISHING_SPEAR   = MISSILE_WEP+4;
 	public static final int SHURIKEN        = MISSILE_WEP+5;
+	public static final int DECK_CARD       = MISSILE_WEP+6;
 	
 	public static final int THROWING_SPEAR  = MISSILE_WEP+7;
 	public static final int BOLAS           = MISSILE_WEP+8;
@@ -344,10 +346,10 @@ public class ItemSpriteSheet {
 	public static final int WAND_DISINTEGRATION = WANDS+4;
 	public static final int WAND_PRISMATIC_LIGHT= WANDS+5;
 	public static final int WAND_CORROSION      = WANDS+6;
-	public static final int WAND_LIVING_EARTH   = WANDS+7;
+	public static final int WAND_CHANNELING     = WANDS+7;
 	public static final int WAND_BLAST_WAVE     = WANDS+8;
 	public static final int WAND_CORRUPTION     = WANDS+9;
-	public static final int WAND_WARDING        = WANDS+10;
+	public static final int WAND_SAPPING        = WANDS+10;
 	public static final int WAND_REGROWTH       = WANDS+11;
 	public static final int WAND_TRANSFUSION    = WANDS+12;
 	static {
@@ -397,6 +399,7 @@ public class ItemSpriteSheet {
 	public static final int ARTIFACT_ROSE1      = ARTIFACTS+20;
 	public static final int ARTIFACT_ROSE2      = ARTIFACTS+21;
 	public static final int ARTIFACT_ROSE3      = ARTIFACTS+22;
+	public static final int ARTIFACT_DECK       = ARTIFACTS+23;
 	static{
 		assignItemRect(ARTIFACT_CLOAK,      9,  15);
 		assignItemRect(ARTIFACT_ARMBAND,    16, 13);
@@ -438,6 +441,9 @@ public class ItemSpriteSheet {
 	public static final int SCROLL_BERKANAN = SCROLLS+9;
 	public static final int SCROLL_ODAL     = SCROLLS+10;
 	public static final int SCROLL_TIWAZ    = SCROLLS+11;
+	public static final int SCROLL_WYNN     = SCROLLS+12;
+	public static final int SCROLL_FERN     = SCROLLS+13;
+	public static final int SCROLL_DEBUG    = SCROLLS+15;
 	static {
 		for (int i = SCROLLS; i < SCROLLS+16; i++)
 			assignItemRect(i, 15, 14);
@@ -474,6 +480,7 @@ public class ItemSpriteSheet {
 	public static final int STONE_FLOCK         = STONES+9;
 	public static final int STONE_INTUITION     = STONES+10;
 	public static final int STONE_SHOCK         = STONES+11;
+	public static final int STONE_DISPAIR       = STONES+12;
 	static {
 		for (int i = STONES; i < STONES+16; i++)
 			assignItemRect(i, 14, 12);
