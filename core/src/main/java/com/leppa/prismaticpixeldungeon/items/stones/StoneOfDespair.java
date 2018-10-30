@@ -46,7 +46,7 @@ public class StoneOfDespair extends Runestone{
 		for (int i : PathFinder.NEIGHBOURS9){
 			Char ch = Actor.findChar( cell + i );
 			
-			CellEmitter.center(cell + i).start(Speck.factory(Speck.STEAM), 0.2f, 5);
+			CellEmitter.center(cell + i).start(Speck.factory(Speck.STEAM), 0.1f, 6);
 			
 			if (ch != null && ch.alignment == Char.Alignment.ENEMY){
 				Class<? extends FlavourBuff> debuff = debuffs.get(Random.Int(debuffs.size()));

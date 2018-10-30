@@ -9,13 +9,17 @@ import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Buff;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Corruption;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Doom;
+import com.leppa.prismaticpixeldungeon.actors.buffs.Drowsy;
 import com.leppa.prismaticpixeldungeon.actors.buffs.FlavourBuff;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Invisibility;
 import com.leppa.prismaticpixeldungeon.actors.buffs.PinCushion;
 import com.leppa.prismaticpixeldungeon.actors.buffs.SoulMark;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
 import com.leppa.prismaticpixeldungeon.effects.MagicMissile;
+import com.leppa.prismaticpixeldungeon.effects.Speck;
+import com.leppa.prismaticpixeldungeon.items.armor.glyphs.Stone;
 import com.leppa.prismaticpixeldungeon.items.artifacts.LloydsBeacon;
+import com.leppa.prismaticpixeldungeon.items.stones.StoneOfDespair;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfCorruption;
 import com.leppa.prismaticpixeldungeon.mechanics.Ballistica;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
@@ -38,6 +42,16 @@ public class ScrollOfCorruption extends Scroll{
 	@Override
 	public void doRead(){
 		setKnown();
+		
+		Invisibility.dispel();
+		
+		for(Mob mob : Dungeon.level.mobs.toArray(new Mob[0])){
+			if(Dungeon.level.heroFOV[mob.pos]){
+				Buff.affect(mob, StoneOfDespair.debuffs.get(Random.Int(StoneOfDespair.debuffs.size())));
+				mob.sprite.centerEmitter().start(Speck.factory(Speck.STEAM), 0.1f, 6);
+			}
+		}
+		
 		GameScene.selectCell(zapper);
 	}
 	
@@ -121,7 +135,7 @@ public class ScrollOfCorruption extends Scroll{
 	};
 	
 	@Override
-	public int price() {
+	public int price(){
 		return isKnown() ? 55 * quantity : super.price();
 	}
 }
