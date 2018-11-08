@@ -28,6 +28,7 @@ public class PrisonPuzzleLevel extends PuzzleLevel{
 		color2 = 0x88924c;
 		
 		usesHardCodedPressurePads = false;
+		viewDistance = 12;
 	}
 	
 	public PrisonPuzzleLevel(){
@@ -130,8 +131,8 @@ public class PrisonPuzzleLevel extends PuzzleLevel{
 		super.createItems();
 		
 		if(interResetData.get(0) == 0){
-			drop(reward, 10 + 26 * width());
 			drop(new PotionOfExperience(), 10 + 26 * width());
+			drop(reward, 10 + 26 * width());
 		}
 	}
 	

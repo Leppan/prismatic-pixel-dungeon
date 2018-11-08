@@ -131,11 +131,11 @@ public class InterlevelScene extends PixelScene {
 				scrollSpeed = returnDepth > Dungeon.depth ? 15 : -15;
 				break;
 		}
-		if (loadingDepth <= 5)          loadingAsset = Assets.LOADING_SEWERS;
-		else if (loadingDepth <= 10)    loadingAsset = Assets.LOADING_PRISON;
-		else if (loadingDepth <= 15)    loadingAsset = Assets.LOADING_CAVES;
-		else if (loadingDepth <= 21)    loadingAsset = Assets.LOADING_CITY;
-		else if (loadingDepth <= 25)    loadingAsset = Assets.LOADING_HALLS;
+		if (loadingDepth <= 6)          loadingAsset = Assets.LOADING_SEWERS;
+		else if (loadingDepth <= 12)    loadingAsset = Assets.LOADING_PRISON;
+		else if (loadingDepth <= 18)    loadingAsset = Assets.LOADING_CAVES;
+		else if (loadingDepth <= 25)    loadingAsset = Assets.LOADING_CITY;
+		else if (loadingDepth <= 30)    loadingAsset = Assets.LOADING_HALLS;
 		else                            loadingAsset = Assets.SHADOW;
 		
 		SkinnedBlock bg = new SkinnedBlock(Camera.main.width, Camera.main.height, loadingAsset ){
@@ -414,7 +414,7 @@ public class InterlevelScene extends PixelScene {
 		SpecialRoom.resetPitRoom(Dungeon.depth+1);
 
 		Dungeon.depth--;
-		Level level = Dungeon.newLevel();
+		Level level = Dungeon.newLevel(true, Dungeon.level.interResetData);
 		Dungeon.switchLevel( level, level.entrance );
 	}
 	

@@ -60,6 +60,8 @@ import com.leppa.prismaticpixeldungeon.items.BrokenSeal;
 import com.leppa.prismaticpixeldungeon.items.armor.glyphs.Brimstone;
 import com.leppa.prismaticpixeldungeon.items.armor.glyphs.Potential;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfElements;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfHaste;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfTenacity;
 import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfRetribution;
 import com.leppa.prismaticpixeldungeon.items.scrolls.exotic.ScrollOfPsionicBlast;
 import com.leppa.prismaticpixeldungeon.items.wands.WandOfFireblast;
@@ -298,10 +300,13 @@ public abstract class Char extends Actor {
 	
 	public float speed() {
 		float speed = baseSpeed;
-		if ( buff( Cripple.class ) != null ) speed /= 2f;
-		if ( buff( Stamina.class ) != null) speed *= 1.5f;
-		if ( buff( Adrenaline.class ) != null) speed *= 2f;
-		if ( buff( Haste.class ) != null) speed *= 3f;
+		if(buff(Cripple.class) != null) speed /= 2f;
+		if(buff(Stamina.class) != null) speed *= 1.5f;
+		if(buff(Adrenaline.class) != null) speed *= 2f;
+		if(buff(Haste.class) != null) speed *= 3f;
+		
+		speed *= RingOfHaste.speedMultiplier(this);
+		
 		return speed;
 	}
 	
@@ -355,15 +360,18 @@ public abstract class Char extends Actor {
 		if (buff( Paralysis.class ) != null) {
 			buff( Paralysis.class ).processDamage(dmg);
 		}
-
+		
+		dmg = (int)Math.ceil(dmg * RingOfTenacity.damageMultiplier( this ));
+		
 		int shielded = dmg;
 		//FIXME: when I add proper damage properties, should add an IGNORES_SHIELDS property to use here.
 		if (!(src instanceof Hunger)){
-			for (ShieldBuff s : buffs(ShieldBuff.class)){
+			for(ShieldBuff s : buffs(ShieldBuff.class)){
 				dmg = s.absorbDamage(dmg);
-				if (dmg == 0) break;
+				if(dmg == 0) break;
 			}
 		}
+		
 		shielded -= dmg;
 		HP -= dmg;
 		

@@ -249,6 +249,7 @@ public abstract class Actor implements Bundlable {
 					}
 					
 					synchronized (GameScene.class){
+						Dungeon.level.turn();
 						//signals to the gamescene that actor processing is finished for now
 						GameScene.class.notify();
 					}

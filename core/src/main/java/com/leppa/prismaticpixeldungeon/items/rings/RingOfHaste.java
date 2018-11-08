@@ -23,17 +23,17 @@ package com.leppa.prismaticpixeldungeon.items.rings;
 
 import com.leppa.prismaticpixeldungeon.actors.Char;
 
-public class RingOfHaste extends Ring {
+public class RingOfHaste extends Ring{
 	
 	@Override
-	protected RingBuff buff( ) {
+	protected RingBuff buff(){
 		return new Haste();
 	}
 	
-	public static float speedMultiplier( Char target ){
+	public static float speedMultiplier(Char target){
 		return (float)Math.pow(1.2, getBonus(target, Haste.class));
 	}
 	
-	public class Haste extends RingBuff {
+	public class Haste extends RingBuff{
 	}
 }

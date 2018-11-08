@@ -168,7 +168,7 @@ public class ShopRoom extends SpecialRoom {
 		ArrayList<Item> itemsToSpawn = new ArrayList<>();
 		
 		switch (Dungeon.depth) {
-		case 6:
+		case 7:
 			itemsToSpawn.add( (Random.Int( 2 ) == 0 ? new Shortsword().identify() : new HandAxe()).identify() );
 			itemsToSpawn.add( Random.Int( 2 ) == 0 ?
 					new FishingSpear().quantity(2) :
@@ -176,7 +176,7 @@ public class ShopRoom extends SpecialRoom {
 			itemsToSpawn.add( new LeatherArmor().identify() );
 			break;
 			
-		case 11:
+		case 13:
 			itemsToSpawn.add( (Random.Int( 2 ) == 0 ? new Sword().identify() : new Mace()).identify() );
 			itemsToSpawn.add( Random.Int( 2 ) == 0 ?
 					new ThrowingSpear().quantity(2) :
@@ -184,7 +184,7 @@ public class ShopRoom extends SpecialRoom {
 			itemsToSpawn.add( new MailArmor().identify() );
 			break;
 			
-		case 16:
+		case 19:
 			itemsToSpawn.add( (Random.Int( 2 ) == 0 ? new Longsword().identify() : new BattleAxe()).identify() );
 			itemsToSpawn.add( Random.Int( 2 ) == 0 ?
 					new Javelin().quantity(2) :
@@ -192,7 +192,7 @@ public class ShopRoom extends SpecialRoom {
 			itemsToSpawn.add( new ScaleArmor().identify() );
 			break;
 			
-		case 21:
+		case 25:
 			itemsToSpawn.add( Random.Int( 2 ) == 0 ? new Greatsword().identify() : new WarHammer().identify() );
 			itemsToSpawn.add( Random.Int(2) == 0 ?
 					new Trident().quantity(2) :
@@ -252,13 +252,13 @@ public class ShopRoom extends SpecialRoom {
 			//creates the given float percent of the remaining bags to be dropped.
 			//this way players who get the hourglass late can still max it, usually.
 			switch (Dungeon.depth) {
-				case 6:
+				case 7:
 					bags = (int)Math.ceil(( 5-hourglass.sandBags) * 0.20f ); break;
-				case 11:
+				case 13:
 					bags = (int)Math.ceil(( 5-hourglass.sandBags) * 0.25f ); break;
-				case 16:
+				case 19:
 					bags = (int)Math.ceil(( 5-hourglass.sandBags) * 0.50f ); break;
-				case 21:
+				case 25:
 					bags = (int)Math.ceil(( 5-hourglass.sandBags) * 0.80f ); break;
 			}
 

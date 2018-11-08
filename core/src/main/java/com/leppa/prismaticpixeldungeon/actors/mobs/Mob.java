@@ -49,6 +49,7 @@ import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.artifacts.TimekeepersHourglass;
 import com.leppa.prismaticpixeldungeon.items.rings.Ring;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfAccuracy;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfWealth;
 import com.leppa.prismaticpixeldungeon.items.stones.StoneOfAggression;
 import com.leppa.prismaticpixeldungeon.levels.features.Chasm;
@@ -500,6 +501,7 @@ public abstract class Mob extends Char {
 				&& !(alignment == Alignment.ALLY && enemy == Dungeon.hero)) {
 			int defenseSkill = this.defenseSkill;
 			defenseSkill *= RingOfAccuracy.enemyEvasionMultiplier( enemy );
+			defenseSkill *= RingOfEvasion.evasionMultiplier( this );
 			return defenseSkill;
 		} else {
 			return 0;
@@ -560,10 +562,10 @@ public abstract class Mob extends Char {
 	
 	
 	@Override
-	public void destroy() {
-		
+	public void destroy(){
 		super.destroy();
 		
+		Dungeon.level.killMob(this);
 		Dungeon.level.mobs.remove( this );
 		
 		if (Dungeon.hero.isAlive()) {

@@ -39,6 +39,10 @@ public class PuzzleLevel extends Level{
 	int trapCounter = 0;
 	ArrayList<Integer> stageDoorsPos = new ArrayList<>();
 	
+	{
+		viewDistance = 12;
+	}
+	
 	@Override
 	protected boolean build(){
 		setSize(21, 32);
@@ -85,8 +89,8 @@ public class PuzzleLevel extends Level{
 		return pad;
 	}
 	
-	public void press(int cell, Char ch, boolean hard){
-		super.press(cell, ch, hard);
+	public void turn(){
+		super.turn();
 		boolean pressurePadsUpdated = false;
 		for(int i = 0; i < pressurePads.size(); i++){
 			PressurePad p = pressurePads.valueAt(i);

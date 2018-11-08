@@ -34,7 +34,7 @@ import com.leppa.prismaticpixeldungeon.sprites.StatueSprite;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
 
-public class Statue extends Mob {
+public class Statue extends WeaponMob {
 	
 	{
 		spriteClass = StatueSprite.class;
@@ -60,18 +60,9 @@ public class Statue extends Mob {
 		defenseSkill = 4 + Dungeon.depth;
 	}
 	
-	private static final String WEAPON	= "weapon";
-	
 	@Override
-	public void storeInBundle( Bundle bundle ) {
-		super.storeInBundle( bundle );
-		bundle.put( WEAPON, weapon );
-	}
-	
-	@Override
-	public void restoreFromBundle( Bundle bundle ) {
-		super.restoreFromBundle( bundle );
-		weapon = (Weapon)bundle.get( WEAPON );
+	public int selfAttackSkill(){
+		return 9 + Dungeon.depth;
 	}
 	
 	@Override
@@ -83,31 +74,6 @@ public class Statue extends Mob {
 	}
 	
 	@Override
-	public int damageRoll() {
-		return weapon.damageRoll(this);
-	}
-	
-	@Override
-	public int attackSkill( Char target ) {
-		return (int)((9 + Dungeon.depth) * weapon.accuracyFactor(this));
-	}
-	
-	@Override
-	protected float attackDelay() {
-		return super.attackDelay()*weapon.speedFactor( this );
-	}
-
-	@Override
-	protected boolean canAttack(Char enemy) {
-		return Dungeon.level.distance( pos, enemy.pos ) <= weapon.reachFactor(this);
-	}
-
-	@Override
-	public int drRoll() {
-		return Random.NormalIntRange(0, Dungeon.depth + weapon.defenseFactor(this));
-	}
-	
-	@Override
 	public void damage( int dmg, Object src ) {
 
 		if (state == PASSIVE) {
@@ -115,12 +81,6 @@ public class Statue extends Mob {
 		}
 		
 		super.damage( dmg, src );
-	}
-	
-	@Override
-	public int attackProc( Char enemy, int damage ) {
-		damage = super.attackProc( enemy, damage );
-		return weapon.proc( this, enemy, damage );
 	}
 	
 	@Override

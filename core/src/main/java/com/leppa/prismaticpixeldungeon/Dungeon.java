@@ -21,6 +21,8 @@
 
 package com.leppa.prismaticpixeldungeon;
 
+import android.util.Log;
+
 import com.leppa.prismaticpixeldungeon.actors.Actor;
 import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Amok;
@@ -252,7 +254,11 @@ public class Dungeon {
 		return (challenges & mask) != 0;
 	}
 	
-	public static Level newLevel() {
+	public static Level newLevel(){
+		return newLevel(false, null);
+	}
+	
+	public static Level newLevel(boolean resetting, ArrayList<Integer> interResetData){
 		
 		Dungeon.level = null;
 		Actor.clear();
@@ -330,12 +336,12 @@ public class Dungeon {
 			level = new LastShopLevel();
 			break;
 		case 26:
-		case 27:
 			level = new HallsLevel();
 			break;
-		case 28:
+		case 27:
 			level = new HallsPuzzleLevel();
 			break;
+		case 28:
 		case 29:
 			level = new HallsLevel();
 			break;
@@ -350,6 +356,10 @@ public class Dungeon {
 			Statistics.deepestFloor--;
 		}
 		
+		if(!resetting){
+			level.setupInterResetData();
+		}
+		else level.interResetData = interResetData;
 		level.create();
 		
 		Statistics.qualifiedForNoKilling = !bossLevel();
@@ -357,12 +367,11 @@ public class Dungeon {
 		return level;
 	}
 	
-	public static void resetLevel() {
-		
+	public static void resetLevel(){
 		Actor.clear();
 		
 		level.reset();
-		switchLevel( level, level.entrance );
+		switchLevel(level, level.entrance);
 	}
 
 	public static long seedCurDepth(){
@@ -379,7 +388,7 @@ public class Dungeon {
 	}
 	
 	public static boolean shopOnLevel() {
-		return depth == 6 || depth == 11 || depth == 16;
+		return depth == 7 || depth == 13 || depth == 19;
 	}
 	
 	public static boolean bossLevel() {
@@ -387,7 +396,7 @@ public class Dungeon {
 	}
 	
 	public static boolean bossLevel( int depth ) {
-		return depth == 5 || depth == 10 || depth == 15 || depth == 20 || depth == 25;
+		return depth == 3 || depth == 6 || depth == 9 ||  depth == 12 || depth == 15 ||  depth == 18 || depth == 21 ||  depth == 24 || depth == 27 || depth == 30;
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -448,7 +457,7 @@ public class Dungeon {
 
 	public static boolean posNeeded() {
 		//2 POS each floor set
-		int posLeftThisSet = 2 - (LimitedDrops.STRENGTH_POTIONS.count - (depth / 5) * 2);
+		int posLeftThisSet = 2 - (LimitedDrops.STRENGTH_POTIONS.count - (depth / 6) * 2);
 		if (posLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
@@ -466,9 +475,9 @@ public class Dungeon {
 		int souLeftThisSet;
 		//3 SOU each floor set, 1.5 (rounded) on forbidden runes challenge
 		if (isChallenged(Challenges.NO_SCROLLS)){
-			souLeftThisSet = Math.round(1.5f - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 1.5f));
+			souLeftThisSet = Math.round(1.5f - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 6) * 1.5f));
 		} else {
-			souLeftThisSet = 3 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 3);
+			souLeftThisSet = 3 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 6) * 3);
 		}
 		if (souLeftThisSet <= 0) return false;
 
@@ -479,7 +488,7 @@ public class Dungeon {
 	
 	public static boolean asNeeded() {
 		//1 AS each floor set
-		int asLeftThisSet = 1 - (LimitedDrops.ARCANE_STYLI.count - (depth / 5));
+		int asLeftThisSet = 1 - (LimitedDrops.ARCANE_STYLI.count - (depth / 6));
 		if (asLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);

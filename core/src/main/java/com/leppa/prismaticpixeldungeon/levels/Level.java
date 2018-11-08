@@ -134,11 +134,11 @@ public abstract class Level implements Bundlable {
 	public HashMap<Class<? extends Blob>,Blob> blobs;
 	public SparseArray<Plant> plants;
 	public SparseArray<Trap> traps;
-	public SparseArray<PressurePad> pressurePads; //TODO: FIX THIS
+	public SparseArray<PressurePad> pressurePads;
 	public HashSet<CustomTiledVisual> customTiles;
 	public HashSet<CustomTiledVisual> customWalls;
 	
-	public ArrayList<Integer> interResetData; //TODO: FIX THIS
+	public ArrayList<Integer> interResetData = new ArrayList<>();
 	
 	protected ArrayList<Item> itemsToSpawn = new ArrayList<>();
 
@@ -147,24 +147,25 @@ public abstract class Level implements Bundlable {
 	public int color1 = 0x004400;
 	public int color2 = 0x88CC44;
 
-	private static final String VERSION     = "version";
-	private static final String WIDTH       = "width";
-	private static final String HEIGHT      = "height";
-	private static final String MAP			= "map";
-	private static final String VISITED		= "visited";
-	private static final String MAPPED		= "mapped";
-	private static final String ENTRANCE	= "entrance";
-	private static final String EXIT		= "exit";
-	private static final String LOCKED      = "locked";
-	private static final String HEAPS		= "heaps";
-	private static final String PLANTS		= "plants";
-	private static final String TRAPS       = "traps";
-	private static final String PRESSUREPADS= "pressurePads";
-	private static final String CUSTOM_TILES= "customTiles";
-	private static final String CUSTOM_WALLS= "customWalls";
-	private static final String MOBS		= "mobs";
-	private static final String BLOBS		= "blobs";
-	private static final String FEELING		= "feeling";
+	private static final String VERSION			= "version";
+	private static final String WIDTH			= "width";
+	private static final String HEIGHT			= "height";
+	private static final String MAP				= "map";
+	private static final String VISITED			= "visited";
+	private static final String MAPPED			= "mapped";
+	private static final String ENTRANCE		= "entrance";
+	private static final String EXIT			= "exit";
+	private static final String LOCKED			= "locked";
+	private static final String HEAPS			= "heaps";
+	private static final String PLANTS			= "plants";
+	private static final String TRAPS			= "traps";
+	private static final String PRESSUREPADS	= "pressurePads";
+	private static final String INTERRESETDATA	= "interResetData";
+	private static final String CUSTOM_TILES	= "customTiles";
+	private static final String CUSTOM_WALLS	= "customWalls";
+	private static final String MOBS			= "mobs";
+	private static final String BLOBS			= "blobs";
+	private static final String FEELING			= "feeling";
 
 	public void create() {
 
@@ -355,10 +356,15 @@ public abstract class Level implements Bundlable {
 			traps.put( trap.pos, trap );
 		}
 		
-		collection = bundle.getCollection( PRESSUREPADS );
-		for (Bundlable p : collection) {
+		collection = bundle.getCollection(PRESSUREPADS);
+		for(Bundlable p : collection){
 			PressurePad pad = (PressurePad)p;
-			pressurePads.put( pad.pos, pad );
+			pressurePads.put(pad.pos, pad);
+		}
+		
+		int[] stuff = bundle.getIntArray(INTERRESETDATA);
+		for(int p : stuff){
+			interResetData.add(p);
 		}
 		
 		collection = bundle.getCollection( CUSTOM_TILES );
@@ -396,25 +402,28 @@ public abstract class Level implements Bundlable {
 	}
 	
 	@Override
-	public void storeInBundle( Bundle bundle ) {
-		bundle.put( VERSION, Game.versionCode );
-		bundle.put( WIDTH, width );
-		bundle.put( HEIGHT, height );
-		bundle.put( MAP, map );
-		bundle.put( VISITED, visited );
-		bundle.put( MAPPED, mapped );
-		bundle.put( ENTRANCE, entrance );
-		bundle.put( EXIT, exit );
-		bundle.put( LOCKED, locked );
-		bundle.put( HEAPS, heaps.values() );
-		bundle.put( PLANTS, plants.values() );
-		bundle.put( TRAPS, traps.values() );
-		bundle.put( PRESSUREPADS, pressurePads.values() );
-		bundle.put( CUSTOM_TILES, customTiles );
-		bundle.put( CUSTOM_WALLS, customWalls );
-		bundle.put( MOBS, mobs );
-		bundle.put( BLOBS, blobs.values() );
-		bundle.put( FEELING, feeling );
+	public void storeInBundle(Bundle bundle){
+		bundle.put(VERSION, Game.versionCode);
+		bundle.put(WIDTH, width);
+		bundle.put(HEIGHT, height);
+		bundle.put(MAP, map);
+		bundle.put(VISITED, visited);
+		bundle.put(MAPPED, mapped);
+		bundle.put(ENTRANCE, entrance);
+		bundle.put(EXIT, exit);
+		bundle.put(LOCKED, locked);
+		bundle.put(HEAPS, heaps.values());
+		bundle.put(PLANTS, plants.values());
+		bundle.put(TRAPS, traps.values());
+		bundle.put(PRESSUREPADS, pressurePads.values());
+			int[] nums = new int[interResetData.size()];
+			for(int i = 0; i < interResetData.size(); i++) nums[i] = interResetData.get(i);
+		bundle.put(INTERRESETDATA, nums);
+		bundle.put(CUSTOM_TILES, customTiles);
+		bundle.put(CUSTOM_WALLS, customWalls);
+		bundle.put(MOBS, mobs);
+		bundle.put(BLOBS, blobs.values());
+		bundle.put(FEELING, feeling);
 	}
 	
 	public int tunnelTile() {
@@ -1090,5 +1099,9 @@ public abstract class Level implements Bundlable {
 		}
 	}
 	
+	//Prismatic voids
 	public void collectItem(Item i){}
+	public void setupInterResetData(){}
+	public void killMob(Mob mob){}
+	public void turn(){}
 }

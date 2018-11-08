@@ -81,6 +81,7 @@ import com.leppa.prismaticpixeldungeon.items.keys.SkeletonKey;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfMight;
 import com.leppa.prismaticpixeldungeon.items.potions.PotionOfStrength;
+import com.leppa.prismaticpixeldungeon.items.rings.RingOfAccuracy;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfEvasion;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfForce;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
@@ -330,7 +331,8 @@ public class Hero extends Char {
 		
 		float evasion = defenseSkill;
 		
-		evasion *= RingOfEvasion.evasionMultiplier( this );
+		evasion *= RingOfAccuracy.enemyEvasionMultiplier(enemy);
+		evasion *= RingOfEvasion.evasionMultiplier(this);
 		
 		if (paralysed > 0) {
 			evasion /= 2;
@@ -389,8 +391,6 @@ public class Hero extends Char {
 	public float speed() {
 
 		float speed = super.speed();
-
-		speed *= RingOfHaste.speedMultiplier(this);
 		
 		if (belongings.armor != null) {
 			speed = belongings.armor.speedFactor(this, speed);
@@ -992,8 +992,6 @@ public class Hero extends Char {
 		if (thorns != null) {
 			dmg = thorns.proc(dmg, (src instanceof Char ? (Char)src : null),  this);
 		}
-
-		dmg = (int)Math.ceil(dmg * RingOfTenacity.damageMultiplier( this ));
 
 		//TODO improve this when I have proper damage source logic
 		if (belongings.armor != null && belongings.armor.hasGlyph(AntiMagic.class, this)
