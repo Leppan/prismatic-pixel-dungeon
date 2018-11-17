@@ -21,10 +21,13 @@
 
 package com.leppa.prismaticpixeldungeon.levels.rooms.standard;
 
+import com.leppa.prismaticpixeldungeon.actors.mobs.Jellyfish;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Mob;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Piranha;
 import com.leppa.prismaticpixeldungeon.levels.Level;
 import com.leppa.prismaticpixeldungeon.levels.Terrain;
 import com.leppa.prismaticpixeldungeon.levels.painters.Painter;
+import com.watabou.utils.Random;
 
 public class AquariumRoom extends StandardRoom {
 	
@@ -53,12 +56,14 @@ public class AquariumRoom extends StandardRoom {
 		int minDim = Math.min(width(), height());
 		int numFish = (minDim - 4)/3; //1-3 fish, depending on room size
 		
-		for (int i=0; i < numFish; i++) {
-			Piranha piranha = new Piranha();
-			do {
-				piranha.pos = level.pointToCell(random(3));
-			} while (level.map[piranha.pos] != Terrain.WATER|| level.findMob( piranha.pos ) != null);
-			level.mobs.add( piranha );
+		for(int i = 0; i < numFish; i++){
+			Mob mob;
+			if(Random.Int(2) == 1) mob = new Piranha();
+			else mob = new Jellyfish();
+			do{
+				mob.pos = level.pointToCell(random(3));
+			}while(level.map[mob.pos] != Terrain.WATER || level.findMob(mob.pos) != null);
+			level.mobs.add(mob);
 		}
 		
 		for (Door door : connected.values()) {

@@ -177,7 +177,7 @@ public class TitleScene extends PixelScene {
 
 		LanguageButton btnLang = new LanguageButton();
 		btnLang.setRect(pos, 0, 14, 16);
-		add( btnLang );
+		//add( btnLang );
 
 		ExitButton btnExit = new ExitButton();
 		btnExit.setPos( w - btnExit.width(), 0 );

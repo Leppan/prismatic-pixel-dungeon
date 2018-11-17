@@ -56,7 +56,7 @@ public class HallsLevel extends RegularLevel {
 
 	{
 		
-		viewDistance = Math.min( 26 - Dungeon.depth, viewDistance );
+		viewDistance = Math.min(31 - Dungeon.depth, viewDistance);
 		
 		color1 = 0x801500;
 		color2 = 0xa68521;
@@ -64,14 +64,14 @@ public class HallsLevel extends RegularLevel {
 	
 	@Override
 	protected int standardRooms() {
-		//8 to 10, average 8.67
-		return 8+Random.chances(new float[]{3, 2, 1});
+		//9 to 11, average 9.67
+		return 9+Random.chances(new float[]{3, 2, 1});
 	}
 	
 	@Override
 	protected int specialRooms() {
-		//2 to 3, average 2.5
-		return 2 + Random.chances(new float[]{1, 1});
+		//3 to 4, average 2.5
+		return 3 + Random.chances(new float[]{1, 1});
 	}
 	
 	@Override

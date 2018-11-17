@@ -161,7 +161,7 @@ public class PrisonBossLevel extends Level {
 		if (item != null) {
 			drop( item, randomRespawnCell() ).type = Heap.Type.REMAINS;
 		}
-		drop(new IronKey(10), randomPrisonCell());
+		drop(new IronKey(12), randomPrisonCell());
 	}
 
 	private int randomPrisonCell(){

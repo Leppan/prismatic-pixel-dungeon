@@ -511,6 +511,8 @@ public class GameScene extends PixelScene {
 			}
 		}
 		
+		Dungeon.level.turn();
+		
 		if (Dungeon.hero.ready && Dungeon.hero.paralysed == 0) {
 			log.newLine();
 		}

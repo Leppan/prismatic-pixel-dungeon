@@ -65,7 +65,8 @@ public class PuzzleLevel extends Level{
 		return true;
 	}
 	
-	protected void setup(){}
+	protected void setup(){
+	}
 	
 	protected void checkTile(int f){
 		if(MAP_START[f] == X) exit = f;
@@ -94,33 +95,31 @@ public class PuzzleLevel extends Level{
 		boolean pressurePadsUpdated = false;
 		for(int i = 0; i < pressurePads.size(); i++){
 			PressurePad p = pressurePads.valueAt(i);
-			boolean checked = false;
-			for(Object a : mobs.toArray()){
-				Mob mob = (Mob)a;
-				if(mob.pos == p.pos && mob instanceof Sheep){
-					if(!p.pressed && !p.finished){
-						p.pressed = true;
-						pressurePadsUpdated = true;
-					}
-					GameScene.updateMap(p.pos);
-					checked = true;
-				}
+			if(!p.finished){
+				p.pressed = false;
+				pressurePadsUpdated = true;
+				GameScene.updateMap(p.pos);
 			}
-			if(Dungeon.hero.pos == p.pos){
+		}
+		
+		for(Object a : mobs.toArray()){
+			Mob mob = (Mob)a;
+			PressurePad p = pressurePads.get(mob.pos);
+			if(p != null && mob instanceof Sheep){
 				if(!p.pressed && !p.finished){
 					p.pressed = true;
 					pressurePadsUpdated = true;
 				}
 				GameScene.updateMap(p.pos);
-				checked = true;
 			}
-			if(!checked){
-				if(p.pressed && !p.finished){
-					p.pressed = false;
-					pressurePadsUpdated = true;
-				}
-				GameScene.updateMap(p.pos);
+		}
+		if(pressurePads.get(Dungeon.hero.pos) != null){
+			PressurePad p = pressurePads.get(Dungeon.hero.pos);
+			if(!p.pressed && !p.finished){
+				p.pressed = true;
+				pressurePadsUpdated = true;
 			}
+			GameScene.updateMap(p.pos);
 		}
 		
 		if(pressurePadsUpdated){

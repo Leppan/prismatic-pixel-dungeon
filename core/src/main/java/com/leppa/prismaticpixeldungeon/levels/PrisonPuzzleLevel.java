@@ -23,6 +23,40 @@ public class PrisonPuzzleLevel extends PuzzleLevel{
 	PuzzleRoom room;
 	PuzzleRoom room2;
 	
+	String stringMap = ""+
+			"WWWWWWWWWWMWWWWWWWWWW" +
+			"WWWWWWWWWSTSWWWWWWWWW" +
+			"WWWWWWWWW E WWWWWWWWW" +
+			"WWWWWWWWW   WWWWWWWWW" +
+			"WWWWWWWMW   WMWWWWWWW" +
+			"WWWWWW  WWDWW  WWWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWWW         WWWWWW" +
+			"WWWWWW         WWWWWW" +
+			"WWWWWW         WWWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWWW  WM MW  WWWWWW" +
+			"WWWWWWWWWMLMWWWWWWWWW" +
+			"WWWWWW  WM MW  WWWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWW      WW   WWWWW" +
+			"WWWWWW     WW  WWWWWW" +
+			"WWWWWW         WWWWWW" +
+			"WWWWWW WW      WWWWWW" +
+			"WWWWW  WW       WWWWW" +
+			"WWWWW           WWWWW" +
+			"WWWWWW  WWTWW  WWWWWW" +
+			"WWWWWWWWMWLWMWWWWWWWW" +
+			"WWWWWWWWS   SWWWWWWWW" +
+			"WWWWWWWW  p  WWWWWWWW" +
+			"WWWWWWWW     WWWWWWWW" +
+			"WWWWWWWW     WWWWWWWW" +
+			"WWWWWWWW  X  WWWWWWWW" +
+			"WWWWWWWWS   SWWWWWWWW" +
+			"WWWWWWWWWWWWWWWWWWWWW";
+	
 	{
 		color1 = 0x6a723d;
 		color2 = 0x88924c;
@@ -32,44 +66,8 @@ public class PrisonPuzzleLevel extends PuzzleLevel{
 	}
 	
 	public PrisonPuzzleLevel(){
-		
 		pressurePads = new SparseArray<>();
-		
-		int[] MAP_START = {
-				W, W, W, W, W, W, W, W, W, W, M, W, W, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, W, S, T, S, W, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, W, e, E, e, W, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, W, e, e, e, W, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, M, W, e, e, e, W, M, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, W, W, D, W, W, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, W, M, e, M, W, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, W, M, L, M, W, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, W, M, e, M, W, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, W, W, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, e, e, e, W, W, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, e, e, e, e, e, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, e, W, W, e, e, e, e, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, e, e, W, W, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, e, e, e, e, e, e, e, e, e, e, e, W, W, W, W, W,
-				W, W, W, W, W, W, e, e, W, W, T, W, W, e, e, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, M, W, L, W, M, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, e, e, p, e, e, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, e, e, e, e, e, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, e, e, X, e, e, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, S, e, e, e, S, W, W, W, W, W, W, W, W,
-				W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W, W};
-		
-		this.MAP_START = MAP_START;
+		MAP_START = HardcodedMapHelper.mapStringToMapIntArray(stringMap);
 	}
 	
 	@Override

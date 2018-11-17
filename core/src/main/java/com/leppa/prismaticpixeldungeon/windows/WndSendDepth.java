@@ -24,8 +24,9 @@ public class WndSendDepth extends Window{
 				Buff buff = Dungeon.hero.buff(TimekeepersHourglass.timeFreeze.class);
 				if(buff != null) buff.detach();
 				
-				InterlevelScene.mode = InterlevelScene.Mode.SEND;
+				InterlevelScene.mode = InterlevelScene.Mode.RETURN;
 				InterlevelScene.returnDepth = depthToSend;
+				InterlevelScene.returnPos = -1;
 				Game.switchScene(InterlevelScene.class);
 			}
 		};

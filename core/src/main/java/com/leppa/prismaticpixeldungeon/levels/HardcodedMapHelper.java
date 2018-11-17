@@ -17,9 +17,11 @@ public class HardcodedMapHelper{
 	protected static final int D = Terrain.DOOR;
 	protected static final int L = Terrain.LOCKED_DOOR;
 	protected static final int e = Terrain.EMPTY;
+	protected static final int w = Terrain.WATER;
 	protected static final int p = Terrain.PEDESTAL;
 	
 	protected static final int P = Terrain.PRESSUREPAD;
+	protected static final int o = Terrain.WELL;
 	
 	protected static final int E = Terrain.ENTRANCE;
 	protected static final int X = Terrain.EXIT;
@@ -69,6 +71,9 @@ public class HardcodedMapHelper{
 					break;
 				case 'T':
 					ret[cha] = T;
+					break;
+				case 'w':
+					ret[cha] = w;
 					break;
 				default:
 					ret[cha] = e;

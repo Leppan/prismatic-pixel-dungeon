@@ -53,6 +53,7 @@ public class ItemSpriteSheet {
 	public static final int BREW_HOLDER     = PLACEHOLDERS+13;
 	public static final int ELIXIR_HOLDER   = PLACEHOLDERS+14;
 	public static final int SPELL_HOLDER    = PLACEHOLDERS+15;
+	public static final int MISC_HOLDER     = PLACEHOLDERS+31;
 	static{
 		assignItemRect(SOMETHING,       8,  13);
 		assignItemRect(WEAPON_HOLDER,   14, 14);
@@ -70,6 +71,7 @@ public class ItemSpriteSheet {
 		assignItemRect(BREW_HOLDER,     12, 14);
 		assignItemRect(ELIXIR_HOLDER,   12, 14);
 		assignItemRect(SPELL_HOLDER,    8,  16);
+		assignItemRect(MISC_HOLDER,     11,  10);
 	}
 
 	private static final int UNCOLLECTIBLE  =                               xy(1, 2);   //16 slots
@@ -617,6 +619,10 @@ public class ItemSpriteSheet {
 	public static final int MEAT_PIE    = FOOD+9;
 	public static final int BLANDFRUIT  = FOOD+10;
 	public static final int BLAND_CHUNKS= FOOD+11;
+	public static final int GEL_GREEN	= FOOD+12;
+	public static final int GEL_BLUE	= FOOD+13;
+	public static final int GEL_PURPLE	= FOOD+14;
+	public static final int GEL_RAINBOW	= FOOD+14;
 	static{
 		assignItemRect(MEAT,        15, 11);
 		assignItemRect(STEAK,       15, 11);

@@ -122,6 +122,7 @@ public enum Document {
 		ALCHEMY_GUIDE.pages.put("Brews",                false);
 		ALCHEMY_GUIDE.pages.put("Elixirs",              false);
 		ALCHEMY_GUIDE.pages.put("Spells",               false);
+		ALCHEMY_GUIDE.pages.put("Misc",                 false);
 	}
 	
 	private static final String DOCUMENTS = "documents";

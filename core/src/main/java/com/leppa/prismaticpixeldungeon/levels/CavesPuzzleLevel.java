@@ -36,7 +36,8 @@ public class CavesPuzzleLevel extends PuzzleLevel{
 	
 	//interResetData: 0 is wand, 1 is first statue, 2 is second statue, 3 is scroll, 4 is water
 	
-	String stringMap = "WWWMWMWMWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWMWWMMMWMW" +
+	String stringMap = "" +
+			"WWWMWMWMWWWWWWWWWWWWWWWWWMWWWWWWWWWWWWWWMWWMMMWMW" +
 			"WS       SWWWWWWWWWWWWWW E WWWWWMWWWWWWS       SW" +
 			"W         WWWWWWWWf MWWW   WWW f  WWWWW         W" +
 			"W         WWWWWM  f   dMWDWM   f   WWWW         W" +
@@ -72,14 +73,14 @@ public class CavesPuzzleLevel extends PuzzleLevel{
 			"WWW   WWWWWM                        WWWWWWW   WWW" +
 			"WWW p WW                                 WW p WWW" +
 			"WWW   WW WW                         WWWW WW   WWW" +
-			"WMMWDWMWDWW                         WWWWDMWWDMWWW" +
+			"WMMWLWMWLWW                         WWWWLMWWLMWWW" +
 			"WS       SWW                       WWWWS       SW" +
 			"W         WWW                      WWWW         W" +
 			"W         WWW                     WWWWW         W" +
 			"W         WWW                    WWWWWW         W" +
 			"W    p    WWWW                 WWWWWWWW    p    W" +
 			"W         WWWWW             WWWWWWWWWWW         W" +
-			"W         WWWWWWWWWWWWWWMDMWWWWWWWWWWWW         W" +
+			"W         WWWWWWWWWWWWWWMLMWWWWWWWWWWWW         W" +
 			"W         WWWWWWWWWWWWWW   WWWWWWWWWWWW         W" +
 			"WS       SWWWWWWWWWWWWWW p WWWWWWWWWWWWS       SW" +
 			"WWWWWWWWWWWWWWWWWWWWWWWW   WWWWWWWWWWWWWWWWWWWWWW" +

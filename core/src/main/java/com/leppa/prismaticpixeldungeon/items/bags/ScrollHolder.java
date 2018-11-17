@@ -23,6 +23,7 @@ package com.leppa.prismaticpixeldungeon.items.bags;
 
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.scrolls.Scroll;
+import com.leppa.prismaticpixeldungeon.items.scrolls.ScrollOfDebug;
 import com.leppa.prismaticpixeldungeon.items.spells.Spell;
 import com.leppa.prismaticpixeldungeon.sprites.ItemSpriteSheet;
 
@@ -36,7 +37,7 @@ public class ScrollHolder extends Bag {
 	
 	@Override
 	public boolean grab( Item item ) {
-		return item instanceof Scroll || item instanceof Spell;
+		return item instanceof Scroll || item instanceof Spell || item instanceof ScrollOfDebug;
 	}
 	
 	@Override

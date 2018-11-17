@@ -28,6 +28,7 @@ import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.Recipe;
 import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
 import com.leppa.prismaticpixeldungeon.items.food.Blandfruit;
+import com.leppa.prismaticpixeldungeon.items.food.ColourGel;
 import com.leppa.prismaticpixeldungeon.items.food.Food;
 import com.leppa.prismaticpixeldungeon.items.food.MeatPie;
 import com.leppa.prismaticpixeldungeon.items.food.MysteryMeat;
@@ -381,6 +382,11 @@ public class QuickRecipe extends Component {
 				result.add(new QuickRecipe(new CurseInfusion.Recipe()));
 				result.add(new QuickRecipe(new Alchemize.Recipe()));
 				result.add(new QuickRecipe(new Recycle.Recipe()));
+				return result;
+			case 10:
+				result.add(new QuickRecipe((new ColourGel.BlueGelRecipe())));
+				result.add(new QuickRecipe((new ColourGel.GreenGelRecipe())));
+				result.add(new QuickRecipe((new ColourGel.PurpleGelRecipe())));
 				return result;
 		}
 	}

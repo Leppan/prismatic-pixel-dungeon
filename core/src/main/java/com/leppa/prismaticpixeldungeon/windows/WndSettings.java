@@ -24,6 +24,7 @@ package com.leppa.prismaticpixeldungeon.windows;
 import com.leppa.prismaticpixeldungeon.Assets;
 import com.leppa.prismaticpixeldungeon.SPDSettings;
 import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
+import com.leppa.prismaticpixeldungeon.journal.Document;
 import com.leppa.prismaticpixeldungeon.messages.Messages;
 import com.leppa.prismaticpixeldungeon.scenes.GameScene;
 import com.leppa.prismaticpixeldungeon.scenes.PixelScene;
@@ -39,7 +40,7 @@ import com.watabou.utils.DeviceCompat;
 
 public class WndSettings extends WndTabbed {
 
-	private static final int WIDTH		    = 112;
+	private static final int WIDTH		    = 132;
 	private static final int HEIGHT         = 138;
 	private static final int SLIDER_HEIGHT	= 24;
 	private static final int BTN_HEIGHT	    = 18;
@@ -50,20 +51,24 @@ public class WndSettings extends WndTabbed {
 	private DisplayTab display;
 	private UITab ui;
 	private AudioTab audio;
+	private GameplayTab gameplay;
 
 	private static int last_index = 0;
 
 	public WndSettings() {
 		super();
-
+		
 		display = new DisplayTab();
-		add( display );
-
+		add(display);
+		
 		ui = new UITab();
-		add( ui );
-
+		add(ui);
+		
 		audio = new AudioTab();
-		add( audio );
+		add(audio);
+		
+		gameplay = new GameplayTab();
+		add(gameplay);
 
 		add( new LabeledTab(Messages.get(this, "display")){
 			@Override
@@ -89,6 +94,15 @@ public class WndSettings extends WndTabbed {
 				super.select(value);
 				audio.visible = audio.active = value;
 				if (value) last_index = 2;
+			}
+		});
+		
+		add( new LabeledTab(Messages.get(this, "gameplay")){
+			@Override
+			protected void select(boolean value) {
+				super.select(value);
+				gameplay.visible = gameplay.active = value;
+				if (value) last_index = 3;
 			}
 		});
 
@@ -219,7 +233,7 @@ public class WndSettings extends WndTabbed {
 					Toolbar.updateLayout();
 				}
 			};
-			btnSplit.setRect( 0, barDesc.y + barDesc.baseLine()+GAP_TINY, 36, 16);
+			btnSplit.setRect( 0, barDesc.y + barDesc.baseLine()+GAP_TINY, WIDTH/3 - GAP_TINY + 1, 16);
 			add(btnSplit);
 
 			RedButton btnGrouped = new RedButton(Messages.get(this, "group")){
@@ -229,7 +243,7 @@ public class WndSettings extends WndTabbed {
 					Toolbar.updateLayout();
 				}
 			};
-			btnGrouped.setRect( btnSplit.right()+GAP_TINY, barDesc.y + barDesc.baseLine()+GAP_TINY, 36, 16);
+			btnGrouped.setRect( btnSplit.right()+GAP_TINY, barDesc.y + barDesc.baseLine()+GAP_TINY, WIDTH/3 - GAP_TINY, 16);
 			add(btnGrouped);
 
 			RedButton btnCentered = new RedButton(Messages.get(this, "center")){
@@ -239,7 +253,7 @@ public class WndSettings extends WndTabbed {
 					Toolbar.updateLayout();
 				}
 			};
-			btnCentered.setRect(btnGrouped.right()+GAP_TINY, barDesc.y + barDesc.baseLine()+GAP_TINY, 36, 16);
+			btnCentered.setRect(btnGrouped.right()+GAP_TINY, barDesc.y + barDesc.baseLine()+GAP_TINY, WIDTH/3 - GAP_TINY + 1, 16);
 			add(btnCentered);
 
 			CheckBox chkFlipToolbar = new CheckBox(Messages.get(this, "flip_toolbar")){
@@ -363,5 +377,48 @@ public class WndSettings extends WndTabbed {
 			resize( WIDTH, (int)btnSound.bottom());
 		}
 
+	}
+	
+	private class GameplayTab extends Group{
+		
+		public GameplayTab(){
+			
+			RedButton btnAllJournal = new RedButton(Messages.get(this, "all_journal")){
+				@Override
+				protected void onClick() {
+					Document.ADVENTURERS_GUIDE.addPage("Intro");
+					Document.ADVENTURERS_GUIDE.addPage("Identifying");
+					Document.ADVENTURERS_GUIDE.addPage("Examining_and_Searching");
+					Document.ADVENTURERS_GUIDE.addPage("Strength");
+					Document.ADVENTURERS_GUIDE.addPage("Food");
+					Document.ADVENTURERS_GUIDE.addPage("Levelling");
+					Document.ADVENTURERS_GUIDE.addPage("Surprise_Attacks");
+					Document.ADVENTURERS_GUIDE.addPage("Dieing");
+					Document.ADVENTURERS_GUIDE.addPage("Looting");
+					Document.ADVENTURERS_GUIDE.addPage("Magic");
+				}
+			};
+			btnAllJournal.setRect(0, 0, WIDTH, BTN_HEIGHT);
+			add(btnAllJournal);
+			
+			RedButton btnAllAlchemy = new RedButton(Messages.get(this, "all_alchemy")){
+				@Override
+				protected void onClick() {
+					Document.ALCHEMY_GUIDE.addPage("Potions");
+					Document.ALCHEMY_GUIDE.addPage("Stones");
+					Document.ALCHEMY_GUIDE.addPage("Darts");
+					Document.ALCHEMY_GUIDE.addPage("Exotic_Potions");
+					Document.ALCHEMY_GUIDE.addPage("Exotic_Scrolls");
+					Document.ALCHEMY_GUIDE.addPage("Energy_Food");
+					Document.ALCHEMY_GUIDE.addPage("Bombs");
+					Document.ALCHEMY_GUIDE.addPage("Brews");
+					Document.ALCHEMY_GUIDE.addPage("Elixirs");
+					Document.ALCHEMY_GUIDE.addPage("Spells");
+					Document.ALCHEMY_GUIDE.addPage("Misc");
+				}
+			};
+			btnAllAlchemy.setRect(0, btnAllJournal.bottom() + GAP_TINY, WIDTH, BTN_HEIGHT);
+			add(btnAllAlchemy);
+		}
 	}
 }

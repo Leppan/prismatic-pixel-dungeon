@@ -29,6 +29,7 @@ import com.leppa.prismaticpixeldungeon.actors.buffs.MagicImmune;
 import com.leppa.prismaticpixeldungeon.actors.hero.Hero;
 import com.leppa.prismaticpixeldungeon.items.Item;
 import com.leppa.prismaticpixeldungeon.items.KindOfWeapon;
+import com.leppa.prismaticpixeldungeon.items.artifacts.DeckOfElements;
 import com.leppa.prismaticpixeldungeon.items.rings.RingOfFuror;
 import com.leppa.prismaticpixeldungeon.items.weapon.curses.Annoying;
 import com.leppa.prismaticpixeldungeon.items.weapon.curses.Displacing;
@@ -98,8 +99,15 @@ abstract public class Weapon extends KindOfWeapon {
 	@Override
 	public int proc( Char attacker, Char defender, int damage ) {
 		
-		if (enchantment != null && attacker.buff(MagicImmune.class) == null) {
+		boolean nullified = false;
+		DeckOfElements deck = Dungeon.hero.belongings.getItem(DeckOfElements.class);
+		if(deck != null && deck.cursed) nullified = true;
+		if (enchantment != null && attacker.buff(MagicImmune.class) == null && !nullified){
 			damage = enchantment.proc( this, attacker, defender, damage );
+		}
+		
+		if(enchantment == null && nullified){
+			Enchantment.randomCurse(Fragile.class, Wayward.class);
 		}
 		
 		if (!levelKnown && attacker == Dungeon.hero) {

@@ -25,6 +25,7 @@ import com.leppa.prismaticpixeldungeon.ShatteredPixelDungeon;
 import com.leppa.prismaticpixeldungeon.items.artifacts.AlchemistsToolkit;
 import com.leppa.prismaticpixeldungeon.items.bombs.Bomb;
 import com.leppa.prismaticpixeldungeon.items.food.Blandfruit;
+import com.leppa.prismaticpixeldungeon.items.food.ColourGel;
 import com.leppa.prismaticpixeldungeon.items.food.MeatPie;
 import com.leppa.prismaticpixeldungeon.items.food.StewedMeat;
 import com.leppa.prismaticpixeldungeon.items.potions.Potion;
@@ -173,7 +174,10 @@ public abstract class Recipe {
 	private static Recipe[] oneIngredientRecipes = new Recipe[]{
 			new AlchemistsToolkit.upgradeKit(),
 			new Scroll.ScrollToStone(),
-			new StewedMeat.oneMeat()
+			new StewedMeat.oneMeat(),
+			new ColourGel.BlueGelRecipe(),
+			new ColourGel.GreenGelRecipe(),
+			new ColourGel.PurpleGelRecipe()
 	};
 	
 	private static Recipe[] twoIngredientRecipes = new Recipe[]{

@@ -50,12 +50,12 @@ public class Bestiary {
 				//3x rat, 3x gnoll
 				return new ArrayList<>(Arrays.asList(Rat.class, Rat.class, Rat.class,
 						Gnoll.class, Gnoll.class, Gnoll.class));
-			case 3:
+			case 4:
 				//2x rat, 4x gnoll, 1x crab, 1x swarm
 				return new ArrayList<>(Arrays.asList(Rat.class, Rat.class,
 						Gnoll.class, Gnoll.class, Gnoll.class, Gnoll.class,
 						Crab.class, Swarm.class));
-			case 4:
+			case 5:
 				//1x rat, 2x gnoll, 3x crab, 1x swarm
 				return new ArrayList<>(Arrays.asList(Rat.class,
 						Gnoll.class, Gnoll.class,
@@ -63,24 +63,24 @@ public class Bestiary {
 						Swarm.class));
 				
 			// Prison
-			case 6:
+			case 7:
 				//3x skeleton, 1x thief, 1x swarm
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
 						Swarm.class));
-			case 7:
+			case 8:
 				//3x skeleton, 1x thief, 1x shaman, 1x guard
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
 						Shaman.class,
 						Guard.class));
-			case 8:
+			case 10:
 				//3x skeleton, 1x thief, 2x shaman, 2x guard
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
 						Shaman.class, Shaman.class,
 						Guard.class, Guard.class));
-			case 9:
+			case 11:
 				//3x skeleton, 1x thief, 2x shaman, 3x guard
 				return new ArrayList<>(Arrays.asList(Skeleton.class, Skeleton.class, Skeleton.class,
 						Thief.class,
@@ -88,25 +88,25 @@ public class Bestiary {
 						Guard.class, Guard.class, Guard.class));
 				
 			// Caves
-			case 11:
+			case 13:
 				//5x bat, 1x brute
 				return new ArrayList<>(Arrays.asList(
 						Bat.class, Bat.class, Bat.class, Bat.class, Bat.class,
 						Brute.class));
-			case 12:
+			case 14:
 				//5x bat, 5x brute, 1x spinner
 				return new ArrayList<>(Arrays.asList(
 						Bat.class, Bat.class, Bat.class, Bat.class, Bat.class,
 						Brute.class, Brute.class, Brute.class, Brute.class, Brute.class,
 						Spinner.class));
-			case 13:
+			case 16:
 				//1x bat, 3x brute, 1x shaman, 1x spinner
 				return new ArrayList<>(Arrays.asList(
 						Bat.class,
 						Brute.class, Brute.class, Brute.class,
 						Shaman.class,
 						Spinner.class));
-			case 14:
+			case 17:
 				//1x bat, 3x brute, 1x shaman, 4x spinner
 				return new ArrayList<>(Arrays.asList(
 						Bat.class,
@@ -115,26 +115,26 @@ public class Bestiary {
 						Spinner.class, Spinner.class, Spinner.class, Spinner.class));
 				
 			// City
-			case 16:
+			case 19:
 				//5x elemental, 5x warlock, 1x monk
 				return new ArrayList<>(Arrays.asList(
 						Elemental.class, Elemental.class, Elemental.class, Elemental.class, Elemental.class,
 						Warlock.class, Warlock.class, Warlock.class, Warlock.class, Warlock.class,
 						Monk.class));
-			case 17:
+			case 20:
 				//2x elemental, 2x warlock, 2x monk
 				return new ArrayList<>(Arrays.asList(
 						Elemental.class, Elemental.class,
 						Warlock.class, Warlock.class,
 						Monk.class, Monk.class));
-			case 18:
+			case 22:
 				//1x elemental, 1x warlock, 2x monk, 1x golem
 				return new ArrayList<>(Arrays.asList(
 						Elemental.class,
 						Warlock.class,
 						Monk.class, Monk.class,
 						Golem.class));
-			case 19:
+			case 23:
 				//1x elemental, 1x warlock, 2x monk, 3x golem
 				return new ArrayList<>(Arrays.asList(
 						Elemental.class,
@@ -143,18 +143,18 @@ public class Bestiary {
 						Golem.class, Golem.class, Golem.class));
 				
 			// Halls
-			case 22:
+			case 25:
 				//3x succubus, 3x evil eye
 				return new ArrayList<>(Arrays.asList(
 						Succubus.class, Succubus.class, Succubus.class,
 						Eye.class, Eye.class, Eye.class));
-			case 23:
+			case 26:
 				//2x succubus, 4x evil eye, 2x scorpio
 				return new ArrayList<>(Arrays.asList(
 						Succubus.class, Succubus.class,
 						Eye.class, Eye.class, Eye.class, Eye.class,
 						Scorpio.class, Scorpio.class));
-			case 24:
+			case 28:
 				//1x succubus, 2x evil eye, 3x scorpio
 				return new ArrayList<>(Arrays.asList(
 						Succubus.class,

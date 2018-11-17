@@ -168,7 +168,7 @@ public abstract class Builder {
 		if (angle < 0){
 			angle += 360f;
 		}
-
+		
 		PointF prevCenter = new PointF((prev.left + prev.right)/2f, (prev.top + prev.bottom)/2f);
 
 		// calculating using y = mx+b, straight line formula

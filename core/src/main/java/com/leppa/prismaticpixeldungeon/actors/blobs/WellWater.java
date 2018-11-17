@@ -127,7 +127,7 @@ public abstract class WellWater extends Blob {
 				
 				Level.set( cell, Terrain.EMPTY_WELL );
 				GameScene.updateMap( cell );
-				if(Dungeon.level.interResetData.get(4) != null) Dungeon.level.interResetData.set(4, 1);
+				if(Dungeon.level.interResetData.size() > 5 && Dungeon.level.interResetData.get(4) != null) Dungeon.level.interResetData.set(4, 1);
 				
 				return;
 			}

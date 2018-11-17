@@ -59,12 +59,15 @@ public class PuzzleGenerator{
 	private static void generateSingleSheep(ArrayList<Sheep> sheep, int width, int height, int wiidth, int heiight, Level level, int xpos, int ypos){
 		int pos;
 		int sheepDir = Random.Int(3);
+		int tries = 0;
 		if(sheepDir == 0){
 			HorizontalPuzzleSheep sh = new HorizontalPuzzleSheep();
 			do{
 				int shWiidth = Random.Int(width);
 				pos = (xpos + shWiidth) + (heiight+ypos)*level.width();
-			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForHorizontalSheep(pos, level, sheep));
+				tries++;
+			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForHorizontalSheep(pos, level, sheep) && tries < 1000);
+			if(tries > 1000) sh.pos = (xpos + wiidth) + (heiight*level.width());
 			sh.pos = pos;
 			sheep.add(sh);
 		}else if(sheepDir == 1){
@@ -72,7 +75,9 @@ public class PuzzleGenerator{
 			do{
 				int shHeiight = Random.Int(height);
 				pos = (xpos + wiidth) + (shHeiight+ypos)*level.width();
-			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForVerticalSheep(pos, level, sheep));
+				tries++;
+			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForVerticalSheep(pos, level, sheep) && tries < 1000);
+			if(tries > 1000) sh.pos = (xpos + wiidth) + (heiight*level.width());
 			sh.pos = pos;
 			sheep.add(sh);
 		}else{
@@ -81,7 +86,9 @@ public class PuzzleGenerator{
 				int shWiidth = Random.Int(width);
 				int shHeiight = Random.Int(height);
 				pos = (xpos + shWiidth) + (shHeiight+ypos)*level.width();
-			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForAnyPushSheep(pos, level, sheep));
+				tries++;
+			}while(isSheepAtPosition(sheep, pos) || isPositionInvalidForAnyPushSheep(pos, level, sheep) && tries < 1000);
+			if(tries > 1000) sh.pos = (xpos + wiidth) + (heiight*level.width());
 			sh.pos = pos;
 			sheep.add(sh);
 		}

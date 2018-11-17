@@ -52,6 +52,7 @@ import com.leppa.prismaticpixeldungeon.levels.CityBossLevel;
 import com.leppa.prismaticpixeldungeon.levels.CityLevel;
 import com.leppa.prismaticpixeldungeon.levels.CityPuzzleLevel;
 import com.leppa.prismaticpixeldungeon.levels.DeadEndLevel;
+import com.leppa.prismaticpixeldungeon.levels.DebugLevel;
 import com.leppa.prismaticpixeldungeon.levels.HallsBossLevel;
 import com.leppa.prismaticpixeldungeon.levels.HallsLevel;
 import com.leppa.prismaticpixeldungeon.levels.HallsPuzzleLevel;
@@ -196,6 +197,7 @@ public class Dungeon {
 	public static int version;
 
 	public static long seed;
+	public static boolean[] generatedLevels;
 	
 	public static void init() {
 
@@ -217,6 +219,7 @@ public class Dungeon {
 			SecretRoom.initForRun();
 
 		Random.seed();
+		generatedLevels = new boolean[200];
 		
 		Statistics.reset();
 		Notes.reset();
@@ -351,6 +354,9 @@ public class Dungeon {
 		case 31:
 			level = new LastLevel();
 			break;
+		case 99:
+			level = new DebugLevel();
+			break;
 		default:
 			level = new DeadEndLevel();
 			Statistics.deepestFloor--;
@@ -363,6 +369,7 @@ public class Dungeon {
 		level.create();
 		
 		Statistics.qualifiedForNoKilling = !bossLevel();
+		generatedLevels[depth] = true;
 		
 		return level;
 	}
@@ -496,31 +503,33 @@ public class Dungeon {
 		return Random.Int(5 - floorThisSet) < asLeftThisSet;
 	}
 	
-	private static final String VERSION		= "version";
-	private static final String SEED		= "seed";
-	private static final String CHALLENGES	= "challenges";
-	private static final String HERO		= "hero";
-	private static final String GOLD		= "gold";
-	private static final String DEPTH		= "depth";
-	private static final String DROPPED     = "dropped%d";
-	private static final String PORTED      = "ported%d";
-	private static final String LEVEL		= "level";
-	private static final String LIMDROPS    = "limited_drops";
-	private static final String CHAPTERS	= "chapters";
-	private static final String QUESTS		= "quests";
-	private static final String BADGES		= "badges";
+	private static final String VERSION			= "version";
+	private static final String SEED			= "seed";
+	private static final String CHALLENGES		= "challenges";
+	private static final String HERO			= "hero";
+	private static final String GOLD			= "gold";
+	private static final String DEPTH			= "depth";
+	private static final String GENERATEDLEVELS	= "generatedLevels";
+	private static final String DROPPED     	= "dropped%d";
+	private static final String PORTED      	= "ported%d";
+	private static final String LEVEL			= "level";
+	private static final String LIMDROPS    	= "limited_drops";
+	private static final String CHAPTERS		= "chapters";
+	private static final String QUESTS			= "quests";
+	private static final String BADGES			= "badges";
 	
 	public static void saveGame( int save ) throws IOException {
 		try {
 			Bundle bundle = new Bundle();
 
 			version = Game.versionCode;
-			bundle.put( VERSION, version );
-			bundle.put( SEED, seed );
-			bundle.put( CHALLENGES, challenges );
-			bundle.put( HERO, hero );
-			bundle.put( GOLD, gold );
-			bundle.put( DEPTH, depth );
+			bundle.put(VERSION, version);
+			bundle.put(SEED, seed);
+			bundle.put(CHALLENGES, challenges);
+			bundle.put(HERO, hero);
+			bundle.put(GOLD, gold);
+			bundle.put(DEPTH, depth);
+			bundle.put(GENERATEDLEVELS, generatedLevels);
 
 			for (int d : droppedItems.keyArray()) {
 				bundle.put(Messages.format(DROPPED, d), droppedItems.get(d));
@@ -590,9 +599,9 @@ public class Dungeon {
 			Actor.fixTime();
 			saveGame( GamesInProgress.curSlot );
 			saveLevel( GamesInProgress.curSlot );
-
+			
 			GamesInProgress.set( GamesInProgress.curSlot, depth, challenges, hero );
-
+			
 		} else if (WndResurrect.instance != null) {
 			
 			WndResurrect.instance.hide();
@@ -688,8 +697,9 @@ public class Dungeon {
 			}
 		}
 		
-		gold = bundle.getInt( GOLD );
-		depth = bundle.getInt( DEPTH );
+		gold = bundle.getInt(GOLD);
+		depth = bundle.getInt(DEPTH);
+		generatedLevels = bundle.getBooleanArray(GENERATEDLEVELS);
 		
 		Statistics.restoreFromBundle( bundle );
 		Generator.restoreFromBundle( bundle );

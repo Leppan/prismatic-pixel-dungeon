@@ -25,6 +25,7 @@ import com.leppa.prismaticpixeldungeon.actors.Char;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Charm;
 import com.leppa.prismaticpixeldungeon.actors.buffs.Weakness;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Eye;
+import com.leppa.prismaticpixeldungeon.actors.mobs.Jellyfish;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Shaman;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Warlock;
 import com.leppa.prismaticpixeldungeon.actors.mobs.Yog;
@@ -41,16 +42,17 @@ public class AntiMagic extends Armor.Glyph {
 	
 	public static final HashSet<Class> RESISTS = new HashSet<>();
 	static {
-		RESISTS.add( Charm.class );
-		RESISTS.add( Weakness.class );
+		RESISTS.add(Charm.class);
+		RESISTS.add(Weakness.class);
 		
-		RESISTS.add( DisintegrationTrap.class );
-		RESISTS.add( GrimTrap.class );
+		RESISTS.add(DisintegrationTrap.class);
+		RESISTS.add(GrimTrap.class);
 		
-		RESISTS.add( Shaman.class );
-		RESISTS.add( Warlock.class );
-		RESISTS.add( Eye.class );
-		RESISTS.add( Yog.BurningFist.class );
+		RESISTS.add(Shaman.class);
+		RESISTS.add(Jellyfish.class);
+		RESISTS.add(Warlock.class);
+		RESISTS.add(Eye.class);
+		RESISTS.add(Yog.BurningFist.class);
 	}
 	
 	@Override

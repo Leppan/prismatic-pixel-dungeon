@@ -139,7 +139,7 @@ public class Boomerang extends MissileWeapon {
 			case DAMAGE:
 				info += "\n\n" + Messages.get(Weapon.class, "stronger");
 				break;
-			case NONE:
+			case NONE:                                         //better
 		}
 
 		return info;
